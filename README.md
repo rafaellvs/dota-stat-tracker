@@ -1,2 +1,14 @@
 # dota-stat-tracker
-dota stat tracker using React and OpenDota API
+Dota Stat Tracker using React and OpenDota API
+
+
+## Stack
+- react
+- styled-components
+- parcel
+- eslint
+
+## Run project
+run `yarn`
+
+run `yarn start`
