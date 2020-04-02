@@ -14,7 +14,7 @@ export const Tab = styled.div`
   align-items: center;
   flex: 1;
   padding: 1rem .5rem;
-  background: ${props => props.active ? 'lightgrey' : 'none'};
+  background: ${props => props.active ? 'lightgrey' : 'black'};
   color: ${props => props.active ? 'black' : 'white'};
   opacity: ${props => props.active ? '1' : '.6'};
   transition: background .3s, opacity .3s, color .3s;
@@ -23,6 +23,7 @@ export const Tab = styled.div`
   &:hover {
     background: lightgrey;
     color: black;
+    opacity: .8;
   }
 `
 
