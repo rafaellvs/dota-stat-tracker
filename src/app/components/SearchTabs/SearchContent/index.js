@@ -1,36 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Text from 'app/components/core/Text'
-import MatchResult from 'app/components/MatchResult'
+import MatchResults from 'app/components/MatchResults'
 import PlayerResults from 'app/components/PlayerResults'
 
 import { Content } from './styled'
 
-const SearchContent = ({
-  selected,
-  result,
-  setResult
-}) =>
-  <Content hasContent={result}>
+const SearchContent = ({ selected }) =>
+  <Content>
     {
       selected === 'players' &&
-        <PlayerResults result={result} setResult={setResult} />
+        <PlayerResults />
     }
 
     {
       selected === 'matches' &&
-      (!result.matchResult.error
-        ? <MatchResult result={result} setResult={setResult} />
-        : <Text component='h3'>found nothing :(</Text>
-      )
+        <MatchResults />
     }
   </Content>
 
 SearchContent.propTypes = {
-  selected: PropTypes.string,
-  result: PropTypes.object,
-  setResult: PropTypes.func
+  selected: PropTypes.string
 }
 
 export default SearchContent

@@ -1,7 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { getPlayer } from 'app/helpers/requests'
+import { fetchSelectedPlayer } from 'app/redux/actions/players'
 
 import {
   SearchResults,
@@ -10,16 +10,19 @@ import {
   Avatar
 } from './styled'
 
-const PlayerResults = ({ result, setResult }) => {
+const PlayerResults = () => {
+  const dispatch = useDispatch()
+  const players = useSelector(state => state.players)
+
   return (
     <SearchResults>
       {
-        result.players
+        players.items
           .filter((profile, index) => index < 10)
           .map(profile =>
             <SearchResult
               key={profile.account_id}
-              onClick={() => getPlayer(profile.account_id, setResult)}
+              onClick={() => dispatch(fetchSelectedPlayer(profile.account_id))}
             >
               <Avatar src={profile.avatarfull} />
 
@@ -31,11 +34,6 @@ const PlayerResults = ({ result, setResult }) => {
       }
     </SearchResults>
   )
-}
-
-PlayerResults.propTypes = {
-  result: PropTypes.object,
-  setResult: PropTypes.func
 }
 
 export default PlayerResults

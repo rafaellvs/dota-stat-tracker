@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
 
 import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
@@ -11,45 +11,46 @@ import {
   Heroes
 } from './styled'
 
-const Match = ({ result }) =>
-  <FullMatch>
-    <Text component='h2'>
-      Match {result.match.match_id}
-    </Text>
+const Match = () => {
+  const match = useSelector(state => state.matches.selected)
 
-    <Text component='h4'>
-      Radiant:
-    </Text>
-    <Heroes>
-      {
-        result.match.players
-          .filter((player, index) => index < 5)
-          .map((player, index) => {
-            const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
+  return (
+    <FullMatch>
+      <Text component='h2'>
+        Match {match.match_id}
+      </Text>
 
-            return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
-          })
-      }
-    </Heroes>
+      <Text component='h4'>
+        Radiant:
+      </Text>
+      <Heroes>
+        {
+          match.players
+            .filter((player, index) => index < 5)
+            .map((player, index) => {
+              const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
 
-    <Text component='h4'>
-      Dire:
-    </Text>
-    <Heroes>
-      {
-        result.match.players
-          .filter((player, index) => index > 4)
-          .map((player, index) => {
-            const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
+              return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
+            })
+        }
+      </Heroes>
 
-            return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
-          })
-      }
-    </Heroes>
-  </FullMatch>
+      <Text component='h4'>
+        Dire:
+      </Text>
+      <Heroes>
+        {
+          match.players
+            .filter((player, index) => index > 4)
+            .map((player, index) => {
+              const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
 
-Match.propTypes = {
-  result: PropTypes.object
+              return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
+            })
+        }
+      </Heroes>
+    </FullMatch>
+  )
 }
 
 export default Match

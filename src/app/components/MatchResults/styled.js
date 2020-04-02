@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const SearchResults = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
 export const Match = styled.div`
   display: flex;
   flex-direction: column;
