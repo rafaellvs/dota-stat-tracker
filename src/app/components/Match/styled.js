@@ -7,7 +7,7 @@ export const FullMatch = styled.div`
   align-items: center;
   background: lightgrey;
   height: 100%;
-  padding: 2rem 1rem;
+  padding: 0 2rem 2rem;
 `
 
 export const Heroes = styled.div`

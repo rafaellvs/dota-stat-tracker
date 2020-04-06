@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
 
-import heroes from 'app/helpers/heroes'
+import { getHeroImage } from 'app/helpers/utils'
 
 import {
   FullMatch,
@@ -27,11 +27,9 @@ const Match = () => {
         {
           match.players
             .filter((player, index) => index < 5)
-            .map((player, index) => {
-              const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
-
-              return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
-            })
+            .map((player, index) =>
+              <Image src={getHeroImage(player.hero_id)} key={index} />
+            )
         }
       </Heroes>
 
@@ -42,11 +40,9 @@ const Match = () => {
         {
           match.players
             .filter((player, index) => index > 4)
-            .map((player, index) => {
-              const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
-
-              return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
-            })
+            .map((player, index) =>
+              <Image src={getHeroImage(player.hero_id)} key={index} />
+            )
         }
       </Heroes>
     </FullMatch>
