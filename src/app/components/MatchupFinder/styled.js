@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import theme from 'app/helpers/theme'
 
 export const Container = styled.div`
   display: flex;
@@ -7,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   z-index: 5;
   padding: 0 2rem 2rem;
-  background: lightgray;
+  background: ${theme.colors.background};
 `
 
 export const Form = styled.form`
