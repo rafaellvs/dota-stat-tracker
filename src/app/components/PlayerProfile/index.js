@@ -26,10 +26,7 @@ import {
   Star,
   Medal,
   RecentMatches,
-  Match,
-  HeroName,
-  TextWon,
-  TextLost
+  Match
 } from './styled'
 
 const PlayerProfile = () => {
@@ -89,18 +86,18 @@ const PlayerProfile = () => {
               >
                 <Image src={getHeroImage(match.hero_id)} />
 
-                <HeroName component='h5'>
+                <Text component='h5' variant='hideOverflow'>
                   {getHeroName(match.hero_id)}
-                </HeroName>
+                </Text>
 
-                <Text component='p'>
+                <Text>
                   {`${match.kills}-${match.deaths}-${match.assists}`}
                 </Text>
 
                 {
                   match.player_slot < 5 ^ match.radiant_win
-                    ? <TextLost>lost match</TextLost>
-                    : <TextWon>won match</TextWon>
+                    ? <Text variant='loss'>lost match</Text>
+                    : <Text variant='win'>won match</Text>
                 }
               </Match>
             )

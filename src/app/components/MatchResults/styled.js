@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import theme from 'app/helpers/theme'
 
 export const SearchResults = styled.div`
   display: flex;
@@ -10,11 +11,11 @@ export const SearchResults = styled.div`
 export const Match = styled.div`
   display: flex;
   flex-direction: column;
-  background: lightgrey;
+  background: ${theme.colors.background};
   padding: 2rem 1rem;
 
   &:hover {
-    background-color: #878080;
+    background-color: ${theme.colors.hover};
     cursor: pointer;
   }
 `

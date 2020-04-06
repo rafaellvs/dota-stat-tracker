@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
-import CoreImage from 'app/components/core/Image'
-import CoreText from 'app/components/core/Text'
+import theme from 'app/helpers/theme'
+
+import Image from 'app/components/core/Image'
 
 export const SearchResults = styled.div`
   display: flex;
@@ -15,16 +16,11 @@ export const SearchResult = styled.div`
   padding: .4rem;
 
   &:hover {
-    background-color: #878080;
+    background-color: ${theme.colors.hover};
     cursor: pointer;
   }
 `
 
-export const Avatar = styled(CoreImage)`
+export const Avatar = styled(Image)`
   width: 50px;
-`
-
-export const Name = styled(CoreText)`
-  overflow: hidden;
-  text-overflow: ellipsis;
 `

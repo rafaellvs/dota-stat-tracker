@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchSelectedPlayer } from 'app/redux/actions/players'
 
+import Text from 'app/components/core/Text'
+
 import {
   SearchResults,
   SearchResult,
-  Name,
   Avatar
 } from './styled'
 
@@ -26,9 +27,9 @@ const PlayerResults = () => {
             >
               <Avatar src={profile.avatarfull} />
 
-              <Name>
+              <Text variant='hideOverflow'>
                 {profile.personaname}
-              </Name>
+              </Text>
             </SearchResult>
           )
       }

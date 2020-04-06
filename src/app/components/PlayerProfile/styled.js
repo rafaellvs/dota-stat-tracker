@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
-import CoreImage from 'app/components/core/Image'
-import CoreText from 'app/components/core/Text'
+import theme from 'app/helpers/theme'
+
+import Image from 'app/components/core/Image'
 
 export const Container = styled.div`
-  background: lightgrey;
+  background: ${theme.colors.background};
   padding: 2rem;
 `
 
@@ -14,7 +15,7 @@ export const Profile = styled.div`
   justify-content: space-evenly;
 `
 
-export const Avatar = styled(CoreImage)`
+export const Avatar = styled(Image)`
   width: 150px;
 `
 
@@ -30,18 +31,18 @@ export const MostPlayed = styled.div`
   justify-content: space-between;
 `
 
-export const MostPlayedHero = styled(CoreImage)`
+export const MostPlayedHero = styled(Image)`
   width: 50px;
 `
 
 export const Rank = styled.div``
 
-export const Star = styled.img`
+export const Star = styled(Image)`
   width: 150px;
   position: absolute;
 `
 
-export const Medal = styled.img`
+export const Medal = styled(Image)`
   width: 150px;
 `
 
@@ -56,20 +57,7 @@ export const Match = styled.div`
   padding: 0 1rem;
 
   &:hover {
-    background-color: #878080;
+    background-color: ${theme.colors.hover};
     cursor: pointer;
   }
-`
-
-export const HeroName = styled(CoreText)`
-  overflow: hidden;
-  text-overflow: ellipsis;
-`
-
-export const TextWon = styled(CoreText)`
-  color: green;
-`
-
-export const TextLost = styled(CoreText)`
-  color: red;
 `

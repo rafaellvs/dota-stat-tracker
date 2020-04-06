@@ -43,7 +43,7 @@ const MatchupFinder = () => {
         Matchup Finder
       </Text>
 
-      <Form onSubmit={handleSubmit} autoComplete='off'>
+      <Form onSubmit={handleSubmit}>
         <Input
           type='text'
           placeholder='radiant heroes'
