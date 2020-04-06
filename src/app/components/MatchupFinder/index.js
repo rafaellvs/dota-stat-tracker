@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import heroes from 'app/helpers/heroes'
 import { fetchMatchups } from 'app/redux/actions/matches'
+
+import { getHeroId, generateHeroesDatalist } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
 
@@ -30,10 +31,10 @@ const MatchupFinder = () => {
   const handleSubmit = event => {
     event.preventDefault()
 
-    const teamA = heroes.find(hero => hero.localized_name === input.teamA)
-    const teamB = heroes.find(hero => hero.localized_name === input.teamB)
+    const teamA = getHeroId(input.teamA)
+    const teamB = getHeroId(input.teamB)
 
-    dispatch(fetchMatchups(teamA.id, teamB.id))
+    dispatch(fetchMatchups(teamA, teamB))
   }
 
   return (
@@ -61,16 +62,7 @@ const MatchupFinder = () => {
           onChange={handleInput}
         />
 
-        <datalist id='heroes'>
-          {
-            heroes.map(hero =>
-              <option
-                key={hero.id}
-                value={hero.localized_name}
-              />
-            )
-          }
-        </datalist>
+        {generateHeroesDatalist()}
 
         <Submit type='submit' value='find matches' />
       </Form>

@@ -1,8 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import heroes from 'app/helpers/heroes'
 import { fetchSelectedMatch } from 'app/redux/actions/matches'
+
+import { getHeroImage } from 'app/helpers/utils'
 
 import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
@@ -40,18 +41,14 @@ const MatchResults = () => {
                     ? (
                       match.players
                         .filter((player, index) => index < 5)
-                        .map((player, index) => {
-                          const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
-
-                          return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
-                        })
+                        .map((player, index) =>
+                          <Image src={getHeroImage(player.hero_id)} key={index} />
+                        )
                     )
                     : (
-                      match.teama.map(player => {
-                        const heroName = heroes.find(h => h.id === parseInt(player)).name
-
-                        return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={player} />
-                      })
+                      match.teama.map(player =>
+                        <Image src={getHeroImage(player)} key={player} />
+                      )
                     )
                 }
               </RadiantHeroes>
@@ -65,18 +62,14 @@ const MatchResults = () => {
                     ? (
                       match.players
                         .filter((player, index) => index > 4)
-                        .map((player, index) => {
-                          const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
-
-                          return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
-                        })
+                        .map((player, index) =>
+                          <Image src={getHeroImage(player.hero_id)} key={index} />
+                        )
                     )
                     : (
-                      match.teamb.map(player => {
-                        const heroName = heroes.find(h => h.id === parseInt(player)).name
-
-                        return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={player} />
-                      })
+                      match.teamb.map(player =>
+                        <Image src={getHeroImage(player)} key={player} />
+                      )
                     )
                 }
               </DireHeroes>

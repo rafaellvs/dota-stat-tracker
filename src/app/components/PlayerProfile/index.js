@@ -7,7 +7,13 @@ import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
 import Link from 'app/components/core/Link'
 
-import heroes from 'app/helpers/heroes'
+import {
+  getHeroName,
+  getHeroImage,
+  getStarImage,
+  getMedalImage,
+  uncalibratedMedalImage
+} from 'app/helpers/utils'
 
 import {
   Container,
@@ -53,12 +59,9 @@ const PlayerProfile = () => {
           {
             selected.heroes
               .filter((hero, index) => index < 5)
-              .map(hero => {
-                const heroName = heroes
-                  .find(h => h.id === parseInt(hero.hero_id)).name
-
-                return <MostPlayedHero src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={hero.hero_id} />
-              })
+              .map(hero =>
+                <MostPlayedHero src={getHeroImage(hero.hero_id)} key={hero.hero_id} />
+              )
           }
         </MostPlayed>
 
@@ -67,11 +70,11 @@ const PlayerProfile = () => {
             selected.account.rank_tier
               ? (
                 <>
-                  <Star src={`https://www.opendota.com/assets/images/dota2/rank_icons/rank_star_${selected.account.rank_tier.toString()[1]}.png`} />
-                  <Medal src={`https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_${selected.account.rank_tier.toString()[0]}.png`} />
+                  <Star src={getStarImage(selected.account.rank_tier)} />
+                  <Medal src={getMedalImage(selected.account.rank_tier)} />
                 </>
               )
-              : <Medal src='https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_0.png' />
+              : <Medal src={uncalibratedMedalImage} />
           }
         </Rank>
       </Profile>
@@ -79,18 +82,15 @@ const PlayerProfile = () => {
       <RecentMatches>
         {
           selected.matches.map((match, index) => {
-            const heroName = heroes
-              .find(h => h.id === parseInt(match.hero_id)).name
-
             return (
               <Match
                 key={index}
                 onClick={() => dispatch(fetchSelectedMatch(match.match_id))}
               >
-                <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} />
+                <Image src={getHeroImage(match.hero_id)} />
 
                 <HeroName component='h5'>
-                  {heroName}
+                  {getHeroName(match.hero_id)}
                 </HeroName>
 
                 <Text component='p'>
