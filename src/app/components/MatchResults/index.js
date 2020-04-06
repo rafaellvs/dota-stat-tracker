@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import heroes from 'app/helpers/heroes'
-import { receiveSelectedMatch } from 'app/redux/actions/matches'
+import { fetchSelectedMatch } from 'app/redux/actions/matches'
 
 import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
@@ -15,7 +15,6 @@ import {
 } from './styled'
 
 const MatchResults = () => {
-  const [noResults, setNoResults] = useState(true)
   const dispatch = useDispatch()
   const matches = useSelector(state => state.matches)
 
@@ -24,10 +23,9 @@ const MatchResults = () => {
       {
         matches.items.map(match =>
           !match.error &&
-          setNoResults(false) &&
             <Match
               key={match.match_id}
-              onClick={() => dispatch(receiveSelectedMatch(match))}
+              onClick={() => dispatch(fetchSelectedMatch(match.match_id))}
             >
               <Text component='h2'>
                 Match {match.match_id}
@@ -39,12 +37,22 @@ const MatchResults = () => {
               <RadiantHeroes>
                 {
                   match.players
-                    .filter((player, index) => index < 5)
-                    .map((player, index) => {
-                      const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
+                    ? (
+                      match.players
+                        .filter((player, index) => index < 5)
+                        .map((player, index) => {
+                          const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
 
-                      return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
-                    })
+                          return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
+                        })
+                    )
+                    : (
+                      match.teama.map(player => {
+                        const heroName = heroes.find(h => h.id === parseInt(player)).name
+
+                        return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={player} />
+                      })
+                    )
                 }
               </RadiantHeroes>
 
@@ -54,23 +62,26 @@ const MatchResults = () => {
               <DireHeroes>
                 {
                   match.players
-                    .filter((player, index) => index > 4)
-                    .map((player, index) => {
-                      const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
+                    ? (
+                      match.players
+                        .filter((player, index) => index > 4)
+                        .map((player, index) => {
+                          const heroName = heroes.find(h => h.id === parseInt(player.hero_id)).name
 
-                      return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
-                    })
+                          return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={index} />
+                        })
+                    )
+                    : (
+                      match.teamb.map(player => {
+                        const heroName = heroes.find(h => h.id === parseInt(player)).name
+
+                        return <Image src={`https://api.opendota.com/apps/dota2/images/heroes/${heroName}_sb.png`} key={player} />
+                      })
+                    )
                 }
               </DireHeroes>
             </Match>
         )
-      }
-
-      {
-        noResults &&
-          <div>
-            found nothing :(
-          </div>
       }
     </SearchResults>
   )
