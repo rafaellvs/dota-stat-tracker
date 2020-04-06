@@ -5,5 +5,6 @@ export const Content = styled.div`
   justify-content: center;
   background: lightgrey;
   width: 500px;
-  padding: 2rem;
+  max-height: 500px;
+  overflow-y: scroll;
 `
