@@ -6,7 +6,7 @@ const Text = ({ component, variant, ...restProps }) =>
 
 Text.propTypes = {
   component: PropTypes.string,
-  variant: PropTypes.object
+  variant: PropTypes.string
 }
 
 export default Text
