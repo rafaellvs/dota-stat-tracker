@@ -10,7 +10,9 @@ import SearchTabs from 'app/components/SearchTabs'
 import PlayerProfile from 'app/components/PlayerProfile'
 import Match from 'app/components/Match'
 
-import { Section } from './styled'
+import loading from 'assets/images/loading.gif'
+
+import { Section, Loading } from './styled'
 
 const App = () => {
   const {
@@ -23,6 +25,11 @@ const App = () => {
       <GlobalStyles />
       <SearchBox />
       <MatchupFinder />
+
+      {
+        (players.isFetching || matches.isFetching) &&
+          <Loading src={loading} />
+      }
 
       {
         (players.items.length > 0 || matches.items.length > 0) &&

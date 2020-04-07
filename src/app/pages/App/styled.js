@@ -10,3 +10,5 @@ export const Section = styled(CoreSection)`
   justify-content: center;
   align-content: center; 
 `
+
+export const Loading = styled.img``
