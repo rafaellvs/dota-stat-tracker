@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import CoreSection from 'app/components/core/Section'
 
 import bg from 'assets/images/bg.jpg'
@@ -10,5 +11,3 @@ export const Section = styled(CoreSection)`
   justify-content: center;
   align-content: center; 
 `
-
-export const Loading = styled.img``
