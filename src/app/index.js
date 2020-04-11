@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import store from 'app/redux/store'
-
 import WebFont from 'webfontloader'
 
-import App from 'app/pages/App'
+import GlobalStyles from 'app/helpers/globalStyles'
+import Router from 'app/components/Router'
+import store from 'app/redux/store'
 
 WebFont.load({
   google: {
@@ -15,7 +15,8 @@ WebFont.load({
 
 render(
   <Provider store={store}>
-    <App />
+    <GlobalStyles />
+    <Router />
   </Provider>,
   document.getElementById('root')
 )
