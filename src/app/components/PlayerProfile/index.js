@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-
-import { fetchSelectedMatch } from 'app/redux/actions/matches'
-
-import Image from 'app/components/core/Image'
-import Text from 'app/components/core/Text'
-import Link from 'app/components/core/Link'
+import { navigate } from '@reach/router'
+import PropTypes from 'prop-types'
 
 import {
+  isEmpty,
   getHeroName,
   getHeroImage,
   getStarImage,
   getMedalImage,
   uncalibratedMedalImage
 } from 'app/helpers/utils'
+
+import { fetchSelectedPlayer } from 'app/redux/actions/players'
+
+import Image from 'app/components/core/Image'
+import Text from 'app/components/core/Text'
+import Link from 'app/components/core/Link'
 
 import {
   Container,
@@ -29,22 +32,27 @@ import {
   Match
 } from './styled'
 
-const PlayerProfile = () => {
+const PlayerProfile = ({ id }) => {
   const dispatch = useDispatch()
-  const selected = useSelector(state => state.players.selected)
+  const player = useSelector(state => state.players.selected)
 
-  return (
+  useEffect(() => {
+    dispatch(fetchSelectedPlayer(id))
+  }, [])
+
+  return !isEmpty(player) &&
+  (
     <Container>
       <Profile>
         <Info>
-          <Avatar src={selected.account.profile.avatarfull} />
+          <Avatar src={player.account.profile.avatarfull} />
 
           <Text component='p'>
-            {selected.account.profile.personaname}
+            {player.account.profile.personaname}
           </Text>
 
           <Link
-            href={selected.account.profile.profileurl}
+            href={player.account.profile.profileurl}
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -54,7 +62,7 @@ const PlayerProfile = () => {
 
         <MostPlayed>
           {
-            selected.heroes
+            player.heroes
               .filter((hero, index) => index < 5)
               .map(hero =>
                 <MostPlayedHero src={getHeroImage(hero.hero_id)} key={hero.hero_id} />
@@ -64,11 +72,11 @@ const PlayerProfile = () => {
 
         <Rank>
           {
-            selected.account.rank_tier
+            player.account.rank_tier
               ? (
                 <>
-                  <Star src={getStarImage(selected.account.rank_tier)} />
-                  <Medal src={getMedalImage(selected.account.rank_tier)} />
+                  <Star src={getStarImage(player.account.rank_tier)} />
+                  <Medal src={getMedalImage(player.account.rank_tier)} />
                 </>
               )
               : <Medal src={uncalibratedMedalImage} />
@@ -78,11 +86,11 @@ const PlayerProfile = () => {
 
       <RecentMatches>
         {
-          selected.matches.map((match, index) => {
+          player.matches.map((match, index) => {
             return (
               <Match
-                key={index}
-                onClick={() => dispatch(fetchSelectedMatch(match.match_id))}
+                key={match.match_id}
+                onClick={() => navigate(`/match/${match.match_id}`)}
               >
                 <Image src={getHeroImage(match.hero_id)} />
 
@@ -106,6 +114,10 @@ const PlayerProfile = () => {
       </RecentMatches>
     </Container>
   )
+}
+
+PlayerProfile.propTypes = {
+  id: PropTypes.string
 }
 
 export default PlayerProfile
