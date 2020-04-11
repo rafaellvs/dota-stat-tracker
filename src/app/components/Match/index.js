@@ -1,20 +1,28 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
+
+import { isEmpty, getHeroImage } from 'app/helpers/utils'
+import { fetchSelectedMatch } from 'app/redux/actions/matches'
 
 import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
-
-import { getHeroImage } from 'app/helpers/utils'
 
 import {
   FullMatch,
   Heroes
 } from './styled'
 
-const Match = () => {
+const Match = ({ id }) => {
+  const dispatch = useDispatch()
   const match = useSelector(state => state.matches.selected)
 
-  return (
+  useEffect(() => {
+    dispatch(fetchSelectedMatch(id))
+  }, [])
+
+  return !isEmpty(match) &&
+  (
     <FullMatch>
       <Text component='h2'>
         Match {match.match_id}
@@ -47,6 +55,10 @@ const Match = () => {
       </Heroes>
     </FullMatch>
   )
+}
+
+Match.propTypes = {
+  id: PropTypes.string
 }
 
 export default Match
