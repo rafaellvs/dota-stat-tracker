@@ -1,7 +1,6 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
-import { fetchSelectedMatch } from 'app/redux/actions/matches'
+import { useSelector } from 'react-redux'
+import { navigate } from '@reach/router'
 
 import { getHeroImage } from 'app/helpers/utils'
 
@@ -16,7 +15,6 @@ import {
 } from './styled'
 
 const MatchResults = () => {
-  const dispatch = useDispatch()
   const matches = useSelector(state => state.matches)
 
   return (
@@ -26,7 +24,7 @@ const MatchResults = () => {
           !match.error &&
             <Match
               key={match.match_id}
-              onClick={() => dispatch(fetchSelectedMatch(match.match_id))}
+              onClick={() => navigate(`/match/${match.match_id}`)}
             >
               <Text component='h2'>
                 Match {match.match_id}
