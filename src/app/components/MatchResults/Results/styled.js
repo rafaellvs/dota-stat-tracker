@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+
 import theme from 'app/helpers/theme'
 
-export const SearchResults = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -17,12 +18,4 @@ export const Match = styled.div`
     background-color: ${theme.colors.hover};
     cursor: pointer;
   }
-`
-
-export const RadiantHeroes = styled.div`
-  display: flex;
-`
-
-export const DireHeroes = styled.div`
-  display: flex;
 `
