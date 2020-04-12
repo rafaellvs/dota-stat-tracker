@@ -6,7 +6,6 @@ import theme from 'app/helpers/theme'
 export const Container = styled.nav`
   position: fixed;
   display: flex;
-  align-items: center;
   width: 100%;
   height: ${theme.navbarHeight};
   padding: 0 6rem;
@@ -23,5 +22,4 @@ export const Link = styled(RouterLink)`
 
   &:hover {
     color: ${theme.colors.hover};
-  }
 `
