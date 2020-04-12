@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-
-import { fetchMatchups } from 'app/redux/actions/matches'
+import { navigate } from '@reach/router'
 
 import { getHeroId, generateHeroesDatalist } from 'app/helpers/utils'
 
@@ -15,7 +13,6 @@ import {
 } from './styled'
 
 const MatchupFinder = () => {
-  const dispatch = useDispatch()
   const [input, setInput] = useState({
     teamA: '',
     teamB: ''
@@ -34,7 +31,10 @@ const MatchupFinder = () => {
     const teamA = getHeroId(input.teamA)
     const teamB = getHeroId(input.teamB)
 
-    dispatch(fetchMatchups(teamA, teamB))
+    navigate(
+      `/search/matchups/${teamA}&${teamB}`,
+      { state: { teamA, teamB } }
+    )
   }
 
   return (

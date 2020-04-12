@@ -7,7 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 5;
-  padding: 0 2rem 2rem;
+  padding: 3rem;
   background: ${theme.colors.background};
 `
 

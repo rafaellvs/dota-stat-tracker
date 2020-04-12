@@ -6,18 +6,21 @@ import PlayerResults from 'app/components/PlayerResults'
 
 import { Content } from './styled'
 
-const SearchContent = ({ selected }) =>
-  <Content>
-    {
-      selected === 'players' &&
-        <PlayerResults />
-    }
+const SearchContent = ({ selected }) => {
+  return (
+    <Content>
+      {
+        selected === 'players' &&
+          <PlayerResults />
+      }
 
-    {
-      selected === 'matches' &&
-        <MatchResults />
-    }
-  </Content>
+      {
+        selected === 'matches' &&
+          <MatchResults />
+      }
+    </Content>
+  )
+}
 
 SearchContent.propTypes = {
   selected: PropTypes.string

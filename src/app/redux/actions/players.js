@@ -9,17 +9,6 @@ export const receivePlayers = data => ({
   items: data
 })
 
-export const fetchPlayers = input => {
-  return dispatch => {
-    dispatch(resetState())
-    dispatch(requestPlayers())
-
-    return fetch(`https://api.opendota.com/api/search?q=${input}`)
-      .then(response => response.json())
-      .then(data => dispatch(receivePlayers(data)))
-  }
-}
-
 export const receiveSelectedPlayer = (account, heroes, matches) => ({
   type: 'RECEIVE_SELECTED_PLAYER',
   selected: {

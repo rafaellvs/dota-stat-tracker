@@ -13,16 +13,16 @@ import {
 } from 'app/helpers/utils'
 
 import { fetchSelectedPlayer } from 'app/redux/actions/players'
-
 import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
-import Link from 'app/components/core/Link'
+
 
 import {
   Container,
   Profile,
   Info,
   Avatar,
+  Link,
   MostPlayed,
   MostPlayedHero,
   Rank,

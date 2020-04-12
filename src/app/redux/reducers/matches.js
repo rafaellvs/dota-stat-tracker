@@ -16,7 +16,7 @@ const matches = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        items: Array.isArray(action.items) ? action.items : [action.items]
+        items: action.items
       }
 
     case 'RECEIVE_SELECTED_MATCH':

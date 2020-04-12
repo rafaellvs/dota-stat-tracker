@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-const Form = styled.form`
-  width: 60%;
-`
+const Form = styled.form``
 
 export default Form

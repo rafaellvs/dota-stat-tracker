@@ -74,6 +74,13 @@ const MatchResults = () => {
             </Match>
         )
       }
+
+      {
+        matches.items.length === 0 &&
+          <div style={{ padding: '3rem' }}>
+            <h2>found nothing :(</h2>
+          </div>
+      }
     </SearchResults>
   )
 }

@@ -7,6 +7,8 @@ import Image from 'app/components/core/Image'
 export const SearchResults = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 `
 
 export const SearchResult = styled.div`

@@ -11,7 +11,6 @@ export const SearchResults = styled.div`
 export const Match = styled.div`
   display: flex;
   flex-direction: column;
-  background: ${theme.colors.background};
   padding: 2rem 1rem;
 
   &:hover {

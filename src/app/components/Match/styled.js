@@ -8,7 +8,7 @@ export const FullMatch = styled.div`
   align-items: center;
   background: ${theme.colors.background};
   height: 100%;
-  padding: 0 2rem 2rem;
+  padding: 3rem;
 `
 
 export const Heroes = styled.div`

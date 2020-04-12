@@ -1,17 +1,12 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 
-import { fetchPlayers } from 'app/redux/actions/players'
-import { fetchMatches } from 'app/redux/actions/matches'
-
-import Form from 'app/components/core/Form'
 import Input from 'app/components/core/Input'
 
-import { Container } from './styled'
+import { Container, Form } from './styled'
+import { navigate } from '@reach/router'
 
 const SearchBox = () => {
   const [input, setInput] = useState('')
-  const dispatch = useDispatch()
 
   const handleInput = event => {
     setInput(event.target.value)
@@ -19,8 +14,7 @@ const SearchBox = () => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    dispatch(fetchPlayers(input))
-    dispatch(fetchMatches(input))
+    navigate(`/search/all/${input}`)
   }
 
   return (
