@@ -36,3 +36,17 @@ export const generateHeroesDatalist = () => {
     </datalist>
   )
 }
+
+export const getRadiantHeroes = match =>
+  match.players
+    ? match.players
+      .filter((player, index) => index < 5)
+      .map(player => player.hero_id)
+    : match.teama
+
+export const getDireHeroes = match =>
+  match.players
+    ? match.players
+      .filter((player, index) => index > 4)
+      .map(player => player.hero_id)
+    : match.teamb
