@@ -6,21 +6,22 @@ import theme from 'app/helpers/theme'
 export const Container = styled.nav`
   position: fixed;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  left: 0;
-  height: 80px;
+  height: ${theme.navbarHeight};
+  padding: 0 6rem;
   background: ${theme.colors.background};
 `
 
 export const Link = styled(RouterLink)`
+  text-decoration: none;
   color: white;
-  font-size: 3rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  padding: 0 2rem;
   transition: color .3s;
 
   &:hover {
-    color: black;
+    color: ${theme.colors.hover};
   }
 `

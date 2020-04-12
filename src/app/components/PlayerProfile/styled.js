@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import theme from 'app/helpers/theme'
 
 import Image from 'app/components/core/Image'
+import CoreLink from 'app/components/core/Link'
 
 export const Container = styled.div`
   background: ${theme.colors.background};
@@ -17,6 +18,16 @@ export const Profile = styled.div`
 
 export const Avatar = styled(Image)`
   width: 150px;
+`
+
+export const Link = styled(CoreLink)`
+  color: ${theme.colors.white};
+  transition: color .3s;
+
+  &:hover {
+    color: ${theme.colors.hover};
+    text-decoration: none;
+  }
 `
 
 export const Info = styled.div`
@@ -53,8 +64,9 @@ export const RecentMatches = styled.div`
 `
 
 export const Match = styled.div`
-  width: 90px;
+  width: 110px;
   padding: 0 1rem;
+  text-align: center;
 
   &:hover {
     background-color: ${theme.colors.hover};
