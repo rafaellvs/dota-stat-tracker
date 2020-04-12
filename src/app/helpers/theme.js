@@ -1,9 +1,10 @@
 const colors = {
-  background: 'lightgrey',
+  background: 'rgba(66, 66, 66, .9)',
+  inactiveTab: 'rgba(0, 0, 0, .6)',
   hover: '#878080',
   black: 'black',
   white: 'white',
-  green: 'green',
+  green: '#03ff1c',
   red: 'red'
 }
 
@@ -22,9 +23,12 @@ const variants = {
   }
 }
 
+const navbarHeight = '55px'
+
 const theme = {
   colors,
-  variants
+  variants,
+  navbarHeight
 }
 
 export default theme
