@@ -1,44 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { navigate } from '@reach/router'
 
-import Text from 'app/components/core/Text'
-
-import {
-  SearchResults,
-  SearchResult,
-  Avatar
-} from './styled'
+import Results from './Results'
+import Result404 from 'app/components/Result404'
 
 const PlayerResults = () => {
-  const players = useSelector(state => state.players)
+  const players = useSelector(state => state.players.items)
 
   return (
-    <SearchResults>
-      {
-        players.items
-          .filter((profile, index) => index < 10)
-          .map(profile =>
-            <SearchResult
-              key={profile.account_id}
-              onClick={() => navigate(`/player/${profile.account_id}`)}
-            >
-              <Avatar src={profile.avatarfull} />
-
-              <Text variant='hideOverflow'>
-                {profile.personaname}
-              </Text>
-            </SearchResult>
-          )
-      }
-
-      {
-        players.items.length === 0 &&
-          <div style={{ padding: '3rem' }}>
-            <h2>found nothing :(</h2>
-          </div>
-      }
-    </SearchResults>
+    players.length > 0
+      ? <Results />
+      : <Result404 />
   )
 }
 

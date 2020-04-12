@@ -4,23 +4,21 @@ import PropTypes from 'prop-types'
 import MatchResults from 'app/components/MatchResults'
 import PlayerResults from 'app/components/PlayerResults'
 
-import { Content } from './styled'
+const renderContent = selected => {
+  switch (selected) {
+    case 'players':
+      return <PlayerResults />
 
-const SearchContent = ({ selected }) => {
-  return (
-    <Content>
-      {
-        selected === 'players' &&
-          <PlayerResults />
-      }
+    case 'matches':
+      return <MatchResults />
 
-      {
-        selected === 'matches' &&
-          <MatchResults />
-      }
-    </Content>
-  )
+    default:
+      return null
+  }
 }
+
+const SearchContent = ({ selected }) =>
+  renderContent(selected)
 
 SearchContent.propTypes = {
   selected: PropTypes.string

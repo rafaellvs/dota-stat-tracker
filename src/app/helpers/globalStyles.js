@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
 
   p, h1, h2, h3, h4, h5, h6 {
     color: ${theme.colors.white};
-    line-height: 1;
+    line-height: 1.2;
   }
 `
 export default GlobalStyles

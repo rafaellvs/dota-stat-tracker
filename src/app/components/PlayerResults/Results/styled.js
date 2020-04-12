@@ -2,19 +2,19 @@ import styled from 'styled-components'
 
 import theme from 'app/helpers/theme'
 
-import Image from 'app/components/core/Image'
+import CoreImage from 'app/components/core/Image'
 
-export const SearchResults = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 `
 
-export const SearchResult = styled.div`
+export const Result = styled.div`
   display: block;
   text-align: center;
-  width: 89px;
+  width: 90px;
   padding: .4rem;
 
   &:hover {
@@ -23,6 +23,6 @@ export const SearchResult = styled.div`
   }
 `
 
-export const Avatar = styled(Image)`
+export const Avatar = styled(CoreImage)`
   width: 50px;
 `
