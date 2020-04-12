@@ -7,6 +7,8 @@ const NavBar = () => {
     <Container>
       <Link to='/'>Home</Link>
       <Link to='/matchup'>Find Matchup</Link>
+      <Link to='/'>Players</Link>
+      <Link to='/'>Matches</Link>
     </Container>
   )
 }

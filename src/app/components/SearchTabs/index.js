@@ -1,15 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Tabs from 'app/components/core/Tabs'
 import SearchContent from './SearchContent'
 
-import { Container } from './styled'
+const SearchTabs = ({ selected, setSelected }) =>
+  <Tabs
+    selected={selected}
+    setSelected={setSelected}
+  >
+    <SearchContent />
+  </Tabs>
 
-const SearchTabs = () =>
-  <Container>
-    <Tabs>
-      <SearchContent />
-    </Tabs>
-  </Container>
+SearchTabs.propTypes = {
+  selected: PropTypes.string,
+  setSelected: PropTypes.func
+}
 
 export default SearchTabs

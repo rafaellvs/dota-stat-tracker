@@ -21,7 +21,7 @@ const PlayerResults = () => {
           .map(profile =>
             <SearchResult
               key={profile.account_id}
-              onClick={() => navigate(`player/${profile.account_id}`)}
+              onClick={() => navigate(`/player/${profile.account_id}`)}
             >
               <Avatar src={profile.avatarfull} />
 
@@ -30,6 +30,13 @@ const PlayerResults = () => {
               </Text>
             </SearchResult>
           )
+      }
+
+      {
+        players.items.length === 0 &&
+          <div style={{ padding: '3rem' }}>
+            <h2>found nothing :(</h2>
+          </div>
       }
     </SearchResults>
   )
