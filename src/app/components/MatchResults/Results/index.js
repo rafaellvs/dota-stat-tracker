@@ -5,7 +5,7 @@ import { navigate } from '@reach/router'
 import { getRadiantHeroes, getDireHeroes } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
-import Team from 'app/components/Match/Team'
+import Team from '../Team'
 
 import { Container, Match } from './styled'
 
