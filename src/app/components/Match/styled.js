@@ -10,3 +10,9 @@ export const Container = styled.div`
   background: ${theme.colors.background};
   padding: 3rem;
 `
+
+export const Teams = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
