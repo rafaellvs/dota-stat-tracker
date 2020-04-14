@@ -21,6 +21,7 @@ import { Container, Teams } from './styled'
 const Match = ({ id }) => {
   const dispatch = useDispatch()
   const match = useSelector(state => state.matches.selected)
+  console.log(match)
 
   useEffect(() => {
     dispatch(fetchSelectedMatch(id))
@@ -33,6 +34,13 @@ const Match = ({ id }) => {
       </Text>
 
       <>
+        <Text component='h2'>
+          {
+            match.radiant_win
+              ? 'Radiant Victory'
+              : 'Dire Victory'
+          }
+        </Text>
         <Text component='h2'>{`${match.radiant_score} - ${match.dire_score}`}</Text>
         <Text>{getGameDuration(match.duration)}</Text>
         <Text>{getGameMode(match.game_mode)}</Text>
