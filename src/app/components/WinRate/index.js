@@ -10,8 +10,8 @@ import {
   WinRate
 } from './styled'
 
-const HeroWinRate = ({ hero }) => {
-  const winRate = (hero.win / hero.games * 100).toFixed(1)
+const HeroWinRate = ({ wins, total }) => {
+  const winRate = (wins / total * 100).toFixed(1)
 
   return (
     <Container>
@@ -23,14 +23,15 @@ const HeroWinRate = ({ hero }) => {
       </Bar>
 
       <Text>
-        {hero.games}
+        {total}
       </Text>
     </Container>
   )
 }
 
 HeroWinRate.propTypes = {
-  hero: PropTypes.object
+  wins: PropTypes.number,
+  total: PropTypes.number
 }
 
 export default HeroWinRate

@@ -5,7 +5,7 @@ import { getHeroImage } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
 import Image from 'app/components/core/Image'
-import HeroWinRate from './HeroWinRate'
+import WinRate from 'app/components/WinRate'
 
 import { Container, Hero } from './styled'
 
@@ -24,7 +24,7 @@ const MostPlayed = () => {
           .map(hero =>
             <Hero key={hero.hero_id}>
               <Image src={getHeroImage(hero.hero_id)} />
-              <HeroWinRate hero={hero} />
+              <WinRate wins={hero.win} total={hero.games} />
             </Hero>
           )
       }
