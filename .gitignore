@@ -2,5 +2,6 @@
 .firebase
 .firebaserc
 firebase.json
+dist
 public
 node_modules
