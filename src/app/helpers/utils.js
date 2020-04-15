@@ -102,6 +102,28 @@ export const getLobbyType = id => {
 export const getSlotColor = id =>
   slotColors.find(slot => id === slot.id).color
 
+export const getTimeElapsed = time => {
+  // time comes in seconds from api
+  const timeElapsed = Date.now() / 1000 - time
+  const inMinutes = timeElapsed / 60
+  const inHours = inMinutes / 60
+  const inDays = inHours / 24
+  const inMonths = inDays / 30
+  const inYears = inMonths / 12
+
+  return (
+    inHours < 1
+      ? `${Math.round(inMinutes)} minute(s) ago`
+      : inDays < 1
+        ? `${Math.round(inHours)} hour(s) ago`
+        : inMonths < 1
+          ? `${Math.round(inDays)} day(s) ago`
+          : inYears < 1
+            ? `${Math.round(inMonths)} month(s) ago`
+            : `${Math.round(inYears)} year(s) ago`
+  )
+}
+
 // -------------
 // item related
 export const getItemName = id =>
