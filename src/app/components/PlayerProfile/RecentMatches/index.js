@@ -9,6 +9,7 @@ import {
   getSkillBracket,
   getGameDuration,
   getLobbyType,
+  getTimeElapsed
 } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
@@ -58,6 +59,10 @@ const RecentMatches = () => {
 
             <Text>
               {getGameDuration(match.duration)}
+            </Text>
+
+            <Text>
+              {getTimeElapsed(match.start_time)}
             </Text>
           </Match>
         )

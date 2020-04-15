@@ -9,6 +9,7 @@ import {
   getGameDuration,
   getGameMode,
   getLobbyType,
+  getTimeElapsed,
 } from 'app/helpers/utils'
 import { fetchSelectedMatch } from 'app/redux/actions/matches'
 
@@ -21,7 +22,6 @@ import { Container, Teams } from './styled'
 const Match = ({ id }) => {
   const dispatch = useDispatch()
   const match = useSelector(state => state.matches.selected)
-  console.log(match)
 
   useEffect(() => {
     dispatch(fetchSelectedMatch(id))
@@ -29,9 +29,8 @@ const Match = ({ id }) => {
 
   return !isEmpty(match) &&
     <Container>
-      <Text component='h1'>
-        Match {match.match_id}
-      </Text>
+      <Text component='h1'>Match {match.match_id}</Text>
+      <Text>{getTimeElapsed(match.start_time)}</Text>
 
       <>
         <Text component='h2'>
