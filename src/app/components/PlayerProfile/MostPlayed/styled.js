@@ -8,5 +8,6 @@ export const Container = styled.div`
 
 export const Hero = styled.div`
   display: flex;
+  align-items: center;
   padding: .3rem 0;
 `
