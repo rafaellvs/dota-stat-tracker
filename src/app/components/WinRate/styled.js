@@ -3,16 +3,15 @@ import styled from 'styled-components'
 import CoreText from 'app/components/core/Text'
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
+  text-align: center;
+  min-width: 120px;
 `
 
 export const Bar = styled.div`
   position: relative;
   background: red;
   height: 5px;
-  width: 150px;
-  margin: 0 1rem;
+  margin: 1rem 0;
   border-radius: 20px;
 `
 
