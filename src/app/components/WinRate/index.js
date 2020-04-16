@@ -23,7 +23,7 @@ const HeroWinRate = ({ wins, total }) => {
       </Bar>
 
       <Text>
-        {total}
+        {`${total} games`}
       </Text>
     </Container>
   )

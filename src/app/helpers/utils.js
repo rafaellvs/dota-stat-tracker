@@ -152,3 +152,7 @@ export const getPlayerItems = player => {
     backpack: [backpack0, backpack1, backpack2, backpack3]
   }
 }
+
+// team related
+export const getPlayerImage = id =>
+  `https://www.opendota.com/assets/images/dota2/players/${id}.png`

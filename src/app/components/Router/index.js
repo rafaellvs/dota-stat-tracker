@@ -9,6 +9,8 @@ import FindMatchup from 'app/pages/FindMatchup'
 import SearchResults from 'app/pages/SearchResults'
 import PlayerProfile from 'app/components/PlayerProfile'
 import Match from 'app/components/Match'
+import Teams from 'app/pages/Teams'
+import Team from 'app/components/Team'
 import Footer from 'app/components/Footer'
 
 import loading from 'assets/images/loading.gif'
@@ -33,6 +35,9 @@ const AppRouter = () => {
           <SearchResults path='search/:query/:input' />
           <PlayerProfile path='player/:id' />
           <Match path='match/:id' />
+
+          <Teams path='teams' />
+          <Team path='teams/:id' />
         </Router>
       </MainContent>
 

@@ -32,7 +32,11 @@ const SearchResults = ({ query, input, location }) => {
     }
   }, [])
 
-  return !isFetching && <SearchTabs selected={selected} setSelected={setSelected} />
+  return !isFetching &&
+    <SearchTabs
+      selected={selected}
+      setSelected={setSelected}
+    />
 }
 
 SearchResults.propTypes = {
