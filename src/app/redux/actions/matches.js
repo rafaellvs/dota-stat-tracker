@@ -35,3 +35,23 @@ export const fetchMatchups = (idA, idB) => {
       .then(data => dispatch(receiveMatches(data)))
   }
 }
+
+export const receiveAllMatches = (proMatches, publicMatches) => ({
+  type: 'RECEIVE_ALL_MATCHES',
+  proMatches: proMatches,
+  publicMatches: publicMatches,
+})
+
+export const fetchAllMatches = () => {
+  return dispatch => {
+    dispatch(resetState())
+    dispatch(requestMatches())
+
+    return Promise.all([
+      fetch('https://api.opendota.com/api/proMatches')
+        .then(response => response.json()),
+      fetch('https://api.opendota.com/api/publicMatches?mmr_descending=1')
+        .then(response => response.json())
+    ]).then(values => dispatch(receiveAllMatches(values[0], values[1])))
+  }
+}
