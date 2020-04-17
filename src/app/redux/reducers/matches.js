@@ -1,6 +1,10 @@
 const initialState = {
   isFetching: false,
-  items: [],
+  items: {
+    search: [],
+    proMatches: [],
+    publicMatches: [],
+  },
   selected: {}
 }
 
@@ -12,18 +16,32 @@ const matches = (state = initialState, action) => {
         isFetching: true
       }
 
-    case 'RECEIVE_MATCHES':
-      return {
-        ...state,
-        isFetching: false,
-        items: action.items
-      }
-
     case 'RECEIVE_SELECTED_MATCH':
       return {
         ...state,
         isFetching: false,
         selected: action.selected
+      }
+
+    case 'RECEIVE_MATCHES':
+      return {
+        ...state,
+        isFetching: false,
+        items: {
+          ...state.items,
+          search: action.items
+        }
+      }
+
+    case 'RECEIVE_ALL_MATCHES':
+      return {
+        ...state,
+        isFetching: false,
+        items: {
+          ...state.items,
+          proMatches: action.proMatches,
+          publicMatches: action.publicMatches,
+        }
       }
 
     default:

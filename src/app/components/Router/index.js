@@ -8,6 +8,7 @@ import Home from 'app/pages/Home'
 import FindMatchup from 'app/pages/FindMatchup'
 import SearchResults from 'app/pages/SearchResults'
 import PlayerProfile from 'app/components/PlayerProfile'
+import Matches from 'app/pages/Matches'
 import Match from 'app/components/Match'
 import Teams from 'app/pages/Teams'
 import Team from 'app/components/Team'
@@ -34,6 +35,8 @@ const AppRouter = () => {
           <FindMatchup path='matchup' />
           <SearchResults path='search/:query/:input' />
           <PlayerProfile path='player/:id' />
+
+          <Matches path='matches' />
           <Match path='match/:id' />
 
           <Teams path='teams' />

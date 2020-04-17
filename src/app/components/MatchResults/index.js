@@ -5,7 +5,7 @@ import Results from './Results'
 import Result404 from 'app/components/Result404'
 
 const MatchResults = () => {
-  const matches = useSelector(state => state.matches.items)
+  const matches = useSelector(state => state.matches.items.search)
 
   return (
     matches.length > 0
