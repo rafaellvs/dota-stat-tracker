@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/assets/index.html",
-    "build": "rm -rf public && parcel build src/assets/index.html --out-dir public"
+    "build": "rm -rf public && parcel build src/assets/index.html --out-dir public --no-source-maps"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
