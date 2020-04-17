@@ -10,7 +10,7 @@ import Team from '../Team'
 import { Container, Match } from './styled'
 
 const Results = () => {
-  const matches = useSelector(state => state.matches)
+  const matches = useSelector(state => state.matches.items.search)
 
   const handleClick = match =>
     navigate(`/match/${match.match_id}`)
@@ -18,7 +18,7 @@ const Results = () => {
   return (
     <Container>
       {
-        matches.items.map(match =>
+        matches.map(match =>
           <Match
             key={match.match_id}
             onClick={() => handleClick(match)}
