@@ -25,7 +25,7 @@ const RecentMatches = () => {
 
   return (
     <Container>
-      <Text component='h3'>
+      <Text component='h2'>
         recent matches
       </Text>
 

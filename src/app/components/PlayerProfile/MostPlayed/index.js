@@ -14,8 +14,8 @@ const MostPlayed = () => {
 
   return (
     <Container>
-      <Text component='h3'>
-        most played heroes
+      <Text component='h2'>
+        most played
       </Text>
 
       {

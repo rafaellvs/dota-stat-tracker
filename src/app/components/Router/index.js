@@ -25,7 +25,7 @@ const AppRouter = () => {
     <Section>
       <NavBar />
 
-      <MainContent isFetching={isFetching}>
+      <MainContent>
         {
           isFetching &&
             <Loading src={loading} />
