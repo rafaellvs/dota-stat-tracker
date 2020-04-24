@@ -6,15 +6,16 @@ export const requestPlayers = () => ({
 
 export const receivePlayers = data => ({
   type: 'RECEIVE_PLAYERS',
-  items: data
+  items: data,
 })
 
-export const receiveSelectedPlayer = (account, heroes, matches) => ({
+export const receiveSelectedPlayer = data => ({
   type: 'RECEIVE_SELECTED_PLAYER',
   selected: {
-    account: account,
-    heroes: heroes,
-    matches: matches
+    account: data[0],
+    heroes: data[1],
+    matches: data[2],
+    peers: data[3],
   }
 })
 
@@ -29,7 +30,9 @@ export const fetchSelectedPlayer = id => {
       fetch(`https://api.opendota.com/api/players/${id}/heroes`)
         .then(response => response.json()),
       fetch(`https://api.opendota.com/api/players/${id}/matches?limit=5`)
-        .then(response => response.json())
-    ]).then(values => dispatch(receiveSelectedPlayer(values[0], values[1], values[2])))
+        .then(response => response.json()),
+      fetch(`https://api.opendota.com/api/players/${id}/peers`)
+        .then(response => response.json()),
+    ]).then(data => dispatch(receiveSelectedPlayer(data)))
   }
 }
