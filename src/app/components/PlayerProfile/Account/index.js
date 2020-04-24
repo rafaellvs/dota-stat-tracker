@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import Text from 'app/components/core/Text'
+import Rank from '../Rank'
 
 import {
   Container,
@@ -28,6 +29,8 @@ const Account = () => {
       >
         steam profile
       </Link>
+
+      <Rank />
     </Container>
   )
 }

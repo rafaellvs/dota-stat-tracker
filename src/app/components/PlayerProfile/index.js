@@ -7,8 +7,8 @@ import { fetchSelectedPlayer } from 'app/redux/actions/players'
 
 import Account from './Account'
 import MostPlayed from './MostPlayed'
-import Rank from './Rank'
 import RecentMatches from './RecentMatches'
+import Peers from './Peers'
 
 import { Container, Profile } from './styled'
 
@@ -18,14 +18,14 @@ const PlayerProfile = ({ id }) => {
 
   useEffect(() => {
     dispatch(fetchSelectedPlayer(id))
-  }, [])
+  }, [id])
 
   return !isEmpty(player) &&
     <Container>
       <Profile>
         <Account />
         <MostPlayed />
-        <Rank />
+        <Peers />
       </Profile>
 
       <RecentMatches />
