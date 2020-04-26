@@ -6,13 +6,14 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 5;
   padding: 3rem;
   background: ${theme.colors.background};
+  box-shadow: ${theme.boxShadow};
 `
 
 export const Form = styled.form`
   width: 60%;
+  padding-top: 1rem;
 `
 
 export const Input = styled.input`

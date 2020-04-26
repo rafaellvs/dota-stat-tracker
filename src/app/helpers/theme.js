@@ -26,10 +26,13 @@ const variants = {
 
 const navbarHeight = '55px'
 
+const boxShadow = '10px 0px 20px 10px rgba(0,0,0,0.75);'
+
 const theme = {
   colors,
   variants,
-  navbarHeight
+  navbarHeight,
+  boxShadow
 }
 
 export default theme

@@ -7,6 +7,7 @@ export const Container = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   background: ${theme.colors.background};
+  box-shadow: ${theme.boxShadow};
   padding: 3rem;
 `
 
@@ -15,12 +16,15 @@ export const Team = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   width: 100px;
   padding: .5rem;
   transition: background .2s;
 
   & img {
-    width: 100%;
+    width: 87px;
+    height: 87px;
+    margin-bottom: 1rem;
   }
 
   &:hover {
