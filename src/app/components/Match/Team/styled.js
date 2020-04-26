@@ -18,7 +18,7 @@ export const Hero = styled.div`
   padding: .3rem 0;
   transition: background .3s;
 
-  & *:not(img) {
+  *:not(img) {
     flex: 1;
   }
 
@@ -30,10 +30,10 @@ export const Hero = styled.div`
 export const PlayerLink = styled(RouterLink)`
   text-decoration: none;
   color: inherit;
-  transition: color .3s;
+  transition: filter .3s;
 
   &:hover{
-    color: ${theme.colors.hover};
+    filter: brightness(1.5);
   }
 `
 
@@ -49,7 +49,7 @@ export const Inventory = styled.div`
   min-width: 240px;
   min-height: 30px;
 
-  & img {
+  img {
     width: 40px;
   }
 `
@@ -59,7 +59,7 @@ export const Backpack = styled.div`
   min-width: 120px;
   min-height: 25px;
 
-  & img {
+  img {
     width: 30px;
   }
 `

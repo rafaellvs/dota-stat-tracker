@@ -25,26 +25,23 @@ const Match = ({ id }) => {
 
   useEffect(() => {
     dispatch(fetchSelectedMatch(id))
-  }, [])
+  }, [id])
 
   return !isEmpty(match) &&
     <Container>
       <Text component='h1'>Match {match.match_id}</Text>
       <Text>{getTimeElapsed(match.start_time)}</Text>
-
-      <>
-        <Text component='h2'>
-          {
-            match.radiant_win
-              ? 'Radiant Victory'
-              : 'Dire Victory'
-          }
-        </Text>
-        <Text component='h2'>{`${match.radiant_score} - ${match.dire_score}`}</Text>
-        <Text>{getGameDuration(match.duration)}</Text>
-        <Text>{getGameMode(match.game_mode)}</Text>
-        <Text>{getLobbyType(match.lobby_type)}</Text>
-      </>
+      <Text component='h2'>
+        {
+          match.radiant_win
+            ? 'Radiant Victory'
+            : 'Dire Victory'
+        }
+      </Text>
+      <Text component='h2'>{`${match.radiant_score} - ${match.dire_score}`}</Text>
+      <Text>{getGameDuration(match.duration)}</Text>
+      <Text>{getGameMode(match.game_mode)}</Text>
+      <Text>{getLobbyType(match.lobby_type)}</Text>
 
       <Teams>
         <Text component='h4'>Radiant:</Text>

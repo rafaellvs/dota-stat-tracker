@@ -14,9 +14,7 @@ import {
 } from './styled'
 
 const Rank = () => {
-  const account = useSelector(state =>
-    state.players.selected.account
-  )
+  const account = useSelector(state => state.players.selected.account)
 
   return (
     <Container>

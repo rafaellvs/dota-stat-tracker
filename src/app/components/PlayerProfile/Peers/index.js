@@ -20,6 +20,7 @@ const Peers = () => {
       <Text component='h2'>
         friends
       </Text>
+
       {
         peers
           .filter((peer, index) => index < 5)
