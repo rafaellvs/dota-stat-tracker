@@ -5,14 +5,14 @@ import theme from 'app/helpers/theme'
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `
 
 export const Match = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
+  padding: 1rem;
 
   &:hover {
     background-color: ${theme.colors.hover};

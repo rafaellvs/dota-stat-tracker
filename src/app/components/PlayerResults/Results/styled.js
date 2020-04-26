@@ -7,12 +7,11 @@ import CoreImage from 'app/components/core/Image'
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `
 
 export const Result = styled.div`
-  display: block;
   text-align: center;
   width: 90px;
   padding: .4rem;
