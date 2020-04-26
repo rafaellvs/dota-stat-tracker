@@ -21,8 +21,8 @@ const Matches = () => {
     !isEmpty(matches.proMatches) &&
     !isEmpty(matches.publicMatches) &&
       <Container>
-        <ProMatches matches={matches.proMatches} />
-        <PublicMatches matches={matches.publicMatches} />
+        <ProMatches />
+        <PublicMatches />
       </Container>
   )
 }

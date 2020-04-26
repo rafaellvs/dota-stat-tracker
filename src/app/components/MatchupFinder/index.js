@@ -39,9 +39,7 @@ const MatchupFinder = () => {
 
   return (
     <Container>
-      <Text component='h3'>
-        Matchup Finder
-      </Text>
+      <Text component='h1'>Matchup Finder</Text>
 
       <Form onSubmit={handleSubmit}>
         <Input

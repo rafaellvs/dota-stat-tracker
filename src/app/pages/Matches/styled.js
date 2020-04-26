@@ -7,5 +7,6 @@ export const Container = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   background: ${theme.colors.background};
+  box-shadow: ${theme.boxShadow};
   padding: 3rem;
 `

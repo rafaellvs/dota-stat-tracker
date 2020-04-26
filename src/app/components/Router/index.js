@@ -12,7 +12,6 @@ import Matches from 'app/pages/Matches'
 import Match from 'app/components/Match'
 import Teams from 'app/pages/Teams'
 import Team from 'app/components/Team'
-import Footer from 'app/components/Footer'
 
 import loading from 'assets/images/loading.gif'
 
@@ -43,8 +42,6 @@ const AppRouter = () => {
           <Team path='teams/:id' />
         </Router>
       </MainContent>
-
-      <Footer />
     </Section>
   )
 }

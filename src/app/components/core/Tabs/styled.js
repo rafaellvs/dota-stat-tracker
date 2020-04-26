@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  box-shadow: ${theme.boxShadow};
 `
 
 export const TabsContainer = styled.div`
@@ -16,7 +17,7 @@ export const Tab = styled.div`
   justify-content: center;
   flex: 1;
   padding: 1rem .5rem;
-  background: ${props => props.active ? theme.colors.background : theme.colors.inactiveTab};
+  background: ${({ active }) => active ? theme.colors.background : theme.colors.inactiveTab};
   color: ${theme.colors.white};
   transition: background .3s;
   cursor: pointer;
@@ -36,5 +37,5 @@ export const ContentContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: ${theme.colors.background};
-  padding: 2rem;
+  padding: 3rem;
 `

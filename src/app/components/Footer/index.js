@@ -7,6 +7,8 @@ const Footer = () => {
     <Container>
       <Link to='/'>Home</Link>
       <Link to='/matchup'>Find Matchup</Link>
+      <Link to='/matches'>Matches</Link>
+      <Link to='/teams'>Teams</Link>
     </Container>
   )
 }

@@ -5,7 +5,7 @@ import theme from 'app/helpers/theme'
 
 export const Container = styled.footer`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   height: ${theme.navbarHeight};

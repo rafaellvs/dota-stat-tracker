@@ -11,17 +11,13 @@ import {
 } from './styled'
 
 const Account = () => {
-  const profile = useSelector(state =>
-    state.players.selected.account.profile
-  )
+  const profile = useSelector(state => state.players.selected.account.profile)
 
   return (
     <Container>
       <Avatar src={profile.avatarfull} />
 
-      <Text>
-        {profile.personaname}
-      </Text>
+      <Text>{profile.personaname}</Text>
 
       <Link
         href={profile.profileurl}

@@ -7,8 +7,9 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: ${theme.colors.background};
   padding: 3rem;
+  background: ${theme.colors.background};
+  box-shadow: ${theme.boxShadow};
 `
 
 export const Teams = styled.div`

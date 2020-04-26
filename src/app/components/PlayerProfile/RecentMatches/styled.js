@@ -13,7 +13,7 @@ export const Match = styled.div`
   align-items: center;
   padding: 1rem 0;
 
-  & *:not(img) {
+  *:not(img) {
     flex: 1;
   }
 

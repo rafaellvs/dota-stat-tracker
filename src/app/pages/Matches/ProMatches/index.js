@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
 import { getGameDuration, getTimeElapsed } from 'app/helpers/utils'
@@ -8,7 +8,9 @@ import Text from 'app/components/core/Text'
 
 import { Container, Match } from './styled'
 
-const ProMatches = ({ matches }) => {
+const ProMatches = () => {
+  const matches = useSelector(state => state.matches.items.proMatches)
+
   const handleClick = id =>
     navigate(`/match/${id}`)
 
@@ -41,10 +43,6 @@ const ProMatches = ({ matches }) => {
       }
     </Container>
   )
-}
-
-ProMatches.propTypes = {
-  matches: PropTypes.array
 }
 
 export default ProMatches
