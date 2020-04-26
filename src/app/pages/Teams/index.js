@@ -31,6 +31,7 @@ const Teams = () => {
           >
             <Image src={team.logo_url} />
             <Text>{team.name}</Text>
+            <Text>{team.rating}</Text>
           </Team>
         )
       }
