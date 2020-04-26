@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
 import {
@@ -14,7 +14,9 @@ import Team from 'app/components/MatchResults/Team'
 
 import { Container, Match } from './styled'
 
-const PublicMatches = ({ matches }) => {
+const PublicMatches = () => {
+  const matches = useSelector(state => state.matches.items.publicMatches)
+
   const handleClick = id =>
     navigate(`/match/${id}`)
 
@@ -60,10 +62,6 @@ const PublicMatches = ({ matches }) => {
       }
     </Container>
   )
-}
-
-PublicMatches.propTypes = {
-  matches: PropTypes.array
 }
 
 export default PublicMatches
