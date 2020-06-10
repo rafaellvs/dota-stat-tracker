@@ -15,15 +15,13 @@ const Tabs = ({ selected, setSelected, children }) =>
     <TabsContainer>
       {
         tabs.map(tab =>
-          (
-            <Tab
-              key={tab.id}
-              onClick={() => setSelected(tab.slug)}
-              active={tab.slug === selected}
-            >
-              <h3>{tab.label}</h3>
-            </Tab>
-          )
+          <Tab
+            key={tab.id}
+            onClick={() => setSelected(tab.slug)}
+            active={tab.slug === selected}
+          >
+            <h3>{tab.label}</h3>
+          </Tab>
         )
       }
     </TabsContainer>
