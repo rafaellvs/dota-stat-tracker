@@ -14,11 +14,22 @@ import {
 
 import Text from 'app/components/core/Text'
 import Image from 'app/components/core/Image'
+import Table from 'app/components/core/Table'
+import Cell from 'app/components/core/Table/Cell'
 
-import { Container, Match, MatchInfo } from './styled'
+import { Container, HeroPlayed } from './styled'
 
 const RecentMatches = () => {
   const matches = useSelector(state => state.players.selected.matches)
+
+  const columns = [
+    'Hero',
+    'KDA',
+    'Info',
+    'Result',
+    'Duration',
+    'When',
+  ]
 
   const handleClick = match =>
     navigate(`/match/${match.match_id}`)
@@ -29,44 +40,54 @@ const RecentMatches = () => {
         recent matches
       </Text>
 
-      {
-        matches.map(match =>
-          <Match
-            key={match.match_id}
-            onClick={() => handleClick(match)}
-          >
-            <Image src={getHeroImage(match.hero_id)} />
+      <Table columns={columns}>
+        {
+          matches.map(match =>
+            <tr
+              key={match.match_id}
+              onClick={() => handleClick(match)}
+            >
+              <Cell id='hero'>
+                <HeroPlayed>
+                  <Image src={getHeroImage(match.hero_id)} />
 
-            <Text component='h5' variant='hideOverflow'>
-              {getHeroLocalizedName(match.hero_id)}
-            </Text>
+                  <Text component='h5' variant='hideOverflow'>
+                    {getHeroLocalizedName(match.hero_id)}
+                  </Text>
+                </HeroPlayed>
+              </Cell>
 
-            <Text>
-              {`${match.kills}-${match.deaths}-${match.assists}`}
-            </Text>
+              <Cell id='kda'>
+                {`${match.kills}-${match.deaths}-${match.assists}`}
+              </Cell>
 
-            <MatchInfo>
-              <Text>{getGameMode(match.game_mode)}</Text>
-              <Text>{getLobbyType(match.lobby_type)}</Text>
-              <Text>{getSkillBracket(match.skill)}</Text>
-            </MatchInfo>
+              <Cell id='info'>
+                <div>
+                  <Text>{getGameMode(match.game_mode)}</Text>
+                  <Text>{getLobbyType(match.lobby_type)}</Text>
+                  <Text>{getSkillBracket(match.skill)}</Text>
+                </div>
+              </Cell>
 
-            {
-              match.player_slot < 5 ^ match.radiant_win
-                ? <Text variant='loss'>lost match</Text>
-                : <Text variant='win'>won match</Text>
-            }
+              <Cell id='result'>
+                {
+                  match.player_slot < 5 ^ match.radiant_win
+                    ? <Text variant='loss'>lost match</Text>
+                    : <Text variant='win'>won match</Text>
+                }
+              </Cell>
 
-            <Text>
-              {getGameDuration(match.duration)}
-            </Text>
+              <Cell id='duration'>
+                {getGameDuration(match.duration)}
+              </Cell>
 
-            <Text>
-              {getTimeElapsed(match.start_time)}
-            </Text>
-          </Match>
-        )
-      }
+              <Cell id='when'>
+                {getTimeElapsed(match.start_time)}
+              </Cell>
+            </tr>
+          )
+        }
+      </Table>
     </Container>
   )
 }

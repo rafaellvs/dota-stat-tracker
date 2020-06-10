@@ -10,12 +10,23 @@ import {
 } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
+import Table from 'app/components/core/Table'
+import Cell from 'app/components/core/Table/Cell'
+
 import Team from 'app/components/MatchResults/Team'
 
-import { Container, Match } from './styled'
+import { Container } from './styled'
 
 const PublicMatches = () => {
   const matches = useSelector(state => state.matches.items.publicMatches)
+
+  const columns = [
+    'Match ID',
+    'Info',
+    'Radiant / Dire',
+    'Duration',
+    'When',
+  ]
 
   const handleClick = id =>
     navigate(`/match/${id}`)
@@ -23,43 +34,57 @@ const PublicMatches = () => {
   return (
     <Container>
       <Text component='h1'>public matches</Text>
-      {
-        matches
-          .filter((match, index) => index < 5)
-          .map(match =>
-            <Match
-              key={match.match_id}
-              onClick={() => handleClick(match.match_id)}
-            >
-              <Text>{match.match_id}</Text>
 
-              <div>
-                <Text>{getGameMode(match.game_mode)}</Text>
-                <Text>{getLobbyType(match.lobby_type)}</Text>
-                <Text>{`avg mmr: ${match.avg_mmr}`}</Text>
-              </div>
+      <Table columns={columns}>
+        {
+          matches
+            .filter((match, index) => index < 5)
+            .map(match =>
+              <tr
+                key={match.match_id}
+                onClick={() => handleClick(match.match_id)}
+              >
+                <Cell id='id'>
+                  {match.match_id}
+                </Cell>
 
-              <div>
-                <Team heroes={
-                  match.radiant_team
-                    .split(',')
-                    .map(hero => parseInt(hero))
-                }
-                />
+                <Cell id='info'>
+                  <div>
+                    <Text>{getGameMode(match.game_mode)}</Text>
+                    <Text>{getLobbyType(match.lobby_type)}</Text>
+                    <Text>{`avg mmr: ${match.avg_mmr}`}</Text>
+                  </div>
+                </Cell>
 
-                <Team heroes={
-                  match.dire_team
-                    .split(',')
-                    .map(hero => parseInt(hero))
-                }
-                />
-              </div>
+                <Cell id='sides'>
+                  <div>
+                    <Team heroes={
+                      match.radiant_team
+                        .split(',')
+                        .map(hero => parseInt(hero))
+                    }
+                    />
 
-              <Text>{getGameDuration(match.duration)}</Text>
-              <Text>{getTimeElapsed(match.start_time)}</Text>
-            </Match>
-          )
-      }
+                    <Team heroes={
+                      match.dire_team
+                        .split(',')
+                        .map(hero => parseInt(hero))
+                    }
+                    />
+                  </div>
+                </Cell>
+
+                <Cell id='duration'>
+                  {getGameDuration(match.duration)}
+                </Cell>
+
+                <Cell id='when'>
+                  {getTimeElapsed(match.start_time)}
+                </Cell>
+              </tr>
+            )
+        }
+      </Table>
     </Container>
   )
 }
