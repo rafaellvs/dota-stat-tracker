@@ -12,7 +12,8 @@ const colors = {
 const variants = {
   hideOverflow: {
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
   },
 
   win: {

@@ -4,12 +4,9 @@ import SearchBox from 'app/components/SearchBox'
 
 import { Container } from './styled'
 
-const Home = () => {
-  return (
-    <Container>
-      <SearchBox />
-    </Container>
-  )
-}
+const Home = () =>
+  <Container>
+    <SearchBox />
+  </Container>
 
 export default Home

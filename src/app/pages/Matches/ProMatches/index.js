@@ -5,11 +5,20 @@ import { navigate } from '@reach/router'
 import { getGameDuration, getTimeElapsed } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
+import Table from 'app/components/core/Table'
+import Cell from 'app/components/core/Table/Cell'
 
-import { Container, Match } from './styled'
+import { Container } from './styled'
 
 const ProMatches = () => {
   const matches = useSelector(state => state.matches.items.proMatches)
+
+  const columns = [
+    'League',
+    'Teams',
+    'Duration',
+    'When',
+  ]
 
   const handleClick = id =>
     navigate(`/match/${id}`)
@@ -17,30 +26,38 @@ const ProMatches = () => {
   return (
     <Container>
       <Text component='h1'>pro matches</Text>
-      {
-        matches
-          .filter((match, index) => index < 5)
-          .map(match =>
-            <Match
-              key={match.match_id}
-              onClick={() => handleClick(match.match_id)}
-            >
-              <div>
-                <Text>{match.match_id}</Text>
-                <Text>{match.league_name}</Text>
-              </div>
 
-              <Text>
-                {match.radiant_name}
-                <br />vs<br />
-                {match.dire_name}
-              </Text>
+      <Table columns={columns}>
+        {
+          matches
+            .filter((match, index) => index < 5)
+            .map(match =>
+              <tr
+                key={match.match_id}
+                onClick={() => handleClick(match.match_id)}
+              >
+                <Cell id='league'>
+                  <div>
+                    <Text>{match.match_id}</Text>
+                    <Text>{match.league_name}</Text>
+                  </div>
+                </Cell>
 
-              <Text>{getGameDuration(match.duration)}</Text>
-              <Text>{getTimeElapsed(match.start_time)}</Text>
-            </Match>
-          )
-      }
+                <Cell id='teams'>
+                  {`${match.radiant_name} vs ${match.dire_name}`}
+                </Cell>
+
+                <Cell id='duration'>
+                  {getGameDuration(match.duration)}
+                </Cell>
+
+                <Cell id='when'>
+                  {getTimeElapsed(match.start_time)}
+                </Cell>
+              </tr>
+            )
+        }
+      </Table>
     </Container>
   )
 }

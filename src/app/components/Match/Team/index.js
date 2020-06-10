@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 
 import { getHeroImage, getSlotColor, getPlayerItems } from 'app/helpers/utils'
 
-import Text from 'app/components/core/Text'
 import Image from 'app/components/core/Image'
+import Table from 'app/components/core/Table'
+import Cell from 'app/components/core/Table/Cell'
 
 import {
   Container,
-  Hero,
+  HeroPlayed,
   PlayerName,
   PlayerLink,
   Items,
@@ -16,55 +17,80 @@ import {
   Backpack
 } from './styled'
 
-const Team = ({ players }) =>
-  <Container>
-    {
-      players.map(player =>
-        <Hero key={player.hero_id}>
-          <Image src={getHeroImage(player.hero_id)} />
-          <PlayerName color={getSlotColor(player.player_slot)}>
-            {
-              player.personaname
-                ? <PlayerLink to={`/player/${player.account_id}`}>{player.personaname}</PlayerLink>
-                : 'Anonymous'
-            }
-          </PlayerName>
+const Team = ({ players }) => {
+  const columns = [
+    'Hero',
+    'Level',
+    'KDA',
+    'CS',
+    'Items'
+  ]
 
-          <Text>{player.level}</Text>
+  return (
+    <Container>
+      <Table columns={columns}>
+        {
+          players.map(player =>
+            <tr key={player.hero_id}>
+              <Cell id='hero'>
+                <HeroPlayed>
+                  <Image src={getHeroImage(player.hero_id)} />
+                  <PlayerName color={getSlotColor(player.player_slot)} variant='hideOverflow'>
+                    {
+                      player.personaname
+                        ? <PlayerLink to={`/player/${player.account_id}`}>{player.personaname}</PlayerLink>
+                        : 'Anonymous'
+                    }
+                  </PlayerName>
+                </HeroPlayed>
+              </Cell>
 
-          <Text>{`${player.kills} - ${player.deaths} - ${player.assists}`}</Text>
+              <Cell id='level'>
+                {player.level}
+              </Cell>
 
-          <Text>{`${player.last_hits}/${player.denies}`}</Text>
+              <Cell id='kda'>
+                {`${player.kills}-${player.deaths}-${player.assists}`}
+              </Cell>
 
-          <Items>
-            <Inventory>
-              {
-                getPlayerItems(player).inventory
-                  .map((item, index) =>
-                    <Image
-                      key={item + index}
-                      src={item}
-                    />
-                  )
-              }
-            </Inventory>
+              <Cell id='cs'>
+                {`${player.last_hits}/${player.denies}`}
+              </Cell>
 
-            <Backpack>
-              {
-                getPlayerItems(player).backpack
-                  .map((item, index) =>
-                    <Image
-                      key={item + index}
-                      src={item}
-                    />
-                  )
-              }
-            </Backpack>
-          </Items>
-        </Hero>
-      )
-    }
-  </Container>
+              <Cell id='items'>
+                <Items>
+                  <Inventory>
+                    {
+                      getPlayerItems(player).inventory
+                        .map((item, index) =>
+                          <Image
+                            key={item + index}
+                            src={item}
+                          />
+                        )
+                    }
+                  </Inventory>
+
+                  <Backpack>
+                    {
+                      getPlayerItems(player).backpack
+                        .map((item, index) =>
+                          <Image
+                            key={item + index}
+                            src={item}
+                          />
+                        )
+                    }
+                  </Backpack>
+                </Items>
+              </Cell>
+            </tr>
+          )
+        }
+      </Table>
+    </Container>
+  )
+}
 
 Team.propTypes = {
   players: PropTypes.array

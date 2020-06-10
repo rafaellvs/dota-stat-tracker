@@ -29,10 +29,14 @@ const AppRouter = () => {
           isFetching &&
             <Loading src={loading} />
         }
+
         <Router>
           <Home path='/' />
+
           <FindMatchup path='matchup' />
+
           <SearchResults path='search/:query/:input' />
+
           <PlayerProfile path='player/:id' />
 
           <Matches path='matches' />

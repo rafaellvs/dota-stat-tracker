@@ -38,7 +38,9 @@ const Match = ({ id }) => {
             : 'Dire Victory'
         }
       </Text>
-      <Text component='h2'>{`${match.radiant_score} - ${match.dire_score}`}</Text>
+      <Text component='h2'>
+        {`${match.radiant_score} - ${match.dire_score}`}
+      </Text>
       <Text>{getGameDuration(match.duration)}</Text>
       <Text>{getGameMode(match.game_mode)}</Text>
       <Text>{getLobbyType(match.lobby_type)}</Text>

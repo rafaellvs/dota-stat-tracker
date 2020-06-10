@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
-const Image = styled.img`
+const Cell = styled.td`
   width: ${({ width }) => width || 'auto'};
-  box-sizing: content-box;
 `
 
-export default Image
+export default Cell
