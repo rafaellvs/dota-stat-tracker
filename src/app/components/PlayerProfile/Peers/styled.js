@@ -22,4 +22,9 @@ export const Account = styled.div`
   width: 130px;
   height: 70px;
   white-space: nowrap;
+  padding-right: 1rem;
+
+  img {
+    margin-right: .7rem;
+  }
 `

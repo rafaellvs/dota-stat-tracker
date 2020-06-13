@@ -10,4 +10,8 @@ export const Hero = styled.div`
   display: flex;
   align-items: center;
   padding: .3rem 0;
+
+  img {
+    margin-right: 1rem;
+  }
 `
