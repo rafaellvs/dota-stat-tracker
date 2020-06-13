@@ -16,7 +16,7 @@ export const HeroPlayed = styled.div`
   width: 180px;
 
   img {
-    margin-right: 1rem;
+    margin-right: .7rem;
   }
 `
 

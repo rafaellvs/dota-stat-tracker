@@ -1,8 +1,7 @@
 const colors = {
-  // background: 'rgba(66, 66, 66, .9)',
   background: 'rgba(0, 0, 0, .9)',
   inactiveTab: 'rgba(0, 0, 0, .6)',
-  hover: '#878080',
+  hover: '#4f4f4f',
   black: 'black',
   white: 'white',
   green: '#03ff1c',

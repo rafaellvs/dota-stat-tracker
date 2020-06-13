@@ -11,6 +11,6 @@ export const HeroPlayed = styled.div`
   align-items: center;
 
   img {
-    margin-right: 1rem;
+    margin-right: .7rem;
   }
 `
