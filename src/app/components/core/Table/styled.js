@@ -20,9 +20,13 @@ export const CoreTable = styled.table`
   }
 
   tbody {
-    tr:hover {
-      background: ${theme.colors.hover};
-      cursor: pointer;
+    tr {
+      transition: background .3s;
+      
+      &:hover {
+        background: ${theme.colors.hover};
+        cursor: pointer;
+      }
     }
   }
 `
