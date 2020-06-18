@@ -38,7 +38,7 @@ const Team = ({ players }) => {
                   <PlayerName color={getSlotColor(player.player_slot)} variant='hideOverflow'>
                     {
                       player.personaname
-                        ? <PlayerLink to={`/player/${player.account_id}`}>{player.personaname}</PlayerLink>
+                        ? <PlayerLink to={`/players/${player.account_id}`}>{player.personaname}</PlayerLink>
                         : 'Anonymous'
                     }
                   </PlayerName>
