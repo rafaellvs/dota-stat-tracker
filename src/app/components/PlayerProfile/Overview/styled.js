@@ -7,9 +7,18 @@ import theme from 'app/helpers/theme'
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
+  padding-bottom: 3rem;
+`
+
+export const Account = styled.div`
+  text-align: center;
+
+  p {
+    padding: .5rem 0;
+  }
 `
 
 export const Avatar = styled(CoreImage)`

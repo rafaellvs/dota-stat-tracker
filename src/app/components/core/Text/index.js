@@ -5,7 +5,7 @@ import theme from 'app/helpers/theme'
 import CoreText from './text'
 
 const Text = styled(CoreText)`
-  padding: 0;
+  padding: ${({ padding }) => padding || '0'};
   margin: 0;
 
   ${

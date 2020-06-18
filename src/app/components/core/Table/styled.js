@@ -17,6 +17,11 @@ export const CoreTable = styled.table`
     &:last-child {
       padding-right: 0;
     }
+
+    &:last-child[id='when'] {
+      width: 1%;
+      white-space: nowrap;
+    }
   }
 
   tbody {

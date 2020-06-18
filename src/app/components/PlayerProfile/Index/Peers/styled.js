@@ -2,7 +2,10 @@ import styled from 'styled-components'
 
 import theme from 'app/helpers/theme'
 
-export const Container = styled.div``
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 export const Peer = styled.div`
   display: flex;

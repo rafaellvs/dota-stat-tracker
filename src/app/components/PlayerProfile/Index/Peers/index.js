@@ -6,6 +6,7 @@ import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
 
 import WinRate from 'app/components/WinRate'
+import More from 'app/components/More'
 
 import { Container, Peer, Account } from './styled'
 
@@ -13,7 +14,7 @@ const Peers = () => {
   const peers = useSelector(state => state.players.selected.peers)
 
   const handleClick = id =>
-    navigate(`/player/${id}`)
+    navigate(`/players/${id}`)
 
   return (
     <Container>
@@ -38,6 +39,8 @@ const Peers = () => {
             </Peer>
           )
       }
+
+      <More to='peers' />
     </Container>
   )
 }

@@ -14,7 +14,7 @@ const Players = () => {
   const players = useSelector(state => state.teams.selected.players)
 
   const handleClick = id =>
-    navigate(`/player/${id}`)
+    navigate(`/players/${id}`)
 
   return (
     <Container>

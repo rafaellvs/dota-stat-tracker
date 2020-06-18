@@ -13,9 +13,10 @@ export const receiveSelectedPlayer = data => ({
   type: 'RECEIVE_SELECTED_PLAYER',
   selected: {
     account: data[0],
-    heroes: data[1],
-    matches: data[2],
-    peers: data[3],
+    winrate: data[1],
+    heroes: data[2],
+    matches: data[3],
+    peers: data[4],
   }
 })
 
@@ -27,9 +28,11 @@ export const fetchSelectedPlayer = id => {
     return Promise.all([
       fetch(`https://api.opendota.com/api/players/${id}`)
         .then(response => response.json()),
+      fetch(`https://api.opendota.com/api/players/${id}/wl`)
+        .then(response => response.json()),
       fetch(`https://api.opendota.com/api/players/${id}/heroes`)
         .then(response => response.json()),
-      fetch(`https://api.opendota.com/api/players/${id}/matches?limit=5`)
+      fetch(`https://api.opendota.com/api/players/${id}/matches?limit=100`)
         .then(response => response.json()),
       fetch(`https://api.opendota.com/api/players/${id}/peers`)
         .then(response => response.json()),

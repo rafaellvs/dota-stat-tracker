@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
@@ -19,7 +19,7 @@ import Cell from 'app/components/core/Table/Cell'
 
 import { Container, HeroPlayed } from './styled'
 
-const RecentMatches = () => {
+const Matches = () => {
   const matches = useSelector(state => state.players.selected.matches)
 
   const columns = [
@@ -34,10 +34,15 @@ const RecentMatches = () => {
   const handleClick = match =>
     navigate(`/match/${match.match_id}`)
 
+  useEffect(() => scrollTo(0, 0))
+
   return (
     <Container>
       <Text component='h2'>
-        recent matches
+        matches
+      </Text>
+      <Text padding='1rem 0'>
+        {`showing ${matches.length} matches`}
       </Text>
 
       <Table columns={columns}>
@@ -92,4 +97,4 @@ const RecentMatches = () => {
   )
 }
 
-export default RecentMatches
+export default Matches

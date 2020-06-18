@@ -5,7 +5,9 @@ import { getHeroImage } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
 import Image from 'app/components/core/Image'
+
 import WinRate from 'app/components/WinRate'
+import More from 'app/components/More'
 
 import { Container, Hero } from './styled'
 
@@ -28,6 +30,8 @@ const MostPlayed = () => {
             </Hero>
           )
       }
+
+      <More to='heroes' />
     </Container>
   )
 }

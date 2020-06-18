@@ -7,9 +7,3 @@ export const Container = styled.div`
   background: ${theme.colors.background};
   box-shadow: ${theme.boxShadow};
 `
-
-export const Profile = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-`
