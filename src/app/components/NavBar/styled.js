@@ -11,6 +11,7 @@ export const Container = styled.nav`
   height: ${theme.navbarHeight};
   padding: 0 6rem;
   background: ${theme.colors.background};
+  z-index: 2;
 `
 
 export const Link = styled(RouterLink)`

@@ -28,4 +28,5 @@ export const WinRate = styled(CoreText)`
   bottom: -5px;
   left: 50%;
   font-weight: bold;
+  z-index: 1;
 `
