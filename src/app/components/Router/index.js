@@ -5,6 +5,7 @@ import { useFetching } from 'app/hooks/isFetching'
 
 import NavBar from 'app/components/NavBar'
 import Breadcrumbs from 'app/components/Breadcrumbs'
+import Page404 from 'app/pages/Page404'
 import Home from 'app/pages/Home'
 import FindMatchup from 'app/pages/FindMatchup'
 import SearchResults from 'app/pages/SearchResults'
@@ -41,6 +42,8 @@ const AppRouter = () => {
         }
 
         <Router>
+          <Page404 default />
+
           <Home path='/' />
 
           <FindMatchup path='matchup' />
