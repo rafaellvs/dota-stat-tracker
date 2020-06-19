@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
     display: none;
   }
 
-  p, h1, h2, h3, h4, h5, h6 {
+  span, p, h1, h2, h3, h4, h5, h6 {
     color: ${theme.colors.white};
     line-height: 1.2;
   }

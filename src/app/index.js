@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import { LocationProvider } from '@reach/router'
 import WebFont from 'webfontloader'
 
 import GlobalStyles from 'app/helpers/globalStyles'
@@ -14,9 +15,11 @@ WebFont.load({
 })
 
 render(
-  <Provider store={store}>
-    <GlobalStyles />
-    <Router />
-  </Provider>,
+  <LocationProvider>
+    <Provider store={store}>
+      <GlobalStyles />
+      <Router />
+    </Provider>
+  </LocationProvider>,
   document.getElementById('root')
 )
