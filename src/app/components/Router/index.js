@@ -4,6 +4,7 @@ import { Router } from '@reach/router'
 import { useFetching } from 'app/hooks/isFetching'
 
 import NavBar from 'app/components/NavBar'
+import Breadcrumbs from 'app/components/Breadcrumbs'
 import Home from 'app/pages/Home'
 import FindMatchup from 'app/pages/FindMatchup'
 import SearchResults from 'app/pages/SearchResults'
@@ -34,8 +35,9 @@ const AppRouter = () => {
 
       <MainContent>
         {
-          isFetching &&
-            <Loading src={loading} />
+          isFetching
+            ? <Loading src={loading} />
+            : <Breadcrumbs />
         }
 
         <Router>
