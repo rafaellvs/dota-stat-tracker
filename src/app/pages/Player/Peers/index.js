@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
@@ -22,8 +22,6 @@ const Peers = () => {
 
   const handleClick = id =>
     navigate(`/players/${id}`)
-
-  useEffect(() => scrollTo(0, 0))
 
   return (
     <Container>
