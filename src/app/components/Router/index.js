@@ -1,5 +1,5 @@
-import React from 'react'
-import { Router } from '@reach/router'
+import React, { useEffect } from 'react'
+import { useLocation } from '@reach/router'
 
 import { useFetching } from 'app/hooks/isFetching'
 
@@ -18,13 +18,14 @@ import Matches from 'app/pages/Matches'
 import MatchesIndex from 'app/pages/Matches/Index'
 import ProMatches from 'app/pages/Matches/ProMatches'
 import PublicMatches from 'app/pages/Matches/PublicMatches'
-import Match from 'app/components/Match'
+import Match from 'app/pages/Matches/Match'
 import Teams from 'app/pages/Teams'
 import Team from 'app/components/Team'
 
 import loading from 'assets/images/loading.gif'
 
 import {
+  ReachRouter,
   Section,
   MainContent,
   Loading,
@@ -32,6 +33,11 @@ import {
 
 const AppRouter = () => {
   const isFetching = useFetching()
+  const location = useLocation()
+
+  useEffect(() => {
+    scrollTo(0, 0)
+  }, [location.pathname])
 
   return (
     <Section>
@@ -44,7 +50,7 @@ const AppRouter = () => {
             : <Breadcrumbs />
         }
 
-        <Router>
+        <ReachRouter hide={isFetching ? 1 : 0}>
           <Page404 default />
 
           <Home path='/' />
@@ -64,13 +70,12 @@ const AppRouter = () => {
             <MatchesIndex path='/' />
             <ProMatches path='promatches' />
             <PublicMatches path='publicmatches' />
+            <Match path=':id' />
           </Matches>
-
-          <Match path='match/:id' />
 
           <Teams path='teams' />
           <Team path='teams/:id' />
-        </Router>
+        </ReachRouter>
       </MainContent>
     </Section>
   )

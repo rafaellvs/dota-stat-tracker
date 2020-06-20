@@ -1,10 +1,15 @@
 import styled from 'styled-components'
+import { Router } from '@reach/router'
 
 import CoreSection from 'app/components/core/Section'
 
 import theme from 'app/helpers/theme'
 
 import bg from 'assets/images/bg.jpg'
+
+export const ReachRouter = styled(Router)`
+  display: ${({ hide }) => hide ? 'none' : 'block'};
+`
 
 export const Section = styled(CoreSection)`
   display: flex;
