@@ -1,6 +1,8 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
+
+import { fetchPublicMatches } from 'app/redux/actions/matches'
 
 import {
   getLobbyType,
@@ -18,6 +20,7 @@ import Team from 'app/components/MatchResults/Team'
 import { Container } from './styled'
 
 const PublicMatches = () => {
+  const dispatch = useDispatch()
   const matches = useSelector(state => state.matches.items.publicMatches)
 
   const columns = [
@@ -29,7 +32,11 @@ const PublicMatches = () => {
   ]
 
   const handleClick = id =>
-    navigate(`/match/${id}`)
+    navigate(`/matches/${id}`)
+
+  useEffect(() => {
+    dispatch(fetchPublicMatches())
+  }, [])
 
   return (
     <Container>

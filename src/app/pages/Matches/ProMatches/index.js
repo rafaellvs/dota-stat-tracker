@@ -1,8 +1,14 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
-import { getGameDuration, getTimeElapsed } from 'app/helpers/utils'
+import { fetchProMatches } from 'app/redux/actions/matches'
+
+import {
+  isEmpty,
+  getGameDuration,
+  getTimeElapsed,
+} from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
 import Table from 'app/components/core/Table'
@@ -11,6 +17,7 @@ import Cell from 'app/components/core/Table/Cell'
 import { Container } from './styled'
 
 const ProMatches = () => {
+  const dispatch = useDispatch()
   const matches = useSelector(state => state.matches.items.proMatches)
 
   const columns = [
@@ -21,9 +28,13 @@ const ProMatches = () => {
   ]
 
   const handleClick = id =>
-    navigate(`/match/${id}`)
+    navigate(`/matches/${id}`)
 
-  return (
+  useEffect(() => {
+    dispatch(fetchProMatches())
+  }, [])
+
+  return !isEmpty(matches) &&
     <Container>
       <Text component='h1'>
         pro matches
@@ -62,7 +73,6 @@ const ProMatches = () => {
         }
       </Table>
     </Container>
-  )
 }
 
 export default ProMatches
