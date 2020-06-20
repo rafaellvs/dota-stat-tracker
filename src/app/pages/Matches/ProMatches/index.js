@@ -25,37 +25,40 @@ const ProMatches = () => {
 
   return (
     <Container>
-      <Text component='h1'>pro matches</Text>
+      <Text component='h1'>
+        pro matches
+      </Text>
+      <Text padding='1rem 0'>
+        {`showing ${matches.length} matches`}
+      </Text>
 
       <Table columns={columns}>
         {
-          matches
-            .filter((match, index) => index < 5)
-            .map(match =>
-              <tr
-                key={match.match_id}
-                onClick={() => handleClick(match.match_id)}
-              >
-                <Cell id='league'>
-                  <div>
-                    <Text>{match.match_id}</Text>
-                    <Text>{match.league_name}</Text>
-                  </div>
-                </Cell>
+          matches.map(match =>
+            <tr
+              key={match.match_id}
+              onClick={() => handleClick(match.match_id)}
+            >
+              <Cell id='league'>
+                <div>
+                  <Text>{match.league_name}</Text>
+                  <Text>{match.match_id}</Text>
+                </div>
+              </Cell>
 
-                <Cell id='teams'>
-                  {`${match.radiant_name} vs ${match.dire_name}`}
-                </Cell>
+              <Cell id='teams'>
+                {`${match.radiant_name} vs ${match.dire_name}`}
+              </Cell>
 
-                <Cell id='duration'>
-                  {getGameDuration(match.duration)}
-                </Cell>
+              <Cell id='duration'>
+                {getGameDuration(match.duration)}
+              </Cell>
 
-                <Cell id='when'>
-                  {getTimeElapsed(match.start_time)}
-                </Cell>
-              </tr>
-            )
+              <Cell id='when'>
+                {getTimeElapsed(match.start_time)}
+              </Cell>
+            </tr>
+          )
         }
       </Table>
     </Container>
