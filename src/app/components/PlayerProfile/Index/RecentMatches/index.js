@@ -34,7 +34,7 @@ const RecentMatches = () => {
   ]
 
   const handleClick = match =>
-    navigate(`/match/${match.match_id}`)
+    navigate(`/matches/${match.match_id}`)
 
   return (
     <Container>
