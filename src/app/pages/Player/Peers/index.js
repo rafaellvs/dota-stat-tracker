@@ -2,6 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
+import { isEmpty } from 'app/helpers/utils'
+
 import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
 import Table from 'app/components/core/Table'
@@ -23,7 +25,7 @@ const Peers = () => {
   const handleClick = id =>
     navigate(`/players/${id}`)
 
-  return (
+  return !isEmpty(peers) &&
     <Container>
       <Text component='h2'>
         friends
@@ -58,7 +60,6 @@ const Peers = () => {
         }
       </Table>
     </Container>
-  )
 }
 
 export default Peers
