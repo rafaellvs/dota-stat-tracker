@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 
+import { fetchSelectedMatch } from 'app/redux/actions/matches'
+
 import {
   isEmpty,
   getRadiantPlayers,
@@ -11,7 +13,6 @@ import {
   getLobbyType,
   getTimeElapsed,
 } from 'app/helpers/utils'
-import { fetchSelectedMatch } from 'app/redux/actions/matches'
 
 import Text from 'app/components/core/Text'
 

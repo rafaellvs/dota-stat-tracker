@@ -32,7 +32,7 @@ const Team = ({ players }) => {
         {
           players.map(player =>
             <tr key={player.hero_id}>
-              <Cell id='hero'>
+              <Cell id='hero' width='200px'>
                 <HeroPlayed>
                   <Image src={getHeroImage(player.hero_id)} />
                   <PlayerName color={getSlotColor(player.player_slot)} variant='hideOverflow'>
@@ -57,7 +57,7 @@ const Team = ({ players }) => {
                 {`${player.last_hits}/${player.denies}`}
               </Cell>
 
-              <Cell id='items'>
+              <Cell id='items' width='1%'>
                 <Items>
                   <Inventory>
                     {
