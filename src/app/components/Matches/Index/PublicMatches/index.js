@@ -30,7 +30,7 @@ const PublicMatches = () => {
   ]
 
   const handleClick = id =>
-    navigate(`/match/${id}`)
+    navigate(`/matches/${id}`)
 
   return (
     <Container>

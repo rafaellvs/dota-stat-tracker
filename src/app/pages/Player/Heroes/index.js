@@ -1,7 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { getHeroImage, getHeroLocalizedName } from 'app/helpers/utils'
+import {
+  isEmpty,
+  getHeroImage,
+  getHeroLocalizedName,
+} from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
 import Image from 'app/components/core/Image'
@@ -22,7 +26,7 @@ const Heroes = () => {
     'Against',
   ]
 
-  return (
+  return !isEmpty(heroes) &&
     <Container>
       <Text component='h2'>
         most played
@@ -58,7 +62,6 @@ const Heroes = () => {
         }
       </Table>
     </Container>
-  )
 }
 
 export default Heroes

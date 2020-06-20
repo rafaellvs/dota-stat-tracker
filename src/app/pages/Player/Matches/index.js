@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
 import {
+  isEmpty,
   getHeroImage,
   getHeroLocalizedName,
   getGameMode,
   getSkillBracket,
   getGameDuration,
   getLobbyType,
-  getTimeElapsed
+  getTimeElapsed,
 } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
@@ -32,9 +33,9 @@ const Matches = () => {
   ]
 
   const handleClick = match =>
-    navigate(`/match/${match.match_id}`)
+    navigate(`/matches/${match.match_id}`)
 
-  return (
+  return !isEmpty(matches) &&
     <Container>
       <Text component='h2'>
         matches
@@ -92,7 +93,6 @@ const Matches = () => {
         }
       </Table>
     </Container>
-  )
 }
 
 export default Matches

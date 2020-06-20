@@ -13,7 +13,7 @@ const Results = () => {
   const matches = useSelector(state => state.matches.items.search)
 
   const handleClick = match =>
-    navigate(`/match/${match.match_id}`)
+    navigate(`/matches/${match.match_id}`)
 
   return (
     <Container>

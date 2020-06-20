@@ -33,6 +33,26 @@ const matches = (state = initialState, action) => {
         }
       }
 
+    case 'RECEIVE_PRO_MATCHES':
+      return {
+        ...state,
+        isFetching: false,
+        items: {
+          ...state.items,
+          proMatches: action.proMatches,
+        }
+      }
+
+    case 'RECEIVE_PUBLIC_MATCHES':
+      return {
+        ...state,
+        isFetching: false,
+        items: {
+          ...state.items,
+          publicMatches: action.publicMatches,
+        }
+      }
+
     case 'RECEIVE_ALL_MATCHES':
       return {
         ...state,

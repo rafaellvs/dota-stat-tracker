@@ -36,6 +36,38 @@ export const fetchMatchups = (idA, idB) => {
   }
 }
 
+export const receiveProMatches = data => ({
+  type: 'RECEIVE_PRO_MATCHES',
+  proMatches: data,
+})
+
+export const fetchProMatches = () => {
+  return dispatch => {
+    dispatch(resetState())
+    dispatch(requestMatches())
+
+    return fetch('https://api.opendota.com/api/proMatches')
+      .then(response => response.json())
+      .then(data => dispatch(receiveProMatches(data)))
+  }
+}
+
+export const receivePublicMatches = data => ({
+  type: 'RECEIVE_PUBLIC_MATCHES',
+  publicMatches: data,
+})
+
+export const fetchPublicMatches = () => {
+  return dispatch => {
+    dispatch(resetState())
+    dispatch(requestMatches())
+
+    return fetch('https://api.opendota.com/api/publicMatches?mmr_descending=1')
+      .then(response => response.json())
+      .then(data => dispatch(receivePublicMatches(data)))
+  }
+}
+
 export const receiveAllMatches = (proMatches, publicMatches) => ({
   type: 'RECEIVE_ALL_MATCHES',
   proMatches: proMatches,

@@ -18,8 +18,6 @@ const Player = ({ id, children }) => {
     dispatch(fetchSelectedPlayer(id))
   }, [id])
 
-  useEffect(() => scrollTo(0, 0))
-
   return !isEmpty(player) &&
     <Container>
       <Overview />

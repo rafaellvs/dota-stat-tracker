@@ -13,7 +13,7 @@ const RecentMatches = () => {
   const matches = useSelector(state => state.teams.selected.matches)
 
   const handleClick = id =>
-    navigate(`/match/${id}`)
+    navigate(`/matches/${id}`)
 
   return (
     <Container>
