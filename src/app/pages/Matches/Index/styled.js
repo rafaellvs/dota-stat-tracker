@@ -8,9 +8,4 @@ export const Container = styled.div`
   flex-wrap: wrap;
   background: ${theme.colors.background};
   box-shadow: ${theme.boxShadow};
-  padding: 3rem;
-
-  div {
-    width: 100%;
-  }
 `

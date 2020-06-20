@@ -15,6 +15,9 @@ import PlayerMatches from 'app/pages/Player/Matches'
 import PlayerHeroes from 'app/pages/Player/Heroes'
 import PlayerPeers from 'app/pages/Player/Peers'
 import Matches from 'app/pages/Matches'
+import MatchesIndex from 'app/pages/Matches/Index'
+import ProMatches from 'app/pages/Matches/ProMatches'
+import PublicMatches from 'app/pages/Matches/PublicMatches'
 import Match from 'app/components/Match'
 import Teams from 'app/pages/Teams'
 import Team from 'app/components/Team'
@@ -50,14 +53,19 @@ const AppRouter = () => {
 
           <SearchResults path='search/:query/:input' />
 
-          <Player path='/players/:id'>
+          <Player path='players/:id'>
             <PlayerIndex path='/' />
             <PlayerMatches path='matches' />
             <PlayerHeroes path='heroes' />
             <PlayerPeers path='peers' />
           </Player>
 
-          <Matches path='matches' />
+          <Matches path='matches'>
+            <MatchesIndex path='/' />
+            <ProMatches path='promatches' />
+            <PublicMatches path='publicmatches' />
+          </Matches>
+
           <Match path='match/:id' />
 
           <Teams path='teams' />

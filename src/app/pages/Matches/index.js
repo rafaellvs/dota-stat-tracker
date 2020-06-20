@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { isEmpty } from 'app/helpers/utils'
 import { fetchAllMatches } from 'app/redux/actions/matches'
 
-import ProMatches from './ProMatches'
-import PublicMatches from './PublicMatches'
-
 import { Container } from './styled'
 
-const Matches = () => {
+const Matches = ({ children }) => {
   const dispatch = useDispatch()
   const matches = useSelector(state => state.matches.items)
 
@@ -17,14 +15,19 @@ const Matches = () => {
     dispatch(fetchAllMatches())
   }, [])
 
+  useEffect(() => scrollTo(0, 0))
+
   return (
     !isEmpty(matches.proMatches) &&
     !isEmpty(matches.publicMatches) &&
       <Container>
-        <ProMatches />
-        <PublicMatches />
+        {children}
       </Container>
   )
+}
+
+Matches.propTypes = {
+  children: PropTypes.node,
 }
 
 export default Matches

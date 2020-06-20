@@ -15,7 +15,6 @@ const Team = ({ heroes }) => {
           <Image
             key={id}
             src={getHeroImage(id)}
-            width='50px'
           />
         )
       }

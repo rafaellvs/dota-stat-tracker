@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
@@ -33,8 +33,6 @@ const Matches = () => {
 
   const handleClick = match =>
     navigate(`/match/${match.match_id}`)
-
-  useEffect(() => scrollTo(0, 0))
 
   return (
     <Container>

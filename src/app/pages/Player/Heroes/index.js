@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { getHeroImage, getHeroLocalizedName } from 'app/helpers/utils'
@@ -21,8 +21,6 @@ const Heroes = () => {
     'With',
     'Against',
   ]
-
-  useEffect(() => scrollTo(0, 0))
 
   return (
     <Container>
