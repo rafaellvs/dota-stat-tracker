@@ -1,7 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { getHeroImage, getSlotColor, getPlayerItems } from 'app/helpers/utils'
+import {
+  getHeroImage,
+  getSlotColor,
+  getPlayerItems,
+  formatNumber,
+} from 'app/helpers/utils'
 
 import Image from 'app/components/core/Image'
 import Table from 'app/components/core/Table'
@@ -20,10 +25,15 @@ import {
 const Team = ({ players }) => {
   const columns = [
     'Hero',
-    'Level',
+    'Lvl',
     'KDA',
     'CS',
-    'Items'
+    'GPM',
+    'XPM',
+    'NW',
+    'HD',
+    'HH',
+    'Items',
   ]
 
   return (
@@ -32,7 +42,7 @@ const Team = ({ players }) => {
         {
           players.map(player =>
             <tr key={player.hero_id}>
-              <Cell id='hero' width='200px'>
+              <Cell id='hero'>
                 <HeroPlayed>
                   <Image src={getHeroImage(player.hero_id)} />
                   <PlayerName color={getSlotColor(player.player_slot)} variant='hideOverflow'>
@@ -45,7 +55,7 @@ const Team = ({ players }) => {
                 </HeroPlayed>
               </Cell>
 
-              <Cell id='level'>
+              <Cell id='lvl'>
                 {player.level}
               </Cell>
 
@@ -55,6 +65,26 @@ const Team = ({ players }) => {
 
               <Cell id='cs'>
                 {`${player.last_hits}/${player.denies}`}
+              </Cell>
+
+              <Cell id='gpm'>
+                {player.gold_per_min}
+              </Cell>
+
+              <Cell id='xpm'>
+                {player.xp_per_min}
+              </Cell>
+
+              <Cell id='nw'>
+                {formatNumber(player.gold_spent)}
+              </Cell>
+
+              <Cell id='hd'>
+                {formatNumber(player.hero_damage)}
+              </Cell>
+
+              <Cell id='hh'>
+                {formatNumber(player.hero_healing)}
               </Cell>
 
               <Cell id='items' width='1%'>
