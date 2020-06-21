@@ -5,7 +5,9 @@ const colors = {
   black: 'black',
   white: 'white',
   green: '#03ff1c',
-  red: 'red'
+  darkgreen: 'green',
+  red: 'red',
+  blue: '#5647ff',
 }
 
 const variants = {
@@ -16,11 +18,11 @@ const variants = {
   },
 
   win: {
-    color: colors.green
+    color: colors.green,
   },
 
   loss: {
-    color: colors.red
+    color: colors.red,
   }
 }
 
@@ -32,7 +34,7 @@ const theme = {
   colors,
   variants,
   navbarHeight,
-  boxShadow
+  boxShadow,
 }
 
 export default theme
