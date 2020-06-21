@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  box-shadow: ${theme.boxShadow};
+  box-shadow: ${theme.boxShadow.noBreadcrumbs};
 `
 
 export const TabsContainer = styled.div`

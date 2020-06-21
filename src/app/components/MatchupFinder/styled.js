@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   padding: 3rem;
   background: ${theme.colors.background};
-  box-shadow: ${theme.boxShadow};
+  box-shadow: ${theme.boxShadow.noBreadcrumbs};
 `
 
 export const Form = styled.form`
