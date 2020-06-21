@@ -11,7 +11,7 @@ export const Container = styled.div`
   width: 100%;
   padding: 3rem;
   background: ${theme.colors.background};
-  box-shadow: ${theme.boxShadow};
+  box-shadow: ${theme.boxShadow.noBreadcrumbs};
 `
 
 export const Form = styled(CoreForm)`
