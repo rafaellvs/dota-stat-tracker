@@ -13,8 +13,8 @@ export const Container = styled.div`
 export const HeroPlayed = styled.div`
   display: flex;
   align-items: center;
-  width: 180px;
-
+  width: 150px;
+  
   img {
     margin-right: .7rem;
   }
@@ -44,6 +44,10 @@ export const Inventory = styled.div`
 
   img {
     width: 40px;
+  }
+
+  img:last-child {
+    margin-left: 1rem;
   }
 `
 
