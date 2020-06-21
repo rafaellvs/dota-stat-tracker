@@ -26,9 +26,12 @@ const variants = {
   }
 }
 
-const navbarHeight = '55px'
+const boxShadow = {
+  default: '10px 30px 20px 10px rgba(0,0,0,0.75);',
+  noBreadcrumbs: '10px 10px 20px 10px rgba(0,0,0,0.75);',
+}
 
-const boxShadow = '10px 0px 20px 10px rgba(0,0,0,0.75);'
+const navbarHeight = '55px'
 
 const theme = {
   colors,
