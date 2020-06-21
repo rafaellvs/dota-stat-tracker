@@ -124,6 +124,16 @@ export const getTimeElapsed = time => {
   )
 }
 
+export const formatNumber = num => {
+  // formats like 1100 to 1.1k
+  if (num < 1000) return num
+
+  const lastTwoDeleted = num.toString().slice(0, -2)
+  const formatted = `${lastTwoDeleted.slice(0, -1)}.${lastTwoDeleted.slice(-1)}k`
+
+  return formatted
+}
+
 // -------------
 // item related
 export const getItemName = id =>
@@ -141,6 +151,7 @@ export const getPlayerItems = player => {
   const item3 = getItemImage(player.item_3)
   const item4 = getItemImage(player.item_4)
   const item5 = getItemImage(player.item_5)
+  const itemNeutral = getItemImage(player.item_neutral)
 
   const backpack0 = getItemImage(player.backpack_0)
   const backpack1 = getItemImage(player.backpack_1)
@@ -148,7 +159,7 @@ export const getPlayerItems = player => {
   const backpack3 = getItemImage(player.backpack_3)
 
   return {
-    inventory: [item0, item1, item2, item3, item4, item5],
+    inventory: [item0, item1, item2, item3, item4, item5, itemNeutral],
     backpack: [backpack0, backpack1, backpack2, backpack3]
   }
 }

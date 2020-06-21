@@ -30,20 +30,27 @@ const Match = ({ id }) => {
 
   return !isEmpty(match) &&
     <Container>
-      <Text component='h1'>Match {match.match_id}</Text>
-      <Text>{getTimeElapsed(match.start_time)}</Text>
-      <Text component='h2'>
+      <Text component='h1'>
+        Match {match.match_id}
+      </Text>
+      <Text padding='.5rem 0'>
+        {getTimeElapsed(match.start_time)}
+      </Text>
+      <Text component='h2' variant={match.radiant_win ? 'win' : 'loss'}>
         {
           match.radiant_win
             ? 'Radiant Victory'
             : 'Dire Victory'
         }
       </Text>
-      <Text component='h2'>
+      <Text component='h2' padding='0 0 .5rem 0'>
         {`${match.radiant_score} - ${match.dire_score}`}
       </Text>
+
       <Text>{getGameDuration(match.duration)}</Text>
-      <Text>{getGameMode(match.game_mode)}</Text>
+      <Text padding='.3rem 0'>
+        {getGameMode(match.game_mode)}
+      </Text>
       <Text>{getLobbyType(match.lobby_type)}</Text>
 
       <Teams>
