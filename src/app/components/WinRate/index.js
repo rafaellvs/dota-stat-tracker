@@ -7,18 +7,24 @@ import {
   Container,
   Bar,
   PercentBar,
-  WinRate
+  WinRate,
 } from './styled'
 
 const HeroWinRate = ({ wins, total }) => {
-  const winRate = (wins / total * 100).toFixed(1)
+  let winRate = 0
+
+  if (total) winRate = (wins / total * 100).toFixed(1)
 
   return (
     <Container>
-      <Bar>
+      <Bar total={total}>
         <PercentBar winRate={winRate} />
         <WinRate>
-          {winRate}%
+          {
+            winRate
+              ? `${winRate}%`
+              : '-'
+          }
         </WinRate>
       </Bar>
 
