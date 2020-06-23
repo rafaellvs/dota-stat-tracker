@@ -9,18 +9,25 @@ import Page404 from 'app/pages/Page404'
 import Home from 'app/pages/Home'
 import FindMatchup from 'app/pages/FindMatchup'
 import SearchResults from 'app/pages/SearchResults'
+
 import Player from 'app/pages/Player'
 import PlayerIndex from 'app/components/PlayerProfile/Index'
 import PlayerMatches from 'app/pages/Player/Matches'
 import PlayerHeroes from 'app/pages/Player/Heroes'
 import PlayerPeers from 'app/pages/Player/Peers'
+
 import Matches from 'app/pages/Matches'
 import MatchesIndex from 'app/pages/Matches/Index'
 import ProMatches from 'app/pages/Matches/ProMatches'
 import PublicMatches from 'app/pages/Matches/PublicMatches'
 import Match from 'app/pages/Matches/Match'
+
 import Teams from 'app/pages/Teams'
-import Team from 'app/components/Team'
+import TeamsIndex from 'app/pages/Teams/Index'
+import Team from 'app/pages/Teams/Team/'
+import TeamIndex from 'app/pages/Teams/Team/Index'
+import TeamMatches from 'app/pages/Teams/Team/Matches'
+import TeamPlayers from 'app/pages/Teams/Team/Players'
 
 import loading from 'assets/images/loading.gif'
 
@@ -73,8 +80,15 @@ const AppRouter = () => {
             <Match path=':id' />
           </Matches>
 
-          <Teams path='teams' />
-          <Team path='teams/:id' />
+          <Teams path='teams'>
+            <TeamsIndex path='/' />
+
+            <Team path=':id'>
+              <TeamIndex path='/' />
+              <TeamMatches path='matches' />
+              <TeamPlayers path='players' />
+            </Team>
+          </Teams>
         </ReachRouter>
       </MainContent>
     </Section>
