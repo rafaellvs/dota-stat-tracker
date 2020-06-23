@@ -42,7 +42,7 @@ export const fetchTeams = () =>
       .then(response => response.json())
       .then(data => dispatch(
         receiveTeams(
-          data.filter((d, index) => index < 50)
+          data.filter((d, index) => index < 54)
         )
       ))
   }
