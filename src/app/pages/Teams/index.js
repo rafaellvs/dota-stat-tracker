@@ -1,41 +1,15 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { navigate } from '@reach/router'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { isEmpty } from 'app/helpers/utils'
-import { fetchTeams } from 'app/redux/actions/teams'
+import { Container } from './styled'
 
-import Image from 'app/components/core/Image'
-import Text from 'app/components/core/Text'
+const Teams = ({ children }) =>
+  <Container>
+    {children}
+  </Container>
 
-import { Container, Team } from './styled'
-
-const Teams = () => {
-  const dispatch = useDispatch()
-  const teams = useSelector(state => state.teams.items)
-
-  const handleClick = id =>
-    navigate(`/teams/${id}`)
-
-  useEffect(() => {
-    dispatch(fetchTeams())
-  }, [])
-
-  return !isEmpty(teams) &&
-    <Container>
-      {
-        teams.map(team =>
-          <Team
-            key={team.team_id}
-            onClick={() => handleClick(team.team_id)}
-          >
-            <Image src={team.logo_url} />
-            <Text>{team.name}</Text>
-            <Text>{team.rating}</Text>
-          </Team>
-        )
-      }
-    </Container>
+Teams.propTypes = {
+  children: PropTypes.node,
 }
 
 export default Teams
