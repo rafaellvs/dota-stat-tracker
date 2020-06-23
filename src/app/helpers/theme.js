@@ -12,6 +12,7 @@ const colors = {
 
 const variants = {
   hideOverflow: {
+    maxWidth: '100%',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
