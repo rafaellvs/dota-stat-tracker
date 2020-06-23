@@ -1,3 +1,3 @@
 export const resetState = () => ({
-  type: 'RESET_STATE'
+  type: 'RESET_STATE',
 })

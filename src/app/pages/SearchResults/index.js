@@ -42,7 +42,7 @@ const SearchResults = ({ query, input, location }) => {
 SearchResults.propTypes = {
   query: PropTypes.string,
   input: PropTypes.string,
-  location: PropTypes.object
+  location: PropTypes.object,
 }
 
 export default SearchResults

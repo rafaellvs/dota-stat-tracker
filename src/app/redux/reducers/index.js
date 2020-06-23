@@ -7,7 +7,7 @@ import teams from './teams'
 const appReducer = combineReducers({
   players,
   matches,
-  teams
+  teams,
 })
 
 const rootReducer = (state, action) => {

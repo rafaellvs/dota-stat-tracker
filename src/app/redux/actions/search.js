@@ -15,7 +15,7 @@ export const fetchAll = input => {
         .then(response => {
           if (!response.ok) return []
           return response.json()
-        })
+        }),
     ]).then(data => {
       dispatch(receivePlayers(data[0]))
       dispatch(receiveMatches(data[1]))

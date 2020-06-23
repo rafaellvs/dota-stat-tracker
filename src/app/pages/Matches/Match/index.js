@@ -64,7 +64,7 @@ const Match = ({ id }) => {
 }
 
 Match.propTypes = {
-  id: PropTypes.string
+  id: PropTypes.string,
 }
 
 export default Match

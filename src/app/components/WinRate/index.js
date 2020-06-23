@@ -37,7 +37,7 @@ const HeroWinRate = ({ wins, total }) => {
 
 HeroWinRate.propTypes = {
   wins: PropTypes.number,
-  total: PropTypes.number
+  total: PropTypes.number,
 }
 
 export default HeroWinRate

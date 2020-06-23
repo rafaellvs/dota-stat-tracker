@@ -35,7 +35,7 @@ export const generateHeroesDatalist = () => {
           <option
             key={hero.id}
             value={hero.localized_name}
-          />,
+          />
         )
       }
     </datalist>
@@ -160,7 +160,7 @@ export const getPlayerItems = player => {
 
   return {
     inventory: [item0, item1, item2, item3, item4, item5, itemNeutral],
-    backpack: [backpack0, backpack1, backpack2, backpack3]
+    backpack: [backpack0, backpack1, backpack2, backpack3],
   }
 }
 

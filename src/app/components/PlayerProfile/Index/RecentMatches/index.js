@@ -9,7 +9,7 @@ import {
   getSkillBracket,
   getGameDuration,
   getLobbyType,
-  getTimeElapsed
+  getTimeElapsed,
 } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'

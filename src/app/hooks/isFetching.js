@@ -5,7 +5,7 @@ export const useFetching = () => {
   const {
     players,
     matches,
-    teams
+    teams,
   } = useSelector(state => state)
 
   const [isFetching, setIsFetching] = useState(false)

@@ -7,7 +7,7 @@ import Text from 'app/components/core/Text'
 import {
   Container,
   Result,
-  Avatar
+  Avatar,
 } from './styled'
 
 const Results = () => {

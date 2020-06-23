@@ -21,7 +21,7 @@ const SearchContent = ({ selected }) =>
   renderContent(selected)
 
 SearchContent.propTypes = {
-  selected: PropTypes.string
+  selected: PropTypes.string,
 }
 
 export default SearchContent

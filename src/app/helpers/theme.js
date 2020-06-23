@@ -24,7 +24,7 @@ const variants = {
 
   loss: {
     color: colors.red,
-  }
+  },
 }
 
 const boxShadow = {
