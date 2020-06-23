@@ -39,3 +39,14 @@ export const fetchSelectedPlayer = id => {
     ]).then(data => dispatch(receiveSelectedPlayer(data)))
   }
 }
+
+export const fetchProPlayers = () => {
+  return dispatch => {
+    dispatch(resetState())
+    dispatch(requestPlayers())
+
+    return fetch('https://api.opendota.com/api/proPlayers?limit=100')
+      .then(response => response.json())
+      .then(data => dispatch(receivePlayers(data)))
+  }
+}
