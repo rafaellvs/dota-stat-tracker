@@ -4,8 +4,14 @@ import theme from 'app/helpers/theme'
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
+`
+
+export const TeamPlayers = styled.div`
+  display: flex;
+  justify-content: space-between;
 `
 
 export const Player = styled.div`
@@ -14,7 +20,8 @@ export const Player = styled.div`
   transition: background .3s;
 
   img {
-    max-width: 100px;
+    width: 100px;
+    height: 100px;
   }
 
   &:hover {

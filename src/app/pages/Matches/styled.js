@@ -10,7 +10,7 @@ export const Container = styled.div`
   box-shadow: ${theme.boxShadow.default};
   padding: 3rem;
 
-  & > div{
+  & > div {
     width: 100%;
   }
 `
