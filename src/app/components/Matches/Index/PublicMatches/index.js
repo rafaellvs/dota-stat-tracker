@@ -6,7 +6,7 @@ import {
   getLobbyType,
   getGameMode,
   getGameDuration,
-  getTimeElapsed
+  getTimeElapsed,
 } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'

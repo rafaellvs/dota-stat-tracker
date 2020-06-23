@@ -5,7 +5,7 @@ const initialState = {
     proMatches: [],
     publicMatches: [],
   },
-  selected: {}
+  selected: {},
 }
 
 const matches = (state = initialState, action) => {
@@ -13,14 +13,14 @@ const matches = (state = initialState, action) => {
     case 'REQUEST_MATCHES':
       return {
         ...state,
-        isFetching: true
+        isFetching: true,
       }
 
     case 'RECEIVE_SELECTED_MATCH':
       return {
         ...state,
         isFetching: false,
-        selected: action.selected
+        selected: action.selected,
       }
 
     case 'RECEIVE_MATCHES':
@@ -29,8 +29,8 @@ const matches = (state = initialState, action) => {
         isFetching: false,
         items: {
           ...state.items,
-          search: action.items
-        }
+          search: action.items,
+        },
       }
 
     case 'RECEIVE_PRO_MATCHES':
@@ -40,7 +40,7 @@ const matches = (state = initialState, action) => {
         items: {
           ...state.items,
           proMatches: action.proMatches,
-        }
+        },
       }
 
     case 'RECEIVE_PUBLIC_MATCHES':
@@ -50,7 +50,7 @@ const matches = (state = initialState, action) => {
         items: {
           ...state.items,
           publicMatches: action.publicMatches,
-        }
+        },
       }
 
     case 'RECEIVE_ALL_MATCHES':
@@ -61,7 +61,7 @@ const matches = (state = initialState, action) => {
           ...state.items,
           proMatches: action.proMatches,
           publicMatches: action.publicMatches,
-        }
+        },
       }
 
     default:

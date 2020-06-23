@@ -10,8 +10,8 @@ import store from 'app/redux/store'
 
 WebFont.load({
   google: {
-    families: ['Rajdhani']
-  }
+    families: ['Rajdhani'],
+  },
 })
 
 render(

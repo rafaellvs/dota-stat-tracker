@@ -41,7 +41,7 @@ const Table = ({ columns, children }) => {
 
 Table.propTypes = {
   columns: PropTypes.array,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 export default Table

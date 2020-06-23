@@ -9,21 +9,21 @@ const teams = (state = initialState, action) => {
     case 'REQUEST_TEAMS':
       return {
         ...state,
-        isFetching: true
+        isFetching: true,
       }
 
     case 'RECEIVE_TEAMS':
       return {
         ...state,
         isFetching: false,
-        items: action.items
+        items: action.items,
       }
 
     case 'RECEIVE_SELECTED_TEAM':
       return {
         ...state,
         isFetching: false,
-        selected: action.selected
+        selected: action.selected,
       }
 
     default:

@@ -7,7 +7,7 @@ import {
   Container,
   TabsContainer,
   Tab,
-  ContentContainer
+  ContentContainer,
 } from './styled'
 
 const Tabs = ({ selected, setSelected, children }) =>
@@ -34,7 +34,7 @@ const Tabs = ({ selected, setSelected, children }) =>
 Tabs.propTypes = {
   selected: PropTypes.string,
   setSelected: PropTypes.func,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 export default Tabs

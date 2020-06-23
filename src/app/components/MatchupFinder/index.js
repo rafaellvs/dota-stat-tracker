@@ -9,19 +9,19 @@ import {
   Container,
   Form,
   Input,
-  Submit
+  Submit,
 } from './styled'
 
 const MatchupFinder = () => {
   const [input, setInput] = useState({
     teamA: '',
-    teamB: ''
+    teamB: '',
   })
 
   const handleInput = event => {
     setInput({
       ...input,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     })
   }
 

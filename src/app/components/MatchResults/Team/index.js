@@ -23,7 +23,7 @@ const Team = ({ heroes }) => {
 }
 
 Team.propTypes = {
-  heroes: PropTypes.array
+  heroes: PropTypes.array,
 }
 
 export default Team

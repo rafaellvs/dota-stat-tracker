@@ -1,7 +1,7 @@
 import { resetState } from './resetState'
 
 export const requestPlayers = () => ({
-  type: 'REQUEST_PLAYERS'
+  type: 'REQUEST_PLAYERS',
 })
 
 export const receivePlayers = data => ({
@@ -17,7 +17,7 @@ export const receiveSelectedPlayer = data => ({
     heroes: data[2],
     matches: data[3],
     peers: data[4],
-  }
+  },
 })
 
 export const fetchSelectedPlayer = id => {

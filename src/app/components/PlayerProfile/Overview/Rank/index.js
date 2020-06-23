@@ -4,13 +4,13 @@ import { useSelector } from 'react-redux'
 import {
   getStarImage,
   getMedalImage,
-  uncalibratedMedalImage
+  uncalibratedMedalImage,
 } from 'app/helpers/utils'
 
 import {
   Container,
   Star,
-  Medal
+  Medal,
 } from './styled'
 
 const Rank = () => {

@@ -457,7 +457,7 @@ const items = [
   {
     id: 87,
     name: 'recipe_ring_of_basilius',
-    localized_name: 'Ring of Basilius Recipe'
+    localized_name: 'Ring of Basilius Recipe',
   },
   {
     id: 88,
@@ -1041,7 +1041,7 @@ const items = [
   {
     id: 227,
     name: 'recipe_solar_crest',
-    localized_name: 'Solar Crest Recipe'
+    localized_name: 'Solar Crest Recipe',
   },
   {
     id: 229,
@@ -1318,7 +1318,7 @@ const items = [
     id: 325,
     name: 'princes_knife',
     localized_name: "Prince's Knife",
-    er: 4
+    er: 4,
   },
   {
     id: 330,
@@ -1514,7 +1514,7 @@ const items = [
     id: 196,
     name: 'diffusal_blade_2',
     localized_name: 'Diffusal Blade',
-  }
+  },
 ]
 
 export default items

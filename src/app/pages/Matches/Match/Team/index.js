@@ -19,7 +19,7 @@ import {
   PlayerLink,
   Items,
   Inventory,
-  Backpack
+  Backpack,
 } from './styled'
 
 const Team = ({ players }) => {
@@ -123,7 +123,7 @@ const Team = ({ players }) => {
 }
 
 Team.propTypes = {
-  players: PropTypes.array
+  players: PropTypes.array,
 }
 
 export default Team

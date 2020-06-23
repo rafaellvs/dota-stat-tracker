@@ -14,7 +14,7 @@ const SearchTabs = ({ selected, setSelected }) =>
 
 SearchTabs.propTypes = {
   selected: PropTypes.string,
-  setSelected: PropTypes.func
+  setSelected: PropTypes.func,
 }
 
 export default SearchTabs

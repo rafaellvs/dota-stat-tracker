@@ -8,9 +8,9 @@ const heroes = [
     roles: [
       'Carry',
       'Escape',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 2,
@@ -22,9 +22,9 @@ const heroes = [
       'Initiator',
       'Durable',
       'Disabler',
-      'Jungler'
+      'Jungler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 3,
@@ -36,9 +36,9 @@ const heroes = [
       'Support',
       'Disabler',
       'Nuker',
-      'Durable'
+      'Durable',
     ],
-    legs: 4
+    legs: 4,
   },
   {
     id: 4,
@@ -51,9 +51,9 @@ const heroes = [
       'Disabler',
       'Jungler',
       'Nuker',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 5,
@@ -65,9 +65,9 @@ const heroes = [
       'Support',
       'Disabler',
       'Nuker',
-      'Jungler'
+      'Jungler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 6,
@@ -78,9 +78,9 @@ const heroes = [
     roles: [
       'Carry',
       'Disabler',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 7,
@@ -92,9 +92,9 @@ const heroes = [
       'Support',
       'Initiator',
       'Disabler',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 8,
@@ -105,9 +105,9 @@ const heroes = [
     roles: [
       'Carry',
       'Pusher',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 9,
@@ -120,9 +120,9 @@ const heroes = [
       'Support',
       'Escape',
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 10,
@@ -135,9 +135,9 @@ const heroes = [
       'Escape',
       'Durable',
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 11,
@@ -147,9 +147,9 @@ const heroes = [
     attack_type: 'Ranged',
     roles: [
       'Carry',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 12,
@@ -161,9 +161,9 @@ const heroes = [
       'Carry',
       'Escape',
       'Pusher',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 13,
@@ -175,9 +175,9 @@ const heroes = [
       'Initiator',
       'Disabler',
       'Escape',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 14,
@@ -189,9 +189,9 @@ const heroes = [
       'Disabler',
       'Initiator',
       'Durable',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 15,
@@ -203,9 +203,9 @@ const heroes = [
       'Carry',
       'Durable',
       'Nuker',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 16,
@@ -219,9 +219,9 @@ const heroes = [
       'Support',
       'Nuker',
       'Escape',
-      'Jungler'
+      'Jungler',
     ],
-    legs: 6
+    legs: 6,
   },
   {
     id: 17,
@@ -234,9 +234,9 @@ const heroes = [
       'Escape',
       'Nuker',
       'Initiator',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 18,
@@ -249,9 +249,9 @@ const heroes = [
       'Disabler',
       'Initiator',
       'Durable',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 19,
@@ -265,9 +265,9 @@ const heroes = [
       'Pusher',
       'Initiator',
       'Durable',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 20,
@@ -280,9 +280,9 @@ const heroes = [
       'Initiator',
       'Disabler',
       'Nuker',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 21,
@@ -295,9 +295,9 @@ const heroes = [
       'Support',
       'Disabler',
       'Escape',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 22,
@@ -306,9 +306,9 @@ const heroes = [
     primary_attr: 'int',
     attack_type: 'Ranged',
     roles: [
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 23,
@@ -322,9 +322,9 @@ const heroes = [
       'Disabler',
       'Initiator',
       'Durable',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 25,
@@ -336,9 +336,9 @@ const heroes = [
       'Support',
       'Carry',
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 26,
@@ -350,9 +350,9 @@ const heroes = [
       'Support',
       'Disabler',
       'Nuker',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 27,
@@ -365,9 +365,9 @@ const heroes = [
       'Pusher',
       'Disabler',
       'Nuker',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 28,
@@ -380,9 +380,9 @@ const heroes = [
       'Durable',
       'Initiator',
       'Disabler',
-      'Escape'
+      'Escape',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 29,
@@ -394,9 +394,9 @@ const heroes = [
       'Initiator',
       'Durable',
       'Disabler',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 30,
@@ -407,9 +407,9 @@ const heroes = [
     roles: [
       'Support',
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 31,
@@ -419,9 +419,9 @@ const heroes = [
     attack_type: 'Ranged',
     roles: [
       'Support',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 32,
@@ -432,9 +432,9 @@ const heroes = [
     roles: [
       'Carry',
       'Escape',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 33,
@@ -446,9 +446,9 @@ const heroes = [
       'Disabler',
       'Jungler',
       'Initiator',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 34,
@@ -459,9 +459,9 @@ const heroes = [
     roles: [
       'Carry',
       'Nuker',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 35,
@@ -471,9 +471,9 @@ const heroes = [
     attack_type: 'Ranged',
     roles: [
       'Carry',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 36,
@@ -485,9 +485,9 @@ const heroes = [
       'Carry',
       'Nuker',
       'Durable',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 37,
@@ -498,9 +498,9 @@ const heroes = [
     roles: [
       'Support',
       'Initiator',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 38,
@@ -512,9 +512,9 @@ const heroes = [
       'Initiator',
       'Disabler',
       'Durable',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 39,
@@ -525,9 +525,9 @@ const heroes = [
     roles: [
       'Carry',
       'Nuker',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 40,
@@ -540,9 +540,9 @@ const heroes = [
       'Nuker',
       'Initiator',
       'Pusher',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 41,
@@ -555,9 +555,9 @@ const heroes = [
       'Initiator',
       'Disabler',
       'Escape',
-      'Durable'
+      'Durable',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 42,
@@ -570,9 +570,9 @@ const heroes = [
       'Support',
       'Durable',
       'Disabler',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 43,
@@ -584,9 +584,9 @@ const heroes = [
       'Carry',
       'Pusher',
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 44,
@@ -596,9 +596,9 @@ const heroes = [
     attack_type: 'Melee',
     roles: [
       'Carry',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 45,
@@ -608,9 +608,9 @@ const heroes = [
     attack_type: 'Ranged',
     roles: [
       'Nuker',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 46,
@@ -620,9 +620,9 @@ const heroes = [
     attack_type: 'Ranged',
     roles: [
       'Carry',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 47,
@@ -634,9 +634,9 @@ const heroes = [
       'Carry',
       'Durable',
       'Initiator',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 48,
@@ -647,9 +647,9 @@ const heroes = [
     roles: [
       'Carry',
       'Nuker',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 49,
@@ -663,9 +663,9 @@ const heroes = [
       'Durable',
       'Disabler',
       'Initiator',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 50,
@@ -676,9 +676,9 @@ const heroes = [
     roles: [
       'Support',
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 51,
@@ -690,9 +690,9 @@ const heroes = [
       'Initiator',
       'Disabler',
       'Durable',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 52,
@@ -705,9 +705,9 @@ const heroes = [
       'Support',
       'Nuker',
       'Pusher',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 4
+    legs: 4,
   },
   {
     id: 53,
@@ -720,9 +720,9 @@ const heroes = [
       'Jungler',
       'Pusher',
       'Escape',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 54,
@@ -735,9 +735,9 @@ const heroes = [
       'Durable',
       'Jungler',
       'Escape',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 55,
@@ -749,9 +749,9 @@ const heroes = [
       'Initiator',
       'Jungler',
       'Escape',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 56,
@@ -762,9 +762,9 @@ const heroes = [
     roles: [
       'Carry',
       'Escape',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 57,
@@ -775,9 +775,9 @@ const heroes = [
     roles: [
       'Support',
       'Durable',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 58,
@@ -790,9 +790,9 @@ const heroes = [
       'Jungler',
       'Pusher',
       'Durable',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 4
+    legs: 4,
   },
   {
     id: 59,
@@ -803,9 +803,9 @@ const heroes = [
     roles: [
       'Carry',
       'Durable',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 60,
@@ -818,9 +818,9 @@ const heroes = [
       'Initiator',
       'Durable',
       'Disabler',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 61,
@@ -832,9 +832,9 @@ const heroes = [
       'Carry',
       'Pusher',
       'Escape',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 8
+    legs: 8,
   },
   {
     id: 62,
@@ -844,9 +844,9 @@ const heroes = [
     attack_type: 'Melee',
     roles: [
       'Escape',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 63,
@@ -856,9 +856,9 @@ const heroes = [
     attack_type: 'Ranged',
     roles: [
       'Carry',
-      'Escape'
+      'Escape',
     ],
-    legs: 4
+    legs: 4,
   },
   {
     id: 64,
@@ -870,9 +870,9 @@ const heroes = [
       'Support',
       'Nuker',
       'Pusher',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 65,
@@ -884,9 +884,9 @@ const heroes = [
       'Initiator',
       'Jungler',
       'Disabler',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 66,
@@ -897,9 +897,9 @@ const heroes = [
     roles: [
       'Support',
       'Jungler',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 67,
@@ -910,9 +910,9 @@ const heroes = [
     roles: [
       'Carry',
       'Durable',
-      'Escape'
+      'Escape',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 68,
@@ -923,9 +923,9 @@ const heroes = [
     roles: [
       'Support',
       'Disabler',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 69,
@@ -938,9 +938,9 @@ const heroes = [
       'Disabler',
       'Initiator',
       'Durable',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 70,
@@ -952,9 +952,9 @@ const heroes = [
       'Carry',
       'Jungler',
       'Durable',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 71,
@@ -967,9 +967,9 @@ const heroes = [
       'Initiator',
       'Disabler',
       'Durable',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 72,
@@ -980,9 +980,9 @@ const heroes = [
     roles: [
       'Carry',
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 73,
@@ -996,9 +996,9 @@ const heroes = [
       'Durable',
       'Disabler',
       'Initiator',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 74,
@@ -1011,9 +1011,9 @@ const heroes = [
       'Nuker',
       'Disabler',
       'Escape',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 75,
@@ -1026,9 +1026,9 @@ const heroes = [
       'Support',
       'Disabler',
       'Initiator',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 76,
@@ -1039,9 +1039,9 @@ const heroes = [
     roles: [
       'Carry',
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 4
+    legs: 4,
   },
   {
     id: 77,
@@ -1054,9 +1054,9 @@ const heroes = [
       'Pusher',
       'Jungler',
       'Durable',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 78,
@@ -1069,9 +1069,9 @@ const heroes = [
       'Initiator',
       'Durable',
       'Disabler',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 79,
@@ -1083,9 +1083,9 @@ const heroes = [
       'Support',
       'Disabler',
       'Initiator',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 80,
@@ -1097,9 +1097,9 @@ const heroes = [
       'Carry',
       'Pusher',
       'Jungler',
-      'Durable'
+      'Durable',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 81,
@@ -1112,9 +1112,9 @@ const heroes = [
       'Disabler',
       'Durable',
       'Pusher',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 82,
@@ -1128,9 +1128,9 @@ const heroes = [
       'Nuker',
       'Disabler',
       'Initiator',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 83,
@@ -1143,9 +1143,9 @@ const heroes = [
       'Initiator',
       'Durable',
       'Disabler',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 84,
@@ -1158,9 +1158,9 @@ const heroes = [
       'Nuker',
       'Disabler',
       'Durable',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 85,
@@ -1172,9 +1172,9 @@ const heroes = [
       'Support',
       'Durable',
       'Disabler',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 86,
@@ -1185,9 +1185,9 @@ const heroes = [
     roles: [
       'Support',
       'Disabler',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 87,
@@ -1199,9 +1199,9 @@ const heroes = [
       'Support',
       'Disabler',
       'Nuker',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 88,
@@ -1213,9 +1213,9 @@ const heroes = [
       'Disabler',
       'Nuker',
       'Initiator',
-      'Escape'
+      'Escape',
     ],
-    legs: 6
+    legs: 6,
   },
   {
     id: 89,
@@ -1229,9 +1229,9 @@ const heroes = [
       'Pusher',
       'Disabler',
       'Initiator',
-      'Escape'
+      'Escape',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 90,
@@ -1243,9 +1243,9 @@ const heroes = [
       'Support',
       'Nuker',
       'Disabler',
-      'Jungler'
+      'Jungler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 91,
@@ -1256,9 +1256,9 @@ const heroes = [
     roles: [
       'Support',
       'Escape',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 92,
@@ -1271,9 +1271,9 @@ const heroes = [
       'Nuker',
       'Durable',
       'Disabler',
-      'Pusher'
+      'Pusher',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 93,
@@ -1285,9 +1285,9 @@ const heroes = [
       'Carry',
       'Escape',
       'Disabler',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 94,
@@ -1298,9 +1298,9 @@ const heroes = [
     roles: [
       'Carry',
       'Disabler',
-      'Durable'
+      'Durable',
     ],
-    legs: 0
+    legs: 0,
   },
   {
     id: 95,
@@ -1312,9 +1312,9 @@ const heroes = [
       'Carry',
       'Pusher',
       'Disabler',
-      'Durable'
+      'Durable',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 96,
@@ -1327,9 +1327,9 @@ const heroes = [
       'Initiator',
       'Disabler',
       'Nuker',
-      'Escape'
+      'Escape',
     ],
-    legs: 4
+    legs: 4,
   },
   {
     id: 97,
@@ -1341,9 +1341,9 @@ const heroes = [
       'Initiator',
       'Disabler',
       'Nuker',
-      'Escape'
+      'Escape',
     ],
-    legs: 4
+    legs: 4,
   },
   {
     id: 98,
@@ -1354,9 +1354,9 @@ const heroes = [
     roles: [
       'Nuker',
       'Durable',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 99,
@@ -1368,9 +1368,9 @@ const heroes = [
       'Carry',
       'Durable',
       'Initiator',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 100,
@@ -1381,9 +1381,9 @@ const heroes = [
     roles: [
       'Initiator',
       'Disabler',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 101,
@@ -1394,9 +1394,9 @@ const heroes = [
     roles: [
       'Support',
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 102,
@@ -1407,9 +1407,9 @@ const heroes = [
     roles: [
       'Support',
       'Carry',
-      'Durable'
+      'Durable',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 103,
@@ -1421,9 +1421,9 @@ const heroes = [
       'Initiator',
       'Disabler',
       'Nuker',
-      'Durable'
+      'Durable',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 104,
@@ -1436,9 +1436,9 @@ const heroes = [
       'Disabler',
       'Initiator',
       'Durable',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 105,
@@ -1448,9 +1448,9 @@ const heroes = [
     attack_type: 'Ranged',
     roles: [
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 6
+    legs: 6,
   },
   {
     id: 106,
@@ -1463,9 +1463,9 @@ const heroes = [
       'Escape',
       'Nuker',
       'Disabler',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 107,
@@ -1478,9 +1478,9 @@ const heroes = [
       'Escape',
       'Disabler',
       'Initiator',
-      'Durable'
+      'Durable',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 108,
@@ -1493,9 +1493,9 @@ const heroes = [
       'Nuker',
       'Disabler',
       'Durable',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 109,
@@ -1506,9 +1506,9 @@ const heroes = [
     roles: [
       'Carry',
       'Pusher',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 110,
@@ -1521,9 +1521,9 @@ const heroes = [
       'Nuker',
       'Initiator',
       'Escape',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 111,
@@ -1535,9 +1535,9 @@ const heroes = [
       'Support',
       'Nuker',
       'Disabler',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 112,
@@ -1548,9 +1548,9 @@ const heroes = [
     roles: [
       'Support',
       'Disabler',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 113,
@@ -1561,9 +1561,9 @@ const heroes = [
     roles: [
       'Carry',
       'Escape',
-      'Nuker'
+      'Nuker',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 114,
@@ -1575,9 +1575,9 @@ const heroes = [
       'Carry',
       'Escape',
       'Disabler',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 119,
@@ -1589,9 +1589,9 @@ const heroes = [
       'Support',
       'Nuker',
       'Disabler',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 120,
@@ -1605,9 +1605,9 @@ const heroes = [
       'Disabler',
       'Durable',
       'Escape',
-      'Initiator'
+      'Initiator',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 121,
@@ -1619,9 +1619,9 @@ const heroes = [
       'Support',
       'Nuker',
       'Disabler',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 126,
@@ -1633,9 +1633,9 @@ const heroes = [
       'Carry',
       'Escape',
       'Nuker',
-      'Disabler'
+      'Disabler',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 128,
@@ -1647,9 +1647,9 @@ const heroes = [
       'Support',
       'Nuker',
       'Disabler',
-      'Escape'
+      'Escape',
     ],
-    legs: 2
+    legs: 2,
   },
   {
     id: 129,
@@ -1661,10 +1661,10 @@ const heroes = [
       'Carry',
       'Initiator',
       'Disabler',
-      'Durable'
+      'Durable',
     ],
-    legs: 2
-  }
+    legs: 2,
+  },
 ]
 
 export default heroes
