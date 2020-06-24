@@ -2,7 +2,7 @@ import React from 'react'
 
 import Heroes from 'app/components/Players/Player/Heroes'
 
-const HeroesPage = () =>
+const PlayerHeroesPage = () =>
   <Heroes />
 
-export default HeroesPage
+export default PlayerHeroesPage

@@ -1,12 +1,12 @@
 import React from 'react'
 
-import RecentMatches from 'app/components/Teams/TeamIndex/RecentMatches'
-import Players from 'app/components/Teams/TeamIndex/Players'
+import RecentMatches from 'app/components/Teams/Team/Index/RecentMatches'
+import Players from 'app/components/Teams/Team/Index/Players'
 
-const Index = () =>
+const TeamIndex = () =>
   <>
     <RecentMatches />
     <Players />
   </>
 
-export default Index
+export default TeamIndex

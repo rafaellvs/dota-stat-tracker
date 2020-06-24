@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 
 import { Container } from './styled'
 
-const Matches = ({ children }) =>
+const MatchesPage = ({ children }) =>
   <Container>
     {children}
   </Container>
 
-Matches.propTypes = {
+MatchesPage.propTypes = {
   children: PropTypes.node,
 }
 
-export default Matches
+export default MatchesPage

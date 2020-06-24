@@ -8,7 +8,7 @@ import { isEmpty } from 'app/helpers/utils'
 
 import Overview from 'app/components/Players/Player/Overview'
 
-const Player = ({ id, children }) => {
+const PlayerPage = ({ id, children }) => {
   const dispatch = useDispatch()
   const player = useSelector(state => state.players.selected)
 
@@ -24,9 +24,9 @@ const Player = ({ id, children }) => {
     </>
 }
 
-Player.propTypes = {
+PlayerPage.propTypes = {
   id: PropTypes.string,
   children: PropTypes.node,
 }
 
-export default Player
+export default PlayerPage
