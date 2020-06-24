@@ -2,7 +2,7 @@ import React from 'react'
 
 import Matches from 'app/components/Players/Player/Matches'
 
-const MatchesPage = () =>
+const PlayerMatchesPage = () =>
   <Matches />
 
-export default MatchesPage
+export default PlayerMatchesPage

@@ -6,9 +6,9 @@ import { fetchSelectedTeam } from 'app/redux/actions/teams'
 
 import { isEmpty } from 'app/helpers/utils'
 
-import Overview from 'app/components/Teams/Overview'
+import Overview from 'app/components/Teams/Team/Overview'
 
-const Team = ({ id, children }) => {
+const TeamPage = ({ id, children }) => {
   const dispatch = useDispatch()
   const team = useSelector(state => state.teams.selected)
 
@@ -24,9 +24,9 @@ const Team = ({ id, children }) => {
     </>
 }
 
-Team.propTypes = {
+TeamPage.propTypes = {
   id: PropTypes.string,
   children: PropTypes.node,
 }
 
-export default Team
+export default TeamPage

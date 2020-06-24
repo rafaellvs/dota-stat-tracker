@@ -6,7 +6,7 @@ import Peers from 'app/components/Players/Player/Index/Peers'
 
 import { Profile } from './styled'
 
-const Player = () =>
+const PlayerIndex = () =>
   <>
     <RecentMatches />
 
@@ -16,4 +16,4 @@ const Player = () =>
     </Profile>
   </>
 
-export default Player
+export default PlayerIndex

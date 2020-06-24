@@ -1,8 +1,8 @@
 import React from 'react'
 
-import TeamMatches from 'app/components/Teams/Matches'
+import Matches from 'app/components/Teams/Team/Matches'
 
-const Matches = () =>
-  <TeamMatches />
+const TeamMatchesPage = () =>
+  <Matches />
 
-export default Matches
+export default TeamMatchesPage

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 
 import { Container } from './styled'
 
-const Players = ({ children }) =>
+const PlayersPage = ({ children }) =>
   <Container>
     {children}
   </Container>
 
-Players.propTypes = {
+PlayersPage.propTypes = {
   children: PropTypes.node,
 }
 
-export default Players
+export default PlayersPage

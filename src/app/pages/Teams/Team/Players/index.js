@@ -1,8 +1,8 @@
 import React from 'react'
 
-import TeamPlayers from 'app/components/Teams/Players'
+import Players from 'app/components/Teams/Team/Players'
 
-const Players = () =>
-  <TeamPlayers />
+const TeamPlayersPage = () =>
+  <Players />
 
-export default Players
+export default TeamPlayersPage

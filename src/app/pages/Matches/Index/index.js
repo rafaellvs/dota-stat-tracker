@@ -8,9 +8,7 @@ import { isEmpty } from 'app/helpers/utils'
 import ProMatches from 'app/components/Matches/Index/ProMatches'
 import PublicMatches from 'app/components/Matches/Index/PublicMatches'
 
-import { Container } from './styled'
-
-const Matches = () => {
+const Index = () => {
   const dispatch = useDispatch()
   const matches = useSelector(state => state.matches.items.proMatches)
 
@@ -19,10 +17,10 @@ const Matches = () => {
   }, [])
 
   return !isEmpty(matches) &&
-    <Container>
+    <>
       <ProMatches />
       <PublicMatches />
-    </Container>
+    </>
 }
 
-export default Matches
+export default Index
