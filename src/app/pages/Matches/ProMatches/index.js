@@ -1,78 +1,8 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { navigate } from '@reach/router'
+import React from 'react'
 
-import { fetchProMatches } from 'app/redux/actions/matches'
+import ProMatches from 'app/components/Matches/ProMatches'
 
-import {
-  isEmpty,
-  getGameDuration,
-  getTimeElapsed,
-} from 'app/helpers/utils'
+const ProMatchesPage = () =>
+  <ProMatches />
 
-import Text from 'app/components/core/Text'
-import Table from 'app/components/core/Table'
-import Cell from 'app/components/core/Table/Cell'
-
-import { Container } from './styled'
-
-const ProMatches = () => {
-  const dispatch = useDispatch()
-  const matches = useSelector(state => state.matches.items.proMatches)
-
-  const columns = [
-    'League',
-    'Teams',
-    'Duration',
-    'When',
-  ]
-
-  const handleClick = id =>
-    navigate(`/matches/${id}`)
-
-  useEffect(() => {
-    dispatch(fetchProMatches())
-  }, [])
-
-  return !isEmpty(matches) &&
-    <Container>
-      <Text component='h1'>
-        pro matches
-      </Text>
-      <Text padding='1rem 0'>
-        {`showing ${matches.length} matches`}
-      </Text>
-
-      <Table columns={columns}>
-        {
-          matches.map(match =>
-            <tr
-              key={match.match_id}
-              onClick={() => handleClick(match.match_id)}
-            >
-              <Cell id='league'>
-                <div>
-                  <Text>{match.league_name}</Text>
-                  <Text>{match.match_id}</Text>
-                </div>
-              </Cell>
-
-              <Cell id='teams'>
-                {`${match.radiant_name} vs ${match.dire_name}`}
-              </Cell>
-
-              <Cell id='duration'>
-                {getGameDuration(match.duration)}
-              </Cell>
-
-              <Cell id='when'>
-                {getTimeElapsed(match.start_time)}
-              </Cell>
-            </tr>
-          )
-        }
-      </Table>
-    </Container>
-}
-
-export default ProMatches
+export default ProMatchesPage
