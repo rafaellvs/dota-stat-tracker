@@ -6,9 +6,7 @@ import { fetchSelectedPlayer } from 'app/redux/actions/players'
 
 import { isEmpty } from 'app/helpers/utils'
 
-import Overview from 'app/components/PlayerProfile/Overview'
-
-import { Container } from './styled'
+import Overview from 'app/components/Players/Player/Overview'
 
 const Player = ({ id, children }) => {
   const dispatch = useDispatch()
@@ -19,11 +17,11 @@ const Player = ({ id, children }) => {
   }, [id])
 
   return !isEmpty(player) &&
-    <Container>
+    <>
       <Overview />
 
       {children}
-    </Container>
+    </>
 }
 
 Player.propTypes = {

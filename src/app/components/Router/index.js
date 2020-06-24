@@ -10,11 +10,13 @@ import Home from 'app/pages/Home'
 import FindMatchup from 'app/pages/FindMatchup'
 import SearchResults from 'app/pages/SearchResults'
 
-import Player from 'app/pages/Player'
-import PlayerIndex from 'app/components/PlayerProfile/Index'
-import PlayerMatches from 'app/pages/Player/Matches'
-import PlayerHeroes from 'app/pages/Player/Heroes'
-import PlayerPeers from 'app/pages/Player/Peers'
+import Players from 'app/pages/Players'
+import PlayersIndex from 'app/pages/Players/Index'
+import Player from 'app/pages/Players/Player'
+import PlayerIndex from 'app/pages/Players/Player/Index'
+import PlayerMatches from 'app/pages/Players/Player/Matches'
+import PlayerHeroes from 'app/pages/Players/Player/Heroes'
+import PlayerPeers from 'app/pages/Players/Player/Peers'
 
 import Matches from 'app/pages/Matches'
 import MatchesIndex from 'app/pages/Matches/Index'
@@ -66,12 +68,16 @@ const AppRouter = () => {
 
           <SearchResults path='search/:query/:input' />
 
-          <Player path='players/:id'>
-            <PlayerIndex path='/' />
-            <PlayerMatches path='matches' />
-            <PlayerHeroes path='heroes' />
-            <PlayerPeers path='peers' />
-          </Player>
+          <Players path='players'>
+            <PlayersIndex path='/' />
+
+            <Player path=':id'>
+              <PlayerIndex path='/' />
+              <PlayerMatches path='matches' />
+              <PlayerHeroes path='heroes' />
+              <PlayerPeers path='peers' />
+            </Player>
+          </Players>
 
           <Matches path='matches'>
             <MatchesIndex path='/' />
