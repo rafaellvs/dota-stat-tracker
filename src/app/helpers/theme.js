@@ -17,13 +17,15 @@ const variants = {
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
   },
-
   win: {
     color: colors.green,
   },
-
   loss: {
     color: colors.red,
+  },
+  lastCell: {
+    width: '1%',
+    whiteSpace: 'nowrap',
   },
 }
 
