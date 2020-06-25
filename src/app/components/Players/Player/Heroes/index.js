@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import {
@@ -12,12 +12,19 @@ import Image from 'app/components/core/Image'
 import Table from 'app/components/core/Table'
 import Cell from 'app/components/core/Table/Cell'
 
+import Pagination from 'app/components/Pagination'
 import WinRate from 'app/components/WinRate'
+import BackToTop from 'app/components/BackToTop'
 
-import { Container, Hero } from './styled'
+import {
+  Container,
+  PaginationContainer,
+  Hero,
+} from './styled'
 
 const Heroes = () => {
-  const heroes = useSelector(state => state.players.selected.heroes)
+  const allHeroes = useSelector(state => state.players.selected.heroes)
+  const [heroes, setHeroes] = useState(allHeroes.slice(0, 25))
 
   const columns = [
     'Hero',
@@ -28,12 +35,21 @@ const Heroes = () => {
 
   return !isEmpty(heroes) &&
     <Container>
-      <Text component='h2'>
-        most played
-      </Text>
-      <Text padding='1rem 0'>
-        {`showing ${heroes.length} heroes`}
-      </Text>
+      <PaginationContainer>
+        <div>
+          <Text component='h2' padding='0 0 .5rem 0'>
+            heroes
+          </Text>
+          <Text>
+            {`showing ${heroes.length} heroes`}
+          </Text>
+        </div>
+
+        <Pagination
+          array={allHeroes}
+          setArray={setHeroes}
+        />
+      </PaginationContainer>
 
       <Table columns={columns}>
         {
@@ -46,21 +62,32 @@ const Heroes = () => {
                 </Hero>
               </Cell>
 
-              <Cell id='matches' width='1%'>
-                <WinRate wins={hero.win} total={hero.games} />
+              <Cell id='matches' width='180px'>
+                <WinRate
+                  wins={hero.win}
+                  total={hero.games}
+                />
               </Cell>
 
-              <Cell id='with' width='1%'>
-                <WinRate wins={hero.with_win} total={hero.with_games} />
+              <Cell id='with' width='180px'>
+                <WinRate
+                  wins={hero.with_win}
+                  total={hero.with_games}
+                />
               </Cell>
 
-              <Cell id='against' width='1%'>
-                <WinRate wins={hero.against_win} total={hero.against_games} />
+              <Cell id='against' width='180px'>
+                <WinRate
+                  wins={hero.against_win}
+                  total={hero.against_games}
+                />
               </Cell>
             </tr>
           )
         }
       </Table>
+
+      <BackToTop />
     </Container>
 }
 

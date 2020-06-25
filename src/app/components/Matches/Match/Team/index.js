@@ -87,7 +87,7 @@ const Team = ({ players }) => {
                 {formatNumber(player.hero_healing)}
               </Cell>
 
-              <Cell id='items' width='1%'>
+              <Cell id='items' variant='lastCell'>
                 <Items>
                   <Inventory>
                     {

@@ -55,7 +55,7 @@ const RecentMatches = () => {
                   <HeroPlayed>
                     <Image src={getHeroImage(match.hero_id)} />
 
-                    <Text component='h5' variant='hideOverflow'>
+                    <Text component='h5'>
                       {getHeroLocalizedName(match.hero_id)}
                     </Text>
                   </HeroPlayed>
@@ -66,11 +66,9 @@ const RecentMatches = () => {
                 </Cell>
 
                 <Cell id='info'>
-                  <div>
-                    <Text>{getGameMode(match.game_mode)}</Text>
-                    <Text>{getLobbyType(match.lobby_type)}</Text>
-                    <Text>{getSkillBracket(match.skill)}</Text>
-                  </div>
+                  <Text>{getGameMode(match.game_mode)}</Text>
+                  <Text>{getLobbyType(match.lobby_type)}</Text>
+                  <Text>{getSkillBracket(match.skill)}</Text>
                 </Cell>
 
                 <Cell id='result'>
@@ -85,7 +83,7 @@ const RecentMatches = () => {
                   {getGameDuration(match.duration)}
                 </Cell>
 
-                <Cell id='when'>
+                <Cell id='when' variant='lastCell'>
                   {getTimeElapsed(match.start_time)}
                 </Cell>
               </tr>

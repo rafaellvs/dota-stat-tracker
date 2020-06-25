@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
@@ -9,12 +9,19 @@ import Text from 'app/components/core/Text'
 import Table from 'app/components/core/Table'
 import Cell from 'app/components/core/Table/Cell'
 
+import Pagination from 'app/components/Pagination'
 import WinRate from 'app/components/WinRate'
+import BackToTop from 'app/components/BackToTop'
 
-import { Container, Account } from './styled'
+import {
+  Container,
+  PaginationContainer,
+  Account,
+} from './styled'
 
 const Peers = () => {
-  const peers = useSelector(state => state.players.selected.peers)
+  const allPeers = useSelector(state => state.players.selected.peers)
+  const [peers, setPeers] = useState(allPeers.slice(0, 25))
 
   const columns = [
     'Friend',
@@ -27,12 +34,21 @@ const Peers = () => {
 
   return !isEmpty(peers) &&
     <Container>
-      <Text component='h2'>
-        friends
-      </Text>
-      <Text padding='1rem 0'>
-        {`showing ${peers.length} friends`}
-      </Text>
+      <PaginationContainer>
+        <div>
+          <Text component='h2' padding='0 0 .5rem 0'>
+            friends
+          </Text>
+          <Text>
+            {`showing ${peers.length} friends`}
+          </Text>
+        </div>
+
+        <Pagination
+          array={allPeers}
+          setArray={setPeers}
+        />
+      </PaginationContainer>
 
       <Table columns={columns}>
         {
@@ -48,17 +64,25 @@ const Peers = () => {
                 </Account>
               </Cell>
 
-              <Cell id='with'>
-                <WinRate wins={peer.with_win} total={peer.with_games} />
+              <Cell id='with' width='180px'>
+                <WinRate
+                  wins={peer.with_win}
+                  total={peer.with_games}
+                />
               </Cell>
 
-              <Cell id='against'>
-                <WinRate wins={peer.against_win} total={peer.against_games} />
+              <Cell id='against' width='180px'>
+                <WinRate
+                  wins={peer.against_win}
+                  total={peer.against_games}
+                />
               </Cell>
             </tr>
           )
         }
       </Table>
+
+      <BackToTop />
     </Container>
 }
 

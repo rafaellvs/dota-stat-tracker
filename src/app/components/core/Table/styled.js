@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import theme from 'app/helpers/theme'
 
 export const CoreTable = styled.table`
+  table-layout: fixed;
   border-collapse: collapse;
   color: ${theme.colors.white};
 
@@ -16,11 +17,6 @@ export const CoreTable = styled.table`
 
     &:last-child {
       padding-right: 0;
-    }
-
-    &:last-child[id='when'] {
-      width: 1%;
-      white-space: nowrap;
     }
   }
 
