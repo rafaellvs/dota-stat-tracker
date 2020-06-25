@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
@@ -18,10 +18,18 @@ import Image from 'app/components/core/Image'
 import Table from 'app/components/core/Table'
 import Cell from 'app/components/core/Table/Cell'
 
-import { Container, HeroPlayed } from './styled'
+import Pagination from 'app/components/Pagination'
+import BackToTop from 'app/components/BackToTop'
+
+import {
+  Container,
+  HeroPlayed,
+  PaginationContainer,
+} from './styled'
 
 const Matches = () => {
-  const matches = useSelector(state => state.players.selected.matches)
+  const allMatches = useSelector(state => state.players.selected.matches)
+  const [matches, setMatches] = useState(allMatches.slice(0, 25))
 
   const columns = [
     'Hero',
@@ -37,12 +45,21 @@ const Matches = () => {
 
   return !isEmpty(matches) &&
     <Container>
-      <Text component='h2'>
-        matches
-      </Text>
-      <Text padding='1rem 0'>
-        {`showing ${matches.length} matches`}
-      </Text>
+      <PaginationContainer>
+        <div>
+          <Text component='h2' padding='0 0 .5rem 0'>
+            matches
+          </Text>
+          <Text>
+            {`showing ${matches.length} matches`}
+          </Text>
+        </div>
+
+        <Pagination
+          array={allMatches}
+          setArray={setMatches}
+        />
+      </PaginationContainer>
 
       <Table columns={columns}>
         {
@@ -51,26 +68,24 @@ const Matches = () => {
               key={match.match_id}
               onClick={() => handleClick(match)}
             >
-              <Cell id='hero'>
+              <Cell id='hero' width='250px'>
                 <HeroPlayed>
                   <Image src={getHeroImage(match.hero_id)} />
 
-                  <Text component='h5' variant='hideOverflow'>
+                  <Text component='h5'>
                     {getHeroLocalizedName(match.hero_id)}
                   </Text>
                 </HeroPlayed>
               </Cell>
 
-              <Cell id='kda'>
+              <Cell id='kda' width='120px'>
                 {`${match.kills}-${match.deaths}-${match.assists}`}
               </Cell>
 
-              <Cell id='info'>
-                <div>
-                  <Text>{getGameMode(match.game_mode)}</Text>
-                  <Text>{getLobbyType(match.lobby_type)}</Text>
-                  <Text>{getSkillBracket(match.skill)}</Text>
-                </div>
+              <Cell id='info' width='200px'>
+                <Text>{getGameMode(match.game_mode)}</Text>
+                <Text>{getLobbyType(match.lobby_type)}</Text>
+                <Text>{getSkillBracket(match.skill)}</Text>
               </Cell>
 
               <Cell id='result'>
@@ -85,13 +100,15 @@ const Matches = () => {
                 {getGameDuration(match.duration)}
               </Cell>
 
-              <Cell id='when'>
+              <Cell id='when' variant='lastCell'>
                 {getTimeElapsed(match.start_time)}
               </Cell>
             </tr>
           )
         }
       </Table>
+
+      <BackToTop />
     </Container>
 }
 
