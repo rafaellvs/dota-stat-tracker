@@ -81,7 +81,7 @@ const PublicMatches = () => {
                   {getGameDuration(match.duration)}
                 </Cell>
 
-                <Cell id='when'>
+                <Cell id='when' variant='lastCell'>
                   {getTimeElapsed(match.start_time)}
                 </Cell>
               </tr>
