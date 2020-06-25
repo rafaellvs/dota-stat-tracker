@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
@@ -9,10 +9,18 @@ import Text from 'app/components/core/Text'
 import Table from 'app/components/core/Table'
 import Cell from 'app/components/core/Table/Cell'
 
-import { Container, Against } from './styled'
+import Pagination from 'app/components/Pagination'
+import BackToTop from 'app/components/BackToTop'
+
+import {
+  Container,
+  PaginationContainer,
+  Against,
+} from './styled'
 
 const RecentMatches = () => {
-  const matches = useSelector(state => state.teams.selected.matches)
+  const allMatches = useSelector(state => state.teams.selected.matches)
+  const [matches, setMatches] = useState(allMatches.slice(0, 25))
 
   const columns = [
     'League',
@@ -27,52 +35,65 @@ const RecentMatches = () => {
 
   return (
     <Container>
-      <Text component='h2'>
-        matches
-      </Text>
-      <Text padding='1rem 0'>
-        showing 100 matches
-      </Text>
+      <PaginationContainer>
+        <div>
+          <Text component='h2' padding='0 0 .5rem 0'>
+            matches
+          </Text>
+          <Text>
+            {`showing ${matches.length} matches`}
+          </Text>
+        </div>
+
+        <Pagination
+          array={allMatches}
+          setArray={setMatches}
+        />
+      </PaginationContainer>
 
       <Table columns={columns}>
         {
-          matches
-            .filter((match, index) => index < 100)
-            .map(match =>
-              <tr
-                key={match.match_id}
-                onClick={() => handleClick(match.match_id)}
-              >
-                <Cell id='league'>
+          matches.map(match =>
+            <tr
+              key={match.match_id}
+              onClick={() => handleClick(match.match_id)}
+            >
+              <Cell id='league' width='300px'>
+                <Text variant='hideOverflow'>
                   {match.league_name}
-                </Cell>
+                </Text>
+              </Cell>
 
-                <Cell id='against'>
-                  <Against>
-                    <Image src={match.opposing_team_logo} />
-                    <Text>{match.opposing_team_name}</Text>
-                  </Against>
-                </Cell>
+              <Cell id='against' width='300px'>
+                <Against>
+                  <Image src={match.opposing_team_logo} />
+                  <Text variant='hideOverflow'>
+                    {match.opposing_team_name}
+                  </Text>
+                </Against>
+              </Cell>
 
-                <Cell id='result'>
-                  {
-                    match.radiant ^ match.radiant_win
-                      ? <Text variant='loss'>lost match</Text>
-                      : <Text variant='win'>won match</Text>
-                  }
-                </Cell>
+              <Cell id='result'>
+                {
+                  match.radiant ^ match.radiant_win
+                    ? <Text variant='loss'>lost match</Text>
+                    : <Text variant='win'>won match</Text>
+                }
+              </Cell>
 
-                <Cell id='duration'>
-                  {getGameDuration(match.duration)}
-                </Cell>
+              <Cell id='duration'>
+                {getGameDuration(match.duration)}
+              </Cell>
 
-                <Cell id='when'>
-                  {getTimeElapsed(match.start_time)}
-                </Cell>
-              </tr>
-            )
+              <Cell id='when' variant='lastCell'>
+                {getTimeElapsed(match.start_time)}
+              </Cell>
+            </tr>
+          )
         }
       </Table>
+
+      <BackToTop />
     </Container>
   )
 }
