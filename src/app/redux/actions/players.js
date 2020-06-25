@@ -32,7 +32,7 @@ export const fetchSelectedPlayer = id => {
         .then(response => response.json()),
       fetch(`https://api.opendota.com/api/players/${id}/heroes`)
         .then(response => response.json()),
-      fetch(`https://api.opendota.com/api/players/${id}/matches?limit=100`)
+      fetch(`https://api.opendota.com/api/players/${id}/matches`)
         .then(response => response.json()),
       fetch(`https://api.opendota.com/api/players/${id}/peers`)
         .then(response => response.json()),
@@ -45,7 +45,7 @@ export const fetchProPlayers = () => {
     dispatch(resetState())
     dispatch(requestPlayers())
 
-    return fetch('https://api.opendota.com/api/proPlayers?limit=100')
+    return fetch('https://api.opendota.com/api/proPlayers')
       .then(response => response.json())
       .then(data => dispatch(receivePlayers(data)))
   }
