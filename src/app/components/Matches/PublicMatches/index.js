@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
-
-import { fetchPublicMatches } from 'app/redux/actions/matches'
 
 import {
   getLobbyType,
@@ -15,13 +13,15 @@ import Text from 'app/components/core/Text'
 import Table from 'app/components/core/Table'
 import Cell from 'app/components/core/Table/Cell'
 
+import Pagination from 'app/components/Pagination'
 import Team from 'app/components/MatchResults/Team'
+import BackToTop from 'app/components/BackToTop'
 
-import { Container } from './styled'
+import { Container, PaginationContainer } from './styled'
 
 const PublicMatches = () => {
-  const dispatch = useDispatch()
-  const matches = useSelector(state => state.matches.items.publicMatches)
+  const allMatches = useSelector(state => state.matches.items.publicMatches)
+  const [matches, setMatches] = useState(allMatches.slice(0, 25))
 
   const columns = [
     'Match ID',
@@ -34,18 +34,23 @@ const PublicMatches = () => {
   const handleClick = id =>
     navigate(`/matches/${id}`)
 
-  useEffect(() => {
-    dispatch(fetchPublicMatches())
-  }, [])
-
   return (
     <Container>
-      <Text component='h1'>
-        public matches
-      </Text>
-      <Text padding='1rem 0'>
-        {`showing ${matches.length} matches`}
-      </Text>
+      <PaginationContainer>
+        <div>
+          <Text component='h2' padding='0 0 .5rem 0'>
+            public matches
+          </Text>
+          <Text>
+            {`showing ${matches.length} matches`}
+          </Text>
+        </div>
+
+        <Pagination
+          array={allMatches}
+          setArray={setMatches}
+        />
+      </PaginationContainer>
 
       <Table columns={columns}>
         {
@@ -59,42 +64,40 @@ const PublicMatches = () => {
               </Cell>
 
               <Cell id='info'>
-                <div>
-                  <Text>{getGameMode(match.game_mode)}</Text>
-                  <Text>{getLobbyType(match.lobby_type)}</Text>
-                  <Text>{`avg mmr: ${match.avg_mmr}`}</Text>
-                </div>
+                <Text>{getGameMode(match.game_mode)}</Text>
+                <Text>{getLobbyType(match.lobby_type)}</Text>
+                <Text>{`avg mmr: ${match.avg_mmr}`}</Text>
               </Cell>
 
               <Cell id='sides'>
-                <div>
-                  <Team heroes={
-                    match.radiant_team
-                      .split(',')
-                      .map(hero => parseInt(hero))
-                  }
-                  />
+                <Team heroes={
+                  match.radiant_team
+                    .split(',')
+                    .map(hero => parseInt(hero))
+                }
+                />
 
-                  <Team heroes={
-                    match.dire_team
-                      .split(',')
-                      .map(hero => parseInt(hero))
-                  }
-                  />
-                </div>
+                <Team heroes={
+                  match.dire_team
+                    .split(',')
+                    .map(hero => parseInt(hero))
+                }
+                />
               </Cell>
 
               <Cell id='duration'>
                 {getGameDuration(match.duration)}
               </Cell>
 
-              <Cell id='when'>
+              <Cell id='when' variant='lastCell'>
                 {getTimeElapsed(match.start_time)}
               </Cell>
             </tr>
           )
         }
       </Table>
+
+      <BackToTop />
     </Container>
   )
 }

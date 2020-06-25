@@ -5,3 +5,10 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+`
