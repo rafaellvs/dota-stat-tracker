@@ -1,56 +1,88 @@
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
-import { fetchProPlayers } from 'app/redux/actions/players'
+import { getTimeElapsed } from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
+import Image from 'app/components/core/Image'
+import Table from 'app/components/core/Table'
+import Cell from 'app/components/core/Table/Cell'
+
+import Pagination from 'app/components/Pagination'
+import BackToTop from 'app/components/BackToTop'
 
 import {
   Container,
-  Players,
-  Result,
-  Avatar,
+  PaginationContainer,
+  Player,
 } from './styled'
 
 const ProPlayers = () => {
-  const dispatch = useDispatch()
-  const players = useSelector(state => state.players.items)
+  const allPlayers = useSelector(state => state.players.items)
+  const [players, setPlayers] = useState(allPlayers.slice(0, 25))
+
+  const columns = [
+    'Player',
+    'Team',
+    'Last Match',
+  ]
 
   const handleClick = profile =>
     navigate(`/players/${profile.account_id}`)
 
-  useEffect(() => {
-    dispatch(fetchProPlayers())
-  }, [])
-
   return (
     <Container>
-      <Text component='h2'>
-        pro players
-      </Text>
-      <Text padding='1rem 0'>
-        showing 100 players
-      </Text>
+      <PaginationContainer>
+        <div>
+          <Text component='h2' padding='0 0 .5rem 0'>
+            pro players
+          </Text>
+          <Text>
+            {`showing ${players.length} players`}
+          </Text>
+        </div>
 
-      <Players>
+        <Pagination
+          array={allPlayers}
+          setArray={setPlayers}
+        />
+      </PaginationContainer>
+
+      <Table columns={columns}>
         {
-          players
-            .filter((_, index) => index < 100)
-            .map(profile =>
-              <Result
-                key={profile.account_id}
-                onClick={() => handleClick(profile)}
-              >
-                <Avatar src={profile.avatarfull} />
+          players.map(profile =>
+            <tr
+              key={profile.account_id}
+              onClick={() => handleClick(profile)}
+            >
+              <Cell id='player' width='400px'>
+                <Player>
+                  <Image src={profile.avatarfull} />
+                  <Text variant='hideOverflow'>
+                    {profile.name}
+                  </Text>
+                </Player>
+              </Cell>
 
-                <Text variant='hideOverflow'>
-                  {profile.personaname}
-                </Text>
-              </Result>
-            )
+              <Cell id='team'>
+                {profile.team_name}
+              </Cell>
+
+              <Cell id='last-match' variant='lastCell'>
+                {
+                  // last_match_time coming in as ISO 8601 date
+                  getTimeElapsed(
+                    Date.parse(profile.last_match_time) / 1000
+                  )
+                }
+              </Cell>
+            </tr>
+          )
         }
-      </Players>
+      </Table>
+
+      <BackToTop />
     </Container>
   )
 }
