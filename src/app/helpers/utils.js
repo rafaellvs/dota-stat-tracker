@@ -167,3 +167,6 @@ export const getPlayerItems = player => {
 // team related
 export const getPlayerImage = id =>
   `https://www.opendota.com/assets/images/dota2/players/${id}.png`
+
+export const getPlayerDefaultPortrait = () =>
+  'https://www.opendota.com/assets/images/dota2/players/portrait.png'
