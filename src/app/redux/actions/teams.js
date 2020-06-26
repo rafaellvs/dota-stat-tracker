@@ -40,9 +40,5 @@ export const fetchTeams = () =>
 
     return fetch('https://api.opendota.com/api/teams')
       .then(response => response.json())
-      .then(data => dispatch(
-        receiveTeams(
-          data.filter((d, index) => index < 54)
-        )
-      ))
+      .then(data => dispatch(receiveTeams(data)))
   }
