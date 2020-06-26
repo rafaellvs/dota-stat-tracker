@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
-import { getPlayerImage, getPlayerDefaultPortrait } from 'app/helpers/utils'
+import { getPlayerImage } from 'app/helpers/utils'
 
 import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
@@ -20,10 +20,6 @@ const Players = () => {
 
   const current = players.filter(player => player.is_current_team_member)
   const old = players.filter(player => !player.is_current_team_member)
-
-  const handleImageError = event => {
-    event.target.src = getPlayerDefaultPortrait()
-  }
 
   const handleClick = id =>
     navigate(`/players/${id}`)
@@ -46,7 +42,7 @@ const Players = () => {
             >
               <Image
                 src={getPlayerImage(player.account_id)}
-                onError={() => handleImageError(event)}
+                player
               />
               <Text padding='.5rem 0 0 0'>
                 {player.name}
@@ -73,7 +69,7 @@ const Players = () => {
             >
               <Image
                 src={getPlayerImage(player.account_id)}
-                onError={() => handleImageError(event)}
+                player
               />
               <Text padding='.5rem 0 0 0'>
                 {player.name}

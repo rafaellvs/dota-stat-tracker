@@ -37,7 +37,10 @@ const Players = () => {
                 key={player.account_id}
                 onClick={() => handleClick(player.account_id)}
               >
-                <Image src={getPlayerImage(player.account_id)} />
+                <Image
+                  src={getPlayerImage(player.account_id)}
+                  player
+                />
                 <Text padding='.5rem 0 0 0'>
                   {player.name}
                 </Text>
