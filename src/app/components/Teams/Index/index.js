@@ -1,55 +1,95 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
-import { fetchTeams } from 'app/redux/actions/teams'
-
-import { isEmpty } from 'app/helpers/utils'
+import { filterByTimeElapsed, getTimeElapsed } from 'app/helpers/utils'
 
 import Image from 'app/components/core/Image'
 import Text from 'app/components/core/Text'
+import Table from 'app/components/core/Table'
+import Cell from 'app/components/core/Table/Cell'
+
+import Pagination from 'app/components/Pagination'
+import WinRate from 'app/components/WinRate'
+import BackToTop from 'app/components/BackToTop'
 
 import {
   Container,
-  TeamsContainer,
+  PaginationContainer,
   Team,
 } from './styled'
 
 const Teams = () => {
-  const dispatch = useDispatch()
-  const teams = useSelector(state => state.teams.items)
+  const allTeams = useSelector(
+    state => state.teams.items
+      .filter(team => filterByTimeElapsed(team.last_match_time))
+  )
+  const [teams, setTeams] = useState(allTeams.slice(0, 25))
+
+  const columns = [
+    'Team',
+    'Rating',
+    'Winrate',
+    'Last Match',
+  ]
 
   const handleClick = id =>
     navigate(`/teams/${id}`)
 
-  useEffect(() => {
-    dispatch(fetchTeams())
-  }, [])
-
-  return !isEmpty(teams) &&
+  return (
     <Container>
-      <Text component='h1'>
-        teams
-      </Text>
-      <Text padding='1rem 0'>
-        {`showing ${teams.length} teams`}
-      </Text>
+      <PaginationContainer>
+        <div>
+          <Text component='h2' padding='0 0 .5rem 0'>
+            teams
+          </Text>
+          <Text>
+            {`showing ${teams.length} teams that played a match in 1 year`}
+          </Text>
+        </div>
 
-      <TeamsContainer>
+        <Pagination
+          array={allTeams}
+          setArray={setTeams}
+        />
+      </PaginationContainer>
+
+      <Table columns={columns}>
         {
           teams.map(team =>
-            <Team
+            <tr
               key={team.team_id}
               onClick={() => handleClick(team.team_id)}
             >
-              <Image src={team.logo_url} />
-              <Text variant='hideOverflow'>{team.name}</Text>
-              <Text>{team.rating}</Text>
-            </Team>
+              <Cell id='team' width='400px'>
+                <Team>
+                  <Image src={team.logo_url} />
+                  <Text variant='hideOverflow'>{team.name}</Text>
+                </Team>
+              </Cell>
+
+              <Cell id='rating' width='100px'>
+                <Text>{team.rating}</Text>
+              </Cell>
+
+              <Cell id='winrate'>
+                <WinRate
+                  wins={team.wins}
+                  total={team.wins + team.losses}
+                />
+              </Cell>
+
+              <Cell id='last-match' variant='lastCell'>
+                {getTimeElapsed(team.last_match_time)}
+              </Cell>
+            </tr>
           )
         }
-      </TeamsContainer>
+      </Table>
+
+      <BackToTop />
     </Container>
+  )
 }
 
 export default Teams
