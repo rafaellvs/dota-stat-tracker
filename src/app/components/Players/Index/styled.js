@@ -1,32 +1,24 @@
 import styled from 'styled-components'
 
-import theme from 'app/helpers/theme'
-
-import CoreImage from 'app/components/core/Image'
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
 `
 
-export const Players = styled.div`
+export const PaginationContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2rem;
 `
 
-export const Result = styled.div`
-  text-align: center;
-  width: 90px;
-  padding: .4rem;
+export const Player = styled.div`
+  display: flex;
+  align-items: center;
 
-  &:hover {
-    background-color: ${theme.colors.hover};
-    cursor: pointer;
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
   }
-`
-
-export const Avatar = styled(CoreImage)`
-  width: 50px;
 `
