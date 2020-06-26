@@ -124,6 +124,13 @@ export const getTimeElapsed = time => {
   )
 }
 
+export const filterByTimeElapsed = time => {
+  const timeElapsed = Date.now() / 1000 - time
+
+  // 1 year
+  return timeElapsed < 31556952
+}
+
 export const formatNumber = num => {
   // formats like 1100 to 1.1k
   if (num < 1000) return num
