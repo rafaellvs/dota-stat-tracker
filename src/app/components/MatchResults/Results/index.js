@@ -2,39 +2,68 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { navigate } from '@reach/router'
 
-import { getRadiantHeroes, getDireHeroes } from 'app/helpers/utils'
+import {
+  getRadiantHeroes,
+  getDireHeroes,
+  getTimeElapsed,
+} from 'app/helpers/utils'
 
 import Text from 'app/components/core/Text'
+import Table from 'app/components/core/Table'
+import Cell from 'app/components/core/Table/Cell'
+
 import Team from '../Team'
 
-import { Container, Match } from './styled'
+import { Container } from './styled'
 
 const Results = () => {
   const matches = useSelector(state => state.matches.items.search)
+
+  const columns = [
+    'ID',
+    'Radiant / Dire',
+    'Result',
+    'When',
+  ]
 
   const handleClick = match =>
     navigate(`/matches/${match.match_id}`)
 
   return (
     <Container>
-      {
-        matches.map(match =>
-          <Match
-            key={match.match_id}
-            onClick={() => handleClick(match)}
-          >
-            <Text component='h2'>
-              Match {match.match_id}
-            </Text>
+      <Table columns={columns}>
+        {
+          matches.map(match =>
+            <tr
+              key={match.match_id}
+              onClick={() => handleClick(match)}
+            >
+              <Cell id='id'>
+                {match.match_id}
+              </Cell>
 
-            <Text component='h4'>Radiant:</Text>
-            <Team heroes={getRadiantHeroes(match)} />
+              <Cell id='Radiant / Dire'>
+                <Team heroes={getRadiantHeroes(match)} />
+                <Team heroes={getDireHeroes(match)} />
+              </Cell>
 
-            <Text component='h4'>Dire:</Text>
-            <Team heroes={getDireHeroes(match)} />
-          </Match>
-        )
-      }
+              <Cell id='result'>
+                <Text variant={match.teamawin ? 'win' : 'loss'}>
+                  {
+                    match.teamawin
+                      ? 'Radiant Victory'
+                      : 'Dire Victory'
+                  }
+                </Text>
+              </Cell>
+
+              <Cell id='when' variant='lastCell'>
+                {getTimeElapsed(match.start_time)}
+              </Cell>
+            </tr>
+          )
+        }
+      </Table>
     </Container>
   )
 }
