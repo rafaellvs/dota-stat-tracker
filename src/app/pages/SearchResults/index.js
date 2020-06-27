@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { useFetching } from 'app/hooks/isFetching'
 import { fetchAll } from 'app/redux/actions/search'
 import { fetchMatchups } from 'app/redux/actions/matches'
 
-import SearchTabs from 'app/components/SearchTabs'
+import { useFetching } from 'app/hooks/isFetching'
+
+import SearchTabs from 'app/components/Search/SearchTabs'
 
 const SearchResults = ({ query, input, location }) => {
   const dispatch = useDispatch()
