@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 const Input = styled.input`
+  display: block;
   width: 100%;
-  margin: .5rem 0;
+  margin: ${({ margin }) => margin || '1rem 0 0 0'};
 `
 
 export default Input
