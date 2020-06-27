@@ -7,17 +7,19 @@ import { getPlayerDefaultPortrait } from 'app/helpers/utils'
 
 import { StyledImage } from './styled'
 
-const Image = ({ src, width, className, player }) => {
+const Image = ({ src, width, className, player, item }) => {
   const handleError = event => {
     event.target.src =
       player
         ? getPlayerDefaultPortrait()
-        : noPic
+        : item
+          ? ''
+          : noPic
   }
 
   return (
     <StyledImage
-      src={src || noPic}
+      src={src}
       width={width}
       className={className}
       onError={() => handleError(event)}
@@ -30,6 +32,7 @@ Image.propTypes = {
   width: PropTypes.string,
   className: PropTypes.string,
   player: PropTypes.bool,
+  item: PropTypes.bool,
 }
 
 export default Image

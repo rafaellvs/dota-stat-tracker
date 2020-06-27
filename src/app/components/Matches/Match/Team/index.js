@@ -96,6 +96,7 @@ const Team = ({ players }) => {
                           <Image
                             key={item + index}
                             src={item}
+                            item
                           />
                         )
                     }
@@ -108,6 +109,7 @@ const Team = ({ players }) => {
                           <Image
                             key={item + index}
                             src={item}
+                            item
                           />
                         )
                     }
