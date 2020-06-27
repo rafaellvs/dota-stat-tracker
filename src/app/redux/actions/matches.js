@@ -25,12 +25,16 @@ export const receiveMatches = data => ({
   items: data,
 })
 
-export const fetchMatchups = (idA, idB) => {
+export const fetchMatchups = (teamA, teamB) => {
+  // generate query array params
+  const queryTeamA = teamA.map(hero => hero && `teamA[]=${hero}&`).join('')
+  const queryTeamB = teamB.map(hero => hero && `teamB[]=${hero}&`).join('')
+
   return dispatch => {
     dispatch(resetState())
     dispatch(requestMatches())
 
-    return fetch(`https://api.opendota.com/api/findMatches?teamA[]=${idA}&teamB[]=${idB}`)
+    return fetch(`https://api.opendota.com/api/findMatches?${queryTeamA}&${queryTeamB}`)
       .then(response => response.json())
       .then(data => dispatch(receiveMatches(data)))
   }
