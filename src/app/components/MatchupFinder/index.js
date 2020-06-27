@@ -3,33 +3,49 @@ import { navigate } from '@reach/router'
 
 import { getHeroId, generateHeroesDatalist } from 'app/helpers/utils'
 
+import Form from 'app/components/core/Form'
+import Input from 'app/components/core/Input'
 import Text from 'app/components/core/Text'
 
-import {
-  Container,
-  Form,
-  Input,
-  Submit,
-} from './styled'
+import { Container, TeamsContainer } from './styled'
 
 const MatchupFinder = () => {
   const [input, setInput] = useState({
-    teamA: '',
-    teamB: '',
+    teamA: Array.from({ length: 5 }, () => ''),
+    teamB: Array.from({ length: 5 }, () => ''),
   })
 
+  const renderInputs = team =>
+    Array.from({ length: 5 })
+      .map((_, index) =>
+        <Input
+          key={team + index}
+          name={team}
+          data-index={index}
+          type='text'
+          placeholder='hero'
+          list='heroes'
+          value={input[team][index]}
+          onChange={handleInput}
+        />
+      )
+
   const handleInput = event => {
+    const index = event.target.dataset.index
+    const newInputArray = input[event.target.name]
+    newInputArray.splice(index, 1, event.target.value)
+
     setInput({
       ...input,
-      [event.target.name]: event.target.value,
+      [event.target.name]: newInputArray,
     })
   }
 
   const handleSubmit = event => {
     event.preventDefault()
 
-    const teamA = getHeroId(input.teamA)
-    const teamB = getHeroId(input.teamB)
+    const teamA = input.teamA.map(hero => getHeroId(hero))
+    const teamB = input.teamB.map(hero => getHeroId(hero))
 
     navigate(
       `/search/matchups/${teamA}&${teamB}`,
@@ -39,30 +55,26 @@ const MatchupFinder = () => {
 
   return (
     <Container>
-      <Text component='h1'>Matchup Finder</Text>
-
       <Form onSubmit={handleSubmit}>
-        <Input
-          type='text'
-          placeholder='radiant heroes'
-          list='heroes'
-          name='teamA'
-          value={input.teamA}
-          onChange={handleInput}
-        />
+        <TeamsContainer>
+          <div>
+            <Text>Radiant:</Text>
+            {renderInputs('teamA')}
+          </div>
 
-        <Input
-          type='text'
-          placeholder='dire heroes'
-          list='heroes'
-          name='teamB'
-          value={input.teamB}
-          onChange={handleInput}
-        />
+          <div>
+            <Text>Dire:</Text>
+            {renderInputs('teamB')}
+          </div>
+        </TeamsContainer>
 
         {generateHeroesDatalist()}
 
-        <Submit type='submit' value='find matches' />
+        <Input
+          type='submit'
+          value='find matches'
+          margin='2rem 0 0 0'
+        />
       </Form>
     </Container>
   )

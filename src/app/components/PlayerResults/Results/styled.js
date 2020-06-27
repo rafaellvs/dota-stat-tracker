@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const Result = styled.div`
   text-align: center;
   width: 90px;
-  padding: .4rem;
+  padding: 1rem;
 
   &:hover {
     background-color: ${theme.colors.hover};

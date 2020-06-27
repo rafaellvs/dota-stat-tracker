@@ -18,7 +18,7 @@ export const fetchAll = input => {
         }),
     ]).then(data => {
       dispatch(receivePlayers(data[0]))
-      dispatch(receiveMatches(data[1]))
+      dispatch(receiveMatches([data[1]]))
     })
   }
 }

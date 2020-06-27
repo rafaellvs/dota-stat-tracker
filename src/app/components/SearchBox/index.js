@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { navigate } from '@reach/router'
 
+import Form from 'app/components/core/Form'
 import Input from 'app/components/core/Input'
 
-import { Container, Form } from './styled'
+import { Container } from './styled'
 
 const SearchBox = () => {
   const [input, setInput] = useState('')

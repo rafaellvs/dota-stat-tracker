@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import theme from 'app/helpers/theme'
 
 export const Container = styled.div`
@@ -11,18 +12,7 @@ export const Container = styled.div`
   box-shadow: ${theme.boxShadow.noBreadcrumbs};
 `
 
-export const Form = styled.form`
-  width: 60%;
-  padding-top: 1rem;
-`
-
-export const Input = styled.input`
-  width: 100%;
-  margin-top: 1rem;
-`
-
-export const Submit = styled.input`
-  display: block;
-  width: 100%;
-  margin-top: 1rem;
+export const TeamsContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
 `

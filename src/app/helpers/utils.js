@@ -16,7 +16,7 @@ export const isEmpty = obj =>
 // -------------
 // hero related
 export const getHeroId = name =>
-  heroes.find(hero => hero.localized_name === name).id
+  name && heroes.find(hero => hero.localized_name === name).id
 
 export const getHeroName = id =>
   heroes.find(hero => hero.id === parseInt(id)).name
