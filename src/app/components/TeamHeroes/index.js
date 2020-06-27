@@ -7,7 +7,7 @@ import Image from 'app/components/core/Image'
 
 import { Container } from './styled'
 
-const Team = ({ heroes }) => {
+const TeamHeroes = ({ heroes }) => {
   return (
     <Container>
       {
@@ -22,8 +22,8 @@ const Team = ({ heroes }) => {
   )
 }
 
-Team.propTypes = {
+TeamHeroes.propTypes = {
   heroes: PropTypes.array,
 }
 
-export default Team
+export default TeamHeroes

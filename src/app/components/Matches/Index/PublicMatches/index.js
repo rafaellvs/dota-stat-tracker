@@ -13,7 +13,7 @@ import Text from 'app/components/core/Text'
 import Table from 'app/components/core/Table'
 import Cell from 'app/components/core/Table/Cell'
 
-import Team from 'app/components/MatchResults/Team'
+import TeamHeroes from 'app/components/TeamHeroes'
 import More from 'app/components/More'
 
 import { Container } from './styled'
@@ -61,14 +61,14 @@ const PublicMatches = () => {
 
                 <Cell id='sides'>
                   <div>
-                    <Team heroes={
+                    <TeamHeroes heroes={
                       match.radiant_team
                         .split(',')
                         .map(hero => parseInt(hero))
                     }
                     />
 
-                    <Team heroes={
+                    <TeamHeroes heroes={
                       match.dire_team
                         .split(',')
                         .map(hero => parseInt(hero))

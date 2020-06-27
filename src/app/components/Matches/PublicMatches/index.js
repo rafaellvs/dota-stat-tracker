@@ -14,7 +14,7 @@ import Table from 'app/components/core/Table'
 import Cell from 'app/components/core/Table/Cell'
 
 import Pagination from 'app/components/Pagination'
-import Team from 'app/components/MatchResults/Team'
+import TeamHeroes from 'app/components/TeamHeroes'
 import BackToTop from 'app/components/BackToTop'
 
 import { Container, PaginationContainer } from './styled'
@@ -70,14 +70,14 @@ const PublicMatches = () => {
               </Cell>
 
               <Cell id='sides'>
-                <Team heroes={
+                <TeamHeroes heroes={
                   match.radiant_team
                     .split(',')
                     .map(hero => parseInt(hero))
                 }
                 />
 
-                <Team heroes={
+                <TeamHeroes heroes={
                   match.dire_team
                     .split(',')
                     .map(hero => parseInt(hero))
