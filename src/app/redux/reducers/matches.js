@@ -29,7 +29,10 @@ const matches = (state = initialState, action) => {
         isFetching: false,
         items: {
           ...state.items,
-          search: action.items,
+          search:
+            Array.isArray(action.items)
+              ? action.items
+              : [action.items],
         },
       }
 
