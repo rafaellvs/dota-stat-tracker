@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel src/assets/index.html",
     "build": "rm -rf public && parcel build src/assets/index.html --out-dir public --no-source-maps"
@@ -16,7 +17,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-standard": "^4.0.1",
-    "parcel-bundler": "^1.12.4",
+    "parcel": "^2.7.0",
+    "process": "^0.11.10",
     "styled-components": "^5.0.0"
   },
   "dependencies": {
