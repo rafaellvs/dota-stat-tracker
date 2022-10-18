@@ -1515,6 +1515,504 @@ const items = [
     name: 'diffusal_blade_2',
     localized_name: 'Diffusal Blade',
   },
+  {
+    id: 600,
+    name: 'overwhelming_blink',
+    localized_name: 'Overwhelming Blink',
+  },
+  {
+    id: 603,
+    name: 'swift_blink',
+    localized_name: 'Swift Blink',
+  },
+  {
+    id: 604,
+    name: 'arcane_blink',
+    localized_name: 'Arcane Blink',
+  },
+  {
+    id: 606,
+    name: 'recipe_arcane_blink',
+    localized_name: 'Arcane Blink Recipe',
+  },
+  {
+    id: 607,
+    name: 'recipe_swift_blink',
+    localized_name: 'Swift Blink Recipe',
+  },
+  {
+    id: 608,
+    name: 'recipe_overwhelming_blink',
+    localized_name: 'Overwhelming Blink Recipe',
+  },
+  {
+    id: 485,
+    name: 'blitz_knuckles',
+    localized_name: 'Blitz Knuckles',
+  },
+  {
+    id: 473,
+    name: 'voodoo_mask',
+    localized_name: 'Voodoo Mask',
+  },
+  {
+    id: 593,
+    name: 'fluffy_hat',
+    localized_name: 'Fluffy Hat',
+  },
+  {
+    id: 655,
+    name: 'grandmasters_glaive',
+    localized_name: "Grandmaster's Glaive",
+  },
+  {
+    id: 533,
+    name: 'recipe_witch_blade',
+    localized_name: 'Witch Blade Recipe',
+  },
+  {
+    id: 534,
+    name: 'witch_blade',
+    localized_name: 'Witch Blade',
+  },
+  {
+    id: 731,
+    name: 'satchel',
+    localized_name: 'Satchel',
+  },
+  {
+    id: 907,
+    name: 'recipe_wraith_pact',
+    localized_name: 'Wraith Pact Recipe',
+  },
+  {
+    id: 908,
+    name: 'wraith_pact',
+    localized_name: 'Wraith Pact',
+  },
+  {
+    id: 612,
+    name: 'recipe_wind_waker',
+    localized_name: 'Wind Waker Recipe',
+  },
+  {
+    id: 610,
+    name: 'wind_waker',
+    localized_name: 'Wind Waker',
+  },
+  {
+    id: 727,
+    name: 'ultimate_scepter_roshan',
+    localized_name: "Aghanim's Blessing - Roshan",
+  },
+  {
+    id: 609,
+    name: 'aghanims_shard',
+    localized_name: "Aghanim's Shard",
+  },
+  {
+    id: 725,
+    name: 'aghanims_shard_roshan',
+    localized_name: "Aghanim's Shard - Roshan",
+  },
+  {
+    id: 120,
+    name: 'recipe_bloodstone',
+    localized_name: 'Bloodstone Recipe',
+  },
+  {
+    id: 222,
+    name: 'recipe_meteor_hammer',
+    localized_name: 'Meteor Hammer Recipe',
+  },
+  {
+    id: 126,
+    name: 'recipe_blade_mail',
+    localized_name: 'Blade Mail Recipe',
+  },
+  {
+    id: 130,
+    name: 'recipe_hood_of_defiance',
+  },
+  {
+    id: 691,
+    name: 'recipe_eternal_shroud',
+    localized_name: 'Eternal Shroud Recipe',
+  },
+  {
+    id: 692,
+    name: 'eternal_shroud',
+    localized_name: 'Eternal Shroud',
+  },
+  {
+    id: 134,
+    name: 'recipe_monkey_king_bar',
+    localized_name: 'Monkey King Bar Recipe',
+  },
+  {
+    id: 234,
+    name: 'recipe_dragon_lance',
+  },
+  {
+    id: 633,
+    name: 'recipe_helm_of_the_overlord',
+    localized_name: 'Helm of the Overlord Recipe',
+  },
+  {
+    id: 635,
+    name: 'helm_of_the_overlord',
+    localized_name: 'Helm of the Overlord',
+  },
+  {
+    id: 1565,
+    name: 'recipe_gungir',
+    localized_name: 'Gleipnir Recipe',
+  },
+  {
+    id: 1466,
+    name: 'gungir',
+    localized_name: 'Gleipnir',
+  },
+  {
+    id: 175,
+    name: 'recipe_ethereal_blade',
+    localized_name: 'Ethereal Blade Recipe',
+  },
+  {
+    id: 640,
+    name: 'recipe_orb_of_corrosion',
+    localized_name: 'Orb of Corrosion Recipe',
+  },
+  {
+    id: 569,
+    name: 'orb_of_corrosion',
+    localized_name: 'Orb of Corrosion',
+  },
+  {
+    id: 599,
+    name: 'recipe_falcon_blade',
+    localized_name: 'Falcon Blade Recipe',
+  },
+  {
+    id: 596,
+    name: 'falcon_blade',
+    localized_name: 'Falcon Blade',
+  },
+  {
+    id: 597,
+    name: 'recipe_mage_slayer',
+    localized_name: 'Mage Slayer Recipe',
+  },
+  {
+    id: 598,
+    name: 'mage_slayer',
+    localized_name: 'Mage Slayer',
+  },
+  {
+    id: 930,
+    name: 'recipe_boots_of_bearing',
+    localized_name: 'Boots of Bearing Recipe',
+  },
+  {
+    id: 931,
+    name: 'boots_of_bearing',
+    localized_name: 'Boots of Bearing',
+  },
+  {
+    id: 910,
+    name: 'recipe_revenants_brooch',
+    localized_name: "Revenant's Brooch Recipe",
+  },
+  {
+    id: 911,
+    name: 'revenants_brooch',
+    localized_name: "Revenant's Brooch",
+  },
+  {
+    id: 209,
+    name: 'recipe_heavens_halberd',
+    localized_name: "Heaven's Halberd Recipe",
+  },
+  {
+    id: 253,
+    name: 'recipe_glimmer_cape',
+    localized_name: 'Glimmer Cape Recipe',
+  },
+  {
+    id: 829,
+    name: 'force_field',
+    localized_name: "Arcanist's Armor",
+  },
+  {
+    id: 834,
+    name: 'black_powder_bag',
+    localized_name: 'Blast Rig',
+  },
+  {
+    id: 849,
+    name: 'mechanical_arm',
+    localized_name: 'Mechanical Arm',
+  },
+  {
+    id: 565,
+    name: 'chipped_vest',
+    localized_name: 'Chipped Vest',
+  },
+  {
+    id: 566,
+    name: 'wizard_glass',
+    localized_name: 'Wizard Glass',
+  },
+  {
+    id: 570,
+    name: 'gloves_of_travel',
+    localized_name: 'Gloves of Travel',
+  },
+  {
+    id: 573,
+    name: 'elven_tunic',
+    localized_name: 'Elven Tunic',
+  },
+  {
+    id: 574,
+    name: 'cloak_of_flames',
+    localized_name: 'Cloak of Flames',
+  },
+  {
+    id: 575,
+    name: 'venom_gland',
+    localized_name: 'Venom Gland',
+  },
+  {
+    id: 571,
+    name: 'trickster_cloak',
+    localized_name: 'Trickster Cloak',
+  },
+  {
+    id: 576,
+    name: 'gladiator_helm',
+    localized_name: 'Helm of the Gladiator',
+  },
+  {
+    id: 577,
+    name: 'possessed_mask',
+    localized_name: 'Possessed Mask',
+  },
+  {
+    id: 578,
+    name: 'ancient_perseverance',
+    localized_name: 'Ancient Perseverance',
+  },
+  {
+    id: 637,
+    name: 'star_mace',
+    localized_name: 'Star Mace',
+  },
+  {
+    id: 638,
+    name: 'penta_edged_sword',
+    localized_name: 'Penta-Edged Sword',
+  },
+  {
+    id: 582,
+    name: 'oakheart',
+    localized_name: 'Oakheart',
+  },
+  {
+    id: 674,
+    name: 'warhammer',
+    localized_name: 'Warhammer',
+  },
+  {
+    id: 680,
+    name: 'bullwhip',
+    localized_name: 'Bullwhip',
+  },
+  {
+    id: 675,
+    name: 'psychic_headband',
+    localized_name: 'Psychic Headband',
+  },
+  {
+    id: 676,
+    name: 'ceremonial_robe',
+    localized_name: 'Ceremonial Robe',
+  },
+  {
+    id: 686,
+    name: 'quicksilver_amulet',
+    localized_name: 'Quicksilver Amulet',
+  },
+  {
+    id: 677,
+    name: 'book_of_shadows',
+    localized_name: 'Book of Shadows',
+  },
+  {
+    id: 678,
+    name: 'giants_ring',
+    localized_name: "Giant's Ring",
+  },
+  {
+    id: 679,
+    name: 'vengeances_shadow',
+    localized_name: 'Shadow of Vengeance',
+  },
+  {
+    id: 585,
+    name: 'stormcrafter',
+    localized_name: 'Stormcrafter',
+  },
+  {
+    id: 588,
+    name: 'overflowing_elixir',
+    localized_name: 'Overflowing Elixir',
+  },
+  {
+    id: 589,
+    name: 'mysterious_hat',
+    localized_name: "Fairy's Trinket",
+  },
+  {
+    id: 824,
+    name: 'assassins_dagger',
+    localized_name: "Assassin's Dagger",
+  },
+  {
+    id: 825,
+    name: 'ascetic_cap',
+    localized_name: "Ascetic's Cap",
+  },
+  {
+    id: 826,
+    name: 'sample_picker',
+    localized_name: "Assassin's Contract",
+  },
+  {
+    id: 827,
+    name: 'icarus_wings',
+    localized_name: 'Icarus Wings',
+  },
+  {
+    id: 828,
+    name: 'misericorde',
+    localized_name: "Brigand's Blade",
+  },
+  {
+    id: 836,
+    name: 'light_robes',
+    localized_name: 'Light Robes',
+  },
+  {
+    id: 837,
+    name: 'heavy_blade',
+    localized_name: 'Witchbane',
+  },
+  {
+    id: 838,
+    name: 'unstable_wand',
+    localized_name: 'Pig Pole',
+  },
+  {
+    id: 839,
+    name: 'fortitude_ring',
+    localized_name: 'Ring of Fortitude',
+  },
+  {
+    id: 840,
+    name: 'pogo_stick',
+    localized_name: "Tumbler's Toy",
+  },
+  {
+    id: 835,
+    name: 'paintball',
+    localized_name: 'Fae Grenade',
+  },
+  {
+    id: 945,
+    name: 'seeds_of_serenity',
+    localized_name: 'Seeds of Serenity',
+  },
+  {
+    id: 946,
+    name: 'lance_of_pursuit',
+    localized_name: 'Lance of Pursuit',
+  },
+  {
+    id: 947,
+    name: 'occult_bracelet',
+    localized_name: 'Occult Bracelet',
+  },
+  {
+    id: 948,
+    name: 'tome_of_omniscience',
+    localized_name: 'Tome of Omniscience',
+  },
+  {
+    id: 949,
+    name: 'ogre_seal_totem',
+    localized_name: 'Ogre Seal Totem',
+  },
+  {
+    id: 940,
+    name: 'wand_of_the_brine',
+    localized_name: 'Wand of the Brine',
+  },
+  {
+    id: 938,
+    name: 'slime_vial',
+    localized_name: 'Slime Vial',
+  },
+  {
+    id: 939,
+    name: 'harpoon',
+    localized_name: 'Harpoon',
+  },
+  {
+    id: 950,
+    name: 'guardian_shell',
+    localized_name: 'Guardian Shell',
+  },
+  {
+    id: 968,
+    name: 'arcane_scout',
+    localized_name: 'Arcane Scout',
+  },
+  {
+    id: 969,
+    name: 'barricade',
+    localized_name: 'Barricade',
+  },
+  {
+    id: 990,
+    name: 'eye_of_the_vizier',
+    localized_name: 'Eye of the Vizier',
+  },
+  {
+    id: 998,
+    name: 'manacles_of_power',
+    localized_name: 'Manacles of Power',
+  },
+  {
+    id: 1000,
+    name: 'bottomless_chalice',
+    localized_name: 'Bottomless Chalice',
+  },
+  {
+    id: 1017,
+    name: 'wand_of_sanctitude',
+    localized_name: 'Wand of Sanctitude',
+  },
+  {
+    id: 1076,
+    name: 'specialists_array',
+    localized_name: "Specialist's Array",
+  },
+  {
+    id: 1077,
+    name: 'dagger_of_ristul',
+    localized_name: 'Dagger of Ristul',
+  },
 ]
 
 export default items
