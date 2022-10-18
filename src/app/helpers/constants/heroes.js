@@ -1665,6 +1665,46 @@ const heroes = [
     ],
     legs: 2,
   },
+  {
+    id: 135,
+    name: 'dawnbreaker',
+    localized_name: 'Dawnbreaker',
+    primary_attr: 'str',
+    attack_type: 'Melee',
+    roles: [
+      'Carry',
+      'Durable',
+    ],
+    legs: 2,
+  },
+  {
+    id: 136,
+    name: 'marci',
+    localized_name: 'Marci',
+    primary_attr: 'str',
+    attack_type: 'Melee',
+    roles: [
+      'Support',
+      'Carry',
+      'Initiator',
+      'Disabler',
+      'Escape',
+    ],
+    legs: 2,
+  },
+  {
+    id: 137,
+    name: 'primal_beast',
+    localized_name: 'Primal Beast',
+    primary_attr: 'str',
+    attack_type: 'Melee',
+    roles: [
+      'Initiator',
+      'Durable',
+      'Disabler',
+    ],
+    legs: 2,
+  },
 ]
 
 export default heroes
